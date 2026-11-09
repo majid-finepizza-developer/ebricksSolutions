@@ -1,17 +1,60 @@
-function App() {
+import React, { useEffect } from 'react';
+import type { SiteData } from './types/site-data';
+import siteDataRaw from './data/site-data.json';
+import { Navbar } from './components/sections/Navbar';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
+import { Services } from './components/sections/Services';
+import { Clients } from './components/sections/Clients';
+import { Testimonials } from './components/sections/Testimonials';
+import { Contact } from './components/sections/Contact';
+import { Footer } from './components/sections/Footer';
+
+// Cast imported JSON into strict SiteData interface
+const data: SiteData = siteDataRaw as SiteData;
+
+export const App: React.FC = () => {
+  // Sync document title and meta description dynamically from JSON meta
+  useEffect(() => {
+    document.title = data.meta.title;
+    document.documentElement.lang = data.meta.language;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', data.meta.description);
+  }, []);
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-100">
-      <section className="max-w-md rounded-card bg-surface p-6 shadow-card border border-line">
-        <h1 className="text-2xl font-bold text-content">
-          EBRICKS SOLUTIONS (PRIVATE) LIMITED
-        </h1>
-        <p className="mt-2 text-content-muted">Themed from one place.</p>
-        <button className="mt-4 rounded-lg bg-brand-600 px-4 py-2 text-white hover:bg-brand-700">
-          Get started
-        </button>
-      </section>
-    </main>
+    <div className="min-h-screen bg-background text-text-primary flex flex-col font-sans selection:bg-primary-100 selection:text-primary-900">
+      {/* Accessible Skip Link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-primary-600 focus:text-text-onPrimary focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 font-medium"
+      >
+        Skip to main content
+      </a>
+
+      {/* Header & Sticky Navbar */}
+      <Navbar brand={data.brand} navbar={data.navbar} />
+
+      {/* Main Content Sections */}
+      <main id="main-content" className="flex-1 focus:outline-none">
+        <Hero hero={data.hero} />
+        <About about={data.about} />
+        <Services services={data.services} />
+        <Clients clients={data.clients} />
+        <Testimonials testimonials={data.testimonials} />
+        <Contact contact={data.contact} />
+      </main>
+
+      {/* Footer */}
+      <Footer brand={data.brand} footer={data.footer} />
+    </div>
   );
-}
+};
 
 export default App;

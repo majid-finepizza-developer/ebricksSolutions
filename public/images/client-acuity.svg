@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="none">
+  <rect x="8" y="14" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+  <circle cx="18" cy="24" r="4" fill="currentColor"/>
+  <text x="38" y="30" fill="currentColor" font-family="system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">AcuityHealth</text>
+</svg>

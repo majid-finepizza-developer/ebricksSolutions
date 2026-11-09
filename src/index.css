@@ -1,8 +1,30 @@
-@import "tailwindcss";
-@import "./styles/theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-surface text-content font-sans;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text-primary));
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

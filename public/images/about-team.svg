@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 400" fill="none">
+  <rect width="540" height="400" rx="16" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.15" stroke-width="2"/>
+  
+  <!-- Presentation / Architecture board -->
+  <rect x="50" y="50" width="440" height="230" rx="12" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-opacity="0.25"/>
+  <rect x="80" y="80" width="120" height="14" rx="4" fill="currentColor" fill-opacity="0.7"/>
+  <rect x="80" y="110" width="180" height="8" rx="3" fill="currentColor" fill-opacity="0.4"/>
+  <rect x="80" y="126" width="140" height="8" rx="3" fill="currentColor" fill-opacity="0.4"/>
+  
+  <!-- Blueprint Diagram on board -->
+  <circle cx="370" cy="120" r="30" stroke="currentColor" stroke-width="2" stroke-opacity="0.5" fill="currentColor" fill-opacity="0.15"/>
+  <circle cx="320" cy="190" r="24" stroke="currentColor" stroke-width="2" stroke-opacity="0.5" fill="currentColor" fill-opacity="0.15"/>
+  <circle cx="420" cy="190" r="24" stroke="currentColor" stroke-width="2" stroke-opacity="0.5" fill="currentColor" fill-opacity="0.15"/>
+  <path d="M350 140L330 170M390 140L410 170" stroke="currentColor" stroke-width="2" stroke-opacity="0.5"/>
+  
+  <!-- Engineers / Collaborative figures -->
+  <!-- Person 1 -->
+  <circle cx="160" cy="300" r="22" fill="currentColor" fill-opacity="0.8"/>
+  <path d="M120 370C120 335 140 330 160 330C180 330 200 335 200 370" fill="currentColor" fill-opacity="0.6"/>
+  
+  <!-- Person 2 (Center) -->
+  <circle cx="270" cy="285" r="26" fill="currentColor" fill-opacity="0.9"/>
+  <path d="M225 370C225 325 245 320 270 320C295 320 315 325 315 370" fill="currentColor" fill-opacity="0.75"/>
+  
+  <!-- Person 3 -->
+  <circle cx="380" cy="300" r="22" fill="currentColor" fill-opacity="0.8"/>
+  <path d="M340 370C340 335 360 330 380 330C400 330 420 335 420 370" fill="currentColor" fill-opacity="0.6"/>
+</svg>

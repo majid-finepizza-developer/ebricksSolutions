@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "title": "ApexWave Technologies | Enterprise Cloud & AI Engineering",
+    "description": "Architecting resilient distributed systems, custom AI platforms, and automated cloud workflows that empower modern global enterprises to scale.",
+    "language": "en"
+  },
+  "brand": {
+    "name": "ApexWave",
+    "tagline": "Intelligent Cloud & AI Engineering",
+    "logo": "/images/logo.svg"
+  },
+  "navbar": {
+    "links": [
+      { "label": "About", "href": "#about" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Clients", "href": "#clients" },
+      { "label": "Testimonials", "href": "#testimonials" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": {
+      "label": "Schedule Consultation",
+      "href": "#contact"
+    }
+  },
+  "hero": {
+    "eyebrow": "Enterprise Digital Innovation",
+    "heading": "Architecting the Future of",
+    "highlightedWord": "Intelligent Platforms",
+    "subheading": "We engineer mission-critical cloud infrastructure, automated pipelines, and tailored AI systems designed to scale seamlessly with your global operations.",
+    "primaryCta": {
+      "label": "Get Started",
+      "href": "#contact"
+    },
+    "secondaryCta": {
+      "label": "Explore Services",
+      "href": "#services"
+    },
+    "image": {
+      "src": "/images/hero-illustration.svg",
+      "alt": "ApexWave cloud architecture and real-time observability platform interface"
+    },
+    "stats": [
+      { "value": "99.995%", "label": "Platform Uptime" },
+      { "value": "250+", "label": "Enterprise Deployments" },
+      { "value": "4.2x", "label": "Delivery Velocity" },
+      { "value": "15M+", "label": "Daily Transactions" }
+    ]
+  },
+  "about": {
+    "title": "Empowering Global Pioneers Through Engineering Precision",
+    "subtitle": "About ApexWave",
+    "description": [
+      "Founded in 2018, ApexWave partners with industry-leading organizations to modernize mission-critical systems, eliminate architectural debt, and accelerate technological roadmaps.",
+      "Our cross-functional teams of cloud architects, systems engineers, and AI researchers work directly with enterprise leaders to deliver secure, resilient, and high-velocity digital solutions."
+    ],
+    "image": {
+      "src": "/images/about-team.svg",
+      "alt": "ApexWave senior systems architects collaborating on technical architecture"
+    },
+    "highlights": [
+      {
+        "icon": "shield",
+        "title": "Zero-Trust Security",
+        "text": "SOC2-compliant and automated governance embedded at every architectural boundary."
+      },
+      {
+        "icon": "zap",
+        "title": "Rapid Iteration Cadence",
+        "text": "Automated GitOps pipelines reducing deployment cycle times from quarters to days."
+      },
+      {
+        "icon": "cpu",
+        "title": "Autonomous AI Pipelines",
+        "text": "Tailored machine learning architectures integrated directly into business workflows."
+      },
+      {
+        "icon": "users",
+        "title": "Dedicated Principal Engineers",
+        "text": "Elite engineering pods embedded directly with your product and DevOps teams."
+      }
+    ],
+    "missionTitle": "Mission",
+    "mission": "To eliminate infrastructure complexity and equip enterprises with scalable, durable platforms that power sustainable innovation.",
+    "visionTitle": "Vision",
+    "vision": "To be the world's most trusted engineering partner for building tomorrow's core digital foundations.",
+    "valuesTitle": "Core Values",
+    "values": [
+      "Architectural Rigor Over Shortcuts",
+      "Radical Operational Transparency",
+      "Security by Design at Every Layer",
+      "Measurable Client Value Delivery"
+    ]
+  },
+  "services": {
+    "title": "Full-Spectrum Engineering Capabilities",
+    "subtitle": "What We Deliver",
+    "items": [
+      {
+        "id": "cloud-architecture",
+        "icon": "cloud",
+        "title": "Cloud Architecture & Multi-Region Resiliency",
+        "description": "High-throughput, fail-safe cloud infrastructure designed on AWS, GCP, and Azure with automated Kubernetes orchestration and multi-zone disaster recovery."
+      },
+      {
+        "id": "enterprise-ai",
+        "icon": "brain",
+        "title": "Enterprise AI & Neural Applications",
+        "description": "Custom LLM integrations, predictive modeling pipelines, and automated intelligence pipelines tailored to proprietary enterprise datasets."
+      },
+      {
+        "id": "modern-data-platforms",
+        "icon": "database",
+        "title": "Modern Data Platforms & Streaming",
+        "description": "Unified data lakes, Kafka-based real-time event streaming architectures, and low-latency analytics engines that turn terabytes into actionable signals."
+      },
+      {
+        "id": "cybersecurity-governance",
+        "icon": "lock",
+        "title": "Zero-Trust Cybersecurity & Compliance",
+        "description": "End-to-end threat modeling, automated IAM policy enforcement, continuous posture monitoring, and rigorous compliance auditing."
+      },
+      {
+        "id": "microservices-apis",
+        "icon": "network",
+        "title": "Distributed APIs & Microservices",
+        "description": "Decoupled distributed architectures, event-driven microservices, and high-concurrency GraphQL/gRPC APIs engineered for sub-millisecond response."
+      },
+      {
+        "id": "devops-gitops",
+        "icon": "git-branch",
+        "title": "DevOps Automation & GitOps",
+        "description": "Declarative Terraform infrastructure-as-code, self-healing continuous delivery pipelines, and comprehensive telemetry for continuous deployment."
+      }
+    ]
+  },
+  "clients": {
+    "title": "Trusted by Engineering Leaders at Scaled Enterprises",
+    "logos": [
+      { "name": "Vertex Dynamics", "logo": "/images/client-vertex.svg" },
+      { "name": "NordicStream", "logo": "/images/client-nordic.svg" },
+      { "name": "Acuity Health", "logo": "/images/client-acuity.svg" },
+      { "name": "Quantix Capital", "logo": "/images/client-quantix.svg" },
+      { "name": "Solaris Energy", "logo": "/images/client-solaris.svg" },
+      { "name": "OmniRetail Global", "logo": "/images/client-omni.svg" },
+      { "name": "HyperLogistics", "logo": "/images/client-hyper.svg" },
+      { "name": "CyberShield Tech", "logo": "/images/client-cybershield.svg" }
+    ]
+  },
+  "testimonials": {
+    "title": "Validated by Industry Executives",
+    "subtitle": "Customer Reviews",
+    "items": [
+      {
+        "name": "Eleanor Vance",
+        "role": "Chief Technology Officer",
+        "company": "Vertex Dynamics",
+        "avatar": "/images/avatar-1.svg",
+        "rating": 5,
+        "quote": "ApexWave modernized our mission-critical distributed platform in under six months with zero downtime. Their engineering caliber, architectural rigor, and velocity are unmatched."
+      },
+      {
+        "name": "Marcus Thorne",
+        "role": "VP of Engineering",
+        "company": "Quantix Capital",
+        "avatar": "/images/avatar-2.svg",
+        "rating": 5,
+        "quote": "The streaming data pipeline engineered by ApexWave reduced our trade settlement telemetry reconciliation window from three hours to under forty seconds."
+      },
+      {
+        "name": "Sarah Jenkins",
+        "role": "Head of Cloud Infrastructure",
+        "company": "NordicStream",
+        "avatar": "/images/avatar-3.svg",
+        "rating": 5,
+        "quote": "Their zero-trust security implementations and proactive communication exceeded every stakeholder expectation. An indispensable strategic partner for high-scale growth."
+      },
+      {
+        "name": "David Chen",
+        "role": "Chief Information Officer",
+        "company": "Acuity Health",
+        "avatar": "/images/avatar-4.svg",
+        "rating": 5,
+        "quote": "Migrating HIPAA-regulated healthcare workloads to a modern Kubernetes topology required surgical precision. ApexWave delivered ahead of schedule with flawless audit verification."
+      },
+      {
+        "name": "Amara Okafor",
+        "role": "Director of Platform Engineering",
+        "company": "Solaris Energy",
+        "avatar": "/images/avatar-5.svg",
+        "rating": 5,
+        "quote": "The team scaled our IoT ingestion layer to sustain over 12 million events per second without dropping a single packet. System reliability has reached a historic high."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Ready to Modernize Your Technology Foundation?",
+    "text": "Connect with our principal architects to evaluate your technical roadmap, discuss architectural challenges, and receive a comprehensive delivery blueprint.",
+    "button": {
+      "label": "Schedule Architecture Session",
+      "href": "mailto:architects@apexwave.tech"
+    },
+    "email": "architects@apexwave.tech",
+    "phone": "+1 (800) 555-0199",
+    "address": "100 Innovation Way, Suite 400, San Francisco, CA 94105"
+  },
+  "footer": {
+    "description": "ApexWave engineers scalable cloud infrastructure, custom artificial intelligence systems, and high-performance distributed platforms for global industry leaders.",
+    "columns": [
+      {
+        "title": "Solutions",
+        "links": [
+          { "label": "Cloud Architecture", "href": "#services" },
+          { "label": "Artificial Intelligence", "href": "#services" },
+          { "label": "Modern Data Platforms", "href": "#services" },
+          { "label": "Zero-Trust Security", "href": "#services" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About ApexWave", "href": "#about" },
+          { "label": "Engineering Culture", "href": "#about" },
+          { "label": "Client Showcase", "href": "#clients" },
+          { "label": "Client Reviews", "href": "#testimonials" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "Technical Documentation", "href": "#contact" },
+          { "label": "Architecture Whitepapers", "href": "#contact" },
+          { "label": "SOC2 Compliance", "href": "#about" },
+          { "label": "Privacy Policy", "href": "#contact" }
+        ]
+      }
+    ],
+    "socials": [
+      { "platform": "Twitter", "url": "https://twitter.com", "icon": "twitter" },
+      { "platform": "LinkedIn", "url": "https://linkedin.com", "icon": "linkedin" },
+      { "platform": "GitHub", "url": "https://github.com", "icon": "github" }
+    ],
+    "copyright": "© {year} ApexWave Technologies Inc. All rights reserved."
+  }
+}

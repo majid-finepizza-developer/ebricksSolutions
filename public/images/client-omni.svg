@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="none">
+  <rect x="6" y="14" width="24" height="20" rx="6" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.15"/>
+  <path d="M12 24L16 28L24 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="38" y="30" fill="currentColor" font-family="system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">OMNIRETAIL</text>
+</svg>
