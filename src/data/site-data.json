@@ -1,13 +1,14 @@
 {
   "meta": {
-    "title": "ApexWave Technologies | Enterprise Cloud & AI Engineering",
-    "description": "Architecting resilient distributed systems, custom AI platforms, and automated cloud workflows that empower modern global enterprises to scale.",
+    "title": "eBricks Solutions | Smart Business. Seamless Operations. Unlimited Growth.",
+    "description": "eBricks Solutions delivers smart business platforms, point-of-sale systems, and automated operations engineered for seamless scale and unlimited growth.",
     "language": "en"
   },
   "brand": {
-    "name": "ApexWave",
-    "tagline": "Intelligent Cloud & AI Engineering",
-    "logo": "/images/logo.svg"
+    "name": "eBricks Solutions",
+    "tagline": "Smart Business. Seamless Operations. Unlimited Growth.",
+    "logo": "/images/ebricks-logo.png",
+    "icon": "/images/ebricks-icon.png"
   },
   "navbar": {
     "links": [
@@ -239,6 +240,6 @@
       { "platform": "LinkedIn", "url": "https://linkedin.com", "icon": "linkedin" },
       { "platform": "GitHub", "url": "https://github.com", "icon": "github" }
     ],
-    "copyright": "© {year} ApexWave Technologies Inc. All rights reserved."
+    "copyright": "© {year} eBricks Solutions. All rights reserved."
   }
 }

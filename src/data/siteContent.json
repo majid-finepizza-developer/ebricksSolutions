@@ -1,0 +1,678 @@
+{
+  "meta": {
+    "title": "EBRICKS SOLUTIONS | Custom Software, Web, Mobile & Digital Marketing Agency Lahore",
+    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a Lahore-based software house and digital marketing agency. We build custom web apps, mobile apps, desktop POS software, Shopify stores, and run high-converting digital marketing campaigns. Visit our office on Model Town Link Road, Lahore.",
+    "keywords": [
+      "software house lahore",
+      "eBricks Solutions Lahore",
+      "custom POS software lahore",
+      "mobile app development pakistan",
+      "web development agency model town lahore",
+      "shopify ecommerce experts pakistan",
+      "digital marketing company lahore",
+      "social media marketing lahore",
+      "flutter app development pakistan",
+      "desktop software point of sale"
+    ],
+    "ogImage": "/images/ebricks-logo.png",
+    "language": "en"
+  },
+  "brand": {
+    "name": "EBRICKS SOLUTIONS",
+    "legalName": "EBRICKS SOLUTIONS (PRIVATE) LIMITED",
+    "tagline": "Smart Business. Seamless Operations. Unlimited Growth.",
+    "logo": "/images/ebricks-logo.png",
+    "icon": "/images/ebricks-icon.png",
+    "yearEstablished": 2021
+  },
+  "contact": {
+    "phone": {
+      "label": "Call Us Directly",
+      "value": "03154112925",
+      "display": "+92 315 4112925",
+      "href": "tel:+923154112925",
+      "icon": "PhoneCall"
+    },
+    "whatsapp": {
+      "label": "WhatsApp Support",
+      "value": "03154112925",
+      "display": "+92 315 4112925",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20a%20project.",
+      "icon": "MessageSquare"
+    },
+    "email": {
+      "label": "Email Inquiries",
+      "value": "Info@ebricks.com",
+      "display": "Info@ebricks.com",
+      "href": "mailto:Info@ebricks.com",
+      "icon": "Mail"
+    },
+    "address": {
+      "line1": "Model Town Link Road",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "formatted": "Model Town Link Road, Lahore, Pakistan",
+      "googleMapsUrl": "https://maps.google.com/?q=Model+Town+Link+Road,+Lahore,+Pakistan",
+      "icon": "MapPin"
+    },
+    "officeHours": {
+      "days": "Monday – Saturday",
+      "hours": "9:00 AM – 6:00 PM PKT",
+      "icon": "Clock"
+    }
+  },
+  "topBar": {
+    "enabled": true,
+    "announcement": {
+      "badge": "Lahore In-Person & Remote Consultations",
+      "text": "Meet our development team at Model Town Link Road or book a Zoom call."
+    }
+  },
+  "navbar": {
+    "links": [
+      { "label": "Services", "href": "#services" },
+      { "label": "Industries", "href": "#industries" },
+      { "label": "Tech Stack", "href": "#tech-stack" },
+      { "label": "Process", "href": "#process" },
+      { "label": "Why Us", "href": "#why-us" },
+      { "label": "FAQs", "href": "#faqs" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "ctaButton": {
+      "label": "Get a Free Quote",
+      "href": "#contact",
+      "icon": "ArrowRight"
+    },
+    "whatsappButton": {
+      "label": "Chat on WhatsApp",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20am%20interested%20in%20your%20services.",
+      "icon": "MessageSquare"
+    }
+  },
+  "hero": {
+    "badge": {
+      "text": "Software House & Digital Marketing Agency • Lahore, Pakistan",
+      "icon": "Sparkles"
+    },
+    "headline": {
+      "prefix": "We Build Reliable Software,",
+      "highlight": "High-Speed Websites & Targeted Marketing",
+      "suffix": "That Actually Grow Your Revenue."
+    },
+    "subheadline": "No buzzword fluff, no endless delays. Whether you need a custom POS software for your retail shops, a scalable mobile app, a high-converting Shopify store, or performance Google & Meta ads — EBRICKS SOLUTIONS (PRIVATE) LIMITED delivers clean code, full source code ownership, and measurable growth.",
+    "primaryCta": {
+      "label": "Get a Free Project Estimate",
+      "href": "#contact",
+      "icon": "ArrowRight"
+    },
+    "secondaryCta": {
+      "label": "Message on WhatsApp (0315-4112925)",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20a%20project.",
+      "icon": "MessageCircle"
+    },
+    "trustBadges": [
+      {
+        "label": "100% In-House Lahore Team",
+        "icon": "Users"
+      },
+      {
+        "label": "Full Code & IP Ownership",
+        "icon": "ShieldCheck"
+      },
+      {
+        "label": "Milestone-Based Transparent Pricing",
+        "icon": "Award"
+      },
+      {
+        "label": "Dedicated Post-Launch Warranty",
+        "icon": "Headphones"
+      }
+    ],
+    "stats": [
+      {
+        "value": "120+",
+        "label": "Live Projects Delivered",
+        "description": "Custom websites, mobile apps, POS software & web apps"
+      },
+      {
+        "value": "48 Hrs",
+        "label": "Average Proposal Turnaround",
+        "description": "Clear technical scope, timeline, and exact milestone costs"
+      },
+      {
+        "value": "98%",
+        "label": "Client Recommendation Rate",
+        "description": "Long-term relationships across Pakistan, UAE, UK & USA"
+      },
+      {
+        "value": "60 Days",
+        "label": "Complimentary Bug Warranty",
+        "description": "Free post-launch support and bug fixes for peace of mind"
+      }
+    ]
+  },
+  "techStack": {
+    "badge": "Battle-Tested Technologies",
+    "heading": "Modern Technologies We Use Daily",
+    "subheading": "We choose reliable, widely-supported frameworks so your software remains fast, secure, easily maintainable, and free from obsolete lock-in.",
+    "technologies": [
+      { "name": "React & Next.js", "category": "Frontend & Web Apps", "icon": "Code2" },
+      { "name": "Node.js & Express", "category": "Backend & Microservices", "icon": "Cpu" },
+      { "name": "Flutter & React Native", "category": "Cross-Platform Mobile Apps", "icon": "Smartphone" },
+      { "name": "Python & Django", "category": "Data & Backend Logic", "icon": "Laptop" },
+      { "name": "Laravel & PHP", "category": "Enterprise Web Portals", "icon": "Globe" },
+      { "name": "Shopify & Liquid", "category": "E-Commerce Stores", "icon": "ShoppingBag" },
+      { "name": "WordPress & WooCommerce", "category": "CMS & Online Stores", "icon": "Layout" },
+      { "name": "Electron & C# .NET", "category": "Desktop & POS Systems", "icon": "Monitor" },
+      { "name": "PostgreSQL & MySQL", "category": "Secure Relational Databases", "icon": "Layers" },
+      { "name": "Google Ads & Meta Ads", "category": "Paid Advertising Funnels", "icon": "TrendingUp" },
+      { "name": "Tailwind CSS", "category": "Modern Responsive UI", "icon": "Sparkles" },
+      { "name": "AWS & Cloud VPS", "category": "Scalable Infrastructure", "icon": "ShieldCheck" }
+    ]
+  },
+  "services": {
+    "badge": "What We Build & Scale",
+    "heading": "End-to-End Technology & Growth Services Under",
+    "highlightedWord": "One Roof",
+    "subheading": "You don't need to hire one agency for development and another for marketing. We align engineering rigor with performance marketing so every digital asset actually generates revenue.",
+    "categories": [
+      {
+        "id": "all",
+        "label": "All Services",
+        "description": "Complete breakdown of our custom engineering and marketing solutions."
+      },
+      {
+        "id": "engineering",
+        "label": "Software & App Engineering",
+        "description": "High-performance web, mobile apps, desktop POS, and online store development."
+      },
+      {
+        "id": "marketing",
+        "label": "Growth & Digital Marketing",
+        "description": "Proven SEO, high-ROI Google Ads, and social media audience acquisition."
+      }
+    ],
+    "items": [
+      {
+        "id": "website-development",
+        "categoryId": "engineering",
+        "title": "Website Static & Dynamic Development",
+        "tagline": "Fast, Clean & Built for Google Rankings",
+        "summary": "We develop custom websites that load instantly on mobile devices, present your business with world-class design credibility, and rank effectively on Google search results.",
+        "icon": "Globe",
+        "badge": "Web Development",
+        "techStack": ["Next.js", "React", "Tailwind CSS", "TypeScript", "Node.js"],
+        "deliverables": [
+          "Custom-designed responsive layout (no bloated bought templates)",
+          "Ultra-fast loading times with Google PageSpeed scores of 90+",
+          "Built-in technical SEO, schema tags, and OpenGraph social previews",
+          "Easy-to-use admin dashboard so your team can update text and images",
+          "WhatsApp chat button, lead contact forms, and automated email alerts"
+        ],
+        "cta": {
+          "label": "Discuss Your Website Project",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "web-app-development",
+        "categoryId": "engineering",
+        "title": "Web App Development",
+        "tagline": "Custom SaaS Platforms & Internal Business Portals",
+        "summary": "Automate manual spreadsheets and paper workflows. We engineer tailor-made cloud applications, staff management portals, client dashboards, and subscription SaaS products.",
+        "icon": "Layout",
+        "badge": "SaaS & Systems",
+        "techStack": ["React", "Node.js", "PostgreSQL", "REST APIs", "AWS"],
+        "deliverables": [
+          "Role-based staff and customer dashboards with granular permissions",
+          "Real-time analytics, downloadable PDF/Excel reports, and business KPIs",
+          "Secure user authentication with two-factor verification (2FA)",
+          "Third-party API integrations (Payment gateways, CRMs, WhatsApp APIs)",
+          "Clean, well-documented source code that your company completely owns"
+        ],
+        "cta": {
+          "label": "Discuss Custom Web App",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "mobile-app-development",
+        "categoryId": "engineering",
+        "title": "Mobile App Development",
+        "tagline": "Intuitive iOS & Android Apps with Native Feel",
+        "summary": "Reach your customers directly on their smartphones. We build smooth, modern mobile apps for both Apple iOS and Android using unified Flutter or React Native codebases that save you time and budget.",
+        "icon": "Smartphone",
+        "badge": "iOS & Android",
+        "techStack": ["Flutter", "React Native", "Firebase", "Node.js", "SQLite"],
+        "deliverables": [
+          "Single codebase for both Google Play Store and Apple App Store",
+          "Fast performance, smooth animations, and offline-first data caching",
+          "Push notifications for promotions, order updates, and customer retention",
+          "In-app payments, biometric fingerprint/FaceID login, and Google Maps GPS",
+          "Complete handling of Google Play and Apple App Store review and publishing"
+        ],
+        "cta": {
+          "label": "Discuss Mobile App",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "desktop-app-development",
+        "categoryId": "engineering",
+        "title": "Desktop App Development (POS & Enterprise)",
+        "tagline": "Fast, Offline-Capable POS & Windows Software",
+        "summary": "Built specifically for retail stores, supermarkets, pharmacies, restaurants, and warehouses. Our desktop Point of Sale (POS) software runs with zero internet dependency and syncs automatically to the cloud.",
+        "icon": "Monitor",
+        "badge": "POS Software",
+        "techStack": ["Electron", "C# .NET", "SQLite", "Node.js", "Thermal Printers"],
+        "deliverables": [
+          "Full POS software: barcode scanning, fast checkout, and thermal receipt printing",
+          "Cash drawer, barcode weight scale, and dual-customer display hardware support",
+          "Multi-branch inventory tracking, expiry alerts, and batch management",
+          "Daily cash register closing, sales tax (FBR / PRA) compliant invoicing",
+          "Works 100% offline; seamlessly syncs sales and stock once internet connects"
+        ],
+        "cta": {
+          "label": "Discuss POS & Desktop Software",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "shopify-wordpress-solutions",
+        "categoryId": "engineering",
+        "title": "Shopify & WordPress Solutions",
+        "tagline": "Turnkey E-Commerce Stores Ready to Take Orders",
+        "summary": "Launch a high-converting online storefront. We build and optimize custom Shopify stores and WordPress/WooCommerce websites configured with local and international payment gateways and courier tracking.",
+        "icon": "ShoppingBag",
+        "badge": "E-Commerce",
+        "techStack": ["Shopify Liquid", "WordPress", "WooCommerce", "TCS/Leopards APIs"],
+        "deliverables": [
+          "Custom Shopify theme design with fast checkout and zero layout glitches",
+          "Full WooCommerce store configuration with Cash on Delivery (COD)",
+          "Courier API integration for automatic shipping slips (TCS, Leopards, Trax)",
+          "Payment gateway setup (PayFast, Safepay, JazzCash, Stripe, PayPal)",
+          "Cart abandonment recovery SMS/WhatsApp flows to rescue lost sales"
+        ],
+        "cta": {
+          "label": "Discuss Shopify or WordPress",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "digital-marketing",
+        "categoryId": "marketing",
+        "title": "Digital Marketing (SEO & Google Ads)",
+        "tagline": "Targeted Lead Generation & Search Rankings",
+        "summary": "Get your business in front of customers who are actively searching to buy. We run high-intent Google Search Ads and execute organic SEO so your phone rings with qualified commercial leads.",
+        "icon": "TrendingUp",
+        "badge": "Google Ads & SEO",
+        "techStack": ["Google Ads", "Google Analytics 4", "Semrush", "Search Console"],
+        "deliverables": [
+          "Google Search & Performance Max campaigns with disciplined cost-per-click",
+          "Local SEO optimization to rank your business on Google Maps in Lahore",
+          "Negative keyword filtering to eliminate wasted ad spend on irrelevant clicks",
+          "Conversion-focused landing page design and phone call click tracking",
+          "Bi-weekly transparent reports showing exactly where every rupee or dollar went"
+        ],
+        "cta": {
+          "label": "Discuss Digital Marketing",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "social-media-marketing",
+        "categoryId": "marketing",
+        "title": "Social Media Marketing",
+        "tagline": "Paid Ad Campaigns on Meta, Instagram & TikTok",
+        "summary": "Stop posting generic Canva graphics that get zero sales. We produce eye-catching video hooks, targeted Facebook/Instagram ad funnels, and TikTok campaigns that generate real orders and brand credibility.",
+        "icon": "Share2",
+        "badge": "Social Growth",
+        "techStack": ["Meta Ads Manager", "TikTok Ads", "Canva Pro", "CapCut", "LinkedIn Ads"],
+        "deliverables": [
+          "Full monthly content calendars with professional graphic design and video edits",
+          "Targeted Meta Ads (Facebook & Instagram) with retargeting for store visitors",
+          "Short-form Reels and TikTok video ads crafted to stop scrolling thumbs",
+          "Direct WhatsApp lead generation ads to bring prospective buyers into chat",
+          "Community management, comment responses, and review monitoring"
+        ],
+        "cta": {
+          "label": "Discuss Social Media Marketing",
+          "href": "#contact"
+        }
+      }
+    ]
+  },
+  "industries": {
+    "badge": "Real-World Experience",
+    "heading": "Industries We Help Grow in",
+    "highlightedWord": "Pakistan & Globally",
+    "subheading": "We don't just write code; we understand how different businesses actually operate on the ground — from retail cash counters to corporate consulting.",
+    "items": [
+      {
+        "id": "retail-pos",
+        "title": "Retail & Supermarkets",
+        "summary": "Multi-counter POS software, barcode scanners, stock inventory, and branch-level cash reconciliations.",
+        "icon": "Monitor",
+        "solutions": ["Multi-till POS systems", "Batch & expiry tracking", "Offline thermal printing", "Vendor payment records"]
+      },
+      {
+        "id": "ecommerce-brands",
+        "title": "E-Commerce & D2C Brands",
+        "summary": "Custom Shopify and WooCommerce stores with automatic courier booking, Cash on Delivery (COD), and Meta retargeting.",
+        "icon": "ShoppingBag",
+        "solutions": ["Custom Shopify themes", "Courier slip automation", "High-converting checkout", "Abandoned cart WhatsApp bots"]
+      },
+      {
+        "id": "healthcare-clinics",
+        "title": "Healthcare & Clinics",
+        "summary": "Patient appointment scheduling, electronic medical records, and local clinic Google Maps visibility.",
+        "icon": "ShieldCheck",
+        "solutions": ["Online doctor bookings", "Digital prescription portals", "Patient history logs", "Local SEO for clinics"]
+      },
+      {
+        "id": "real-estate",
+        "title": "Real Estate & Builders",
+        "summary": "High-impact property listing websites, lead capture landing pages, and targeted Google Ads for property investors.",
+        "icon": "Layout",
+        "solutions": ["Property search portals", "WhatsApp inquiry capture", "Video tour showcases", "High-intent investor ads"]
+      },
+      {
+        "id": "education-academies",
+        "title": "Academies & Institutes",
+        "summary": "Student admission management, fee voucher generation, online course delivery, and social media student enrollments.",
+        "icon": "Award",
+        "solutions": ["Student registration systems", "Fee tracking & invoicing", "Online lecture portals", "Social ad enrollment funnels"]
+      },
+      {
+        "id": "corporate-b2b",
+        "title": "Corporate & B2B Services",
+        "summary": "Credible corporate web presence, custom client portals, and LinkedIn B2B lead generation campaigns.",
+        "icon": "Globe",
+        "solutions": ["Custom corporate websites", "Staff intranet dashboards", "B2B LinkedIn outreach", "Client document vaults"]
+      }
+    ]
+  },
+  "process": {
+    "badge": "How We Work With You",
+    "heading": "A Straightforward 4-Step Process with",
+    "highlightedWord": "Zero Surprises",
+    "subheading": "You work directly with the developers and marketers doing the actual work. We break projects into clear weekly deliverables so you stay in complete control from day one.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Free Discovery & Project Scoping",
+        "timeline": "Days 1 – 3",
+        "summary": "We sit down (in person at Model Town, Lahore or via Zoom) to understand your exact business workflow, target budget, and deadlines. We deliver a crystal-clear proposal within 48 hours.",
+        "icon": "Compass",
+        "activities": [
+          "Detailed feature-by-feature requirements checklist",
+          "Honest advice on the right technology stack (no over-engineering)",
+          "Fixed milestone budget and realistic go-live date",
+          "Direct WhatsApp group created with technical lead"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Interactive Wireframes & UI Design",
+        "timeline": "Week 1 – 2",
+        "summary": "You see exactly how your website, app, or POS interface will look and feel before we write code. We iterate on Figma designs until you are 100% satisfied.",
+        "icon": "Layout",
+        "activities": [
+          "Figma visual prototypes you can click and test on your phone",
+          "User-friendly navigation flow designed for fast customer action",
+          "Brand typography, colors, and layout review sessions",
+          "Approval of all database fields and screen structures"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Development & Weekly Demos",
+        "timeline": "Weeks 3 – 6",
+        "summary": "We build in weekly sprints. You receive a live staging link every week so you can test features as they are completed — no blackout periods where you wonder what's happening.",
+        "icon": "Cpu",
+        "activities": [
+          "Clean, modern TypeScript, Flutter, or desktop software code",
+          "Weekly progress updates and live staging server demonstrations",
+          "Rigorous testing on multiple real mobile devices and browsers",
+          "Hardware testing for POS (printers, barcode scanners, cash drawers)"
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Launch, Staff Training & 60-Day Warranty",
+        "timeline": "Go-Live & Beyond",
+        "summary": "We deploy your project to your domain and cloud servers, train your team on how to use it, hand over all source code, and stand by with 60 days of free bug support.",
+        "icon": "Rocket",
+        "activities": [
+          "Zero-downtime production deployment and SSL security setup",
+          "Hands-on staff training session (video recording provided)",
+          "100% source code, admin credentials, and database handover",
+          "60 days of complimentary technical warranty and bug fixing"
+        ]
+      }
+    ],
+    "differentiatorsBadge": "The EBRICKS Advantage",
+    "differentiatorsHeading": "Why Clients Choose Us Over Freelancers & Big Agencies",
+    "differentiators": [
+      {
+        "title": "Direct Communication, No Bureaucracy",
+        "description": "You talk directly to senior developers and marketers on WhatsApp or phone. No junior account managers playing telephone with your requirements.",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "You Own 100% of Your Code & Data",
+        "description": "We never hold your domain, hosting, source code, or accounts hostage. Everything is registered in your business name from day one.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Lahore Office You Can Visit Anytime",
+        "description": "We are a real, registered company based on Model Town Link Road, Lahore. You are always welcome to visit for meetings and product reviews.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Engineering + Real Marketing Synergy",
+        "description": "Most developers don't know how to run Google Ads, and most marketers don't know code. We bridge both disciplines seamlessly.",
+        "icon": "Layers"
+      }
+    ]
+  },
+  "testimonials": {
+    "badge": "Client Feedback",
+    "heading": "What Business Owners Say About Working with",
+    "highlightedWord": "EBRICKS",
+    "subheading": "Real reviews from retail store owners, e-commerce founders, and corporate clients we partner with in Lahore and across the globe.",
+    "items": [
+      {
+        "quote": "EBRICKS developed our multi-counter supermarket POS software in Lahore. Thermal receipt printing is instant, barcode scanning never lags, and end-of-day cash reconciliation saves us 2 hours every evening. Their team personally came to our store to test everything.",
+        "author": "Haji Tariq Mehmood",
+        "role": "Owner & Managing Director",
+        "company": "Mehmood Mart & Supermarket",
+        "location": "Lahore, Pakistan",
+        "service": "Custom Desktop POS Software",
+        "rating": 5
+      },
+      {
+        "quote": "Our previous WordPress website took 8 seconds to load on mobile. EBRICKS rebuilt our platform on modern Next.js; loading speed dropped to under 1.2 seconds and our Google organic leads tripled in the first 90 days. Professional, honest, and always responsive on WhatsApp.",
+        "author": "Dr. Kamran Qureshi",
+        "role": "Founder & Clinical Director",
+        "company": "Qureshi Dental & Aesthetic Clinic",
+        "location": "Model Town, Lahore",
+        "service": "Dynamic Website Development & Local SEO",
+        "rating": 5
+      },
+      {
+        "quote": "Finding a software team that actually understands Shopify and courier APIs in Pakistan is rare. EBRICKS built our custom store, integrated Trax and Leopards COD booking, and manages our Meta ads. Our monthly order volume grew 4x within 4 months.",
+        "author": "Zainab Raza",
+        "role": "Co-Founder",
+        "company": "Lumina Apparel & Home",
+        "location": "Karachi / UAE",
+        "service": "Shopify E-Commerce & Performance Meta Ads",
+        "rating": 5
+      }
+    ]
+  },
+  "faqs": {
+    "badge": "Clear Answers",
+    "heading": "Frequently Asked Questions Before",
+    "highlightedWord": "Getting Started",
+    "subheading": "We believe in complete transparency. Here are honest answers to the common questions clients ask us before signing a proposal.",
+    "items": [
+      {
+        "question": "How much does a website, custom mobile app, or retail POS system cost?",
+        "answer": "Costs depend on scope and feature complexity. A high-speed corporate business website typically ranges between PKR 45,000 to PKR 150,000. Custom POS desktop software ranges between PKR 60,000 to PKR 250,000 depending on hardware integrations and multi-branch inventory. Mobile apps and custom SaaS portals are scoped on milestone sprints. We provide an exact, itemized quotation within 48 hours with zero hidden fees.",
+        "category": "Pricing & Budget"
+      },
+      {
+        "question": "How long does a typical project take from start to launch?",
+        "answer": "A standard professional corporate website is typically delivered in 2 to 3 weeks. An e-commerce Shopify or WooCommerce store usually takes 2 to 4 weeks. Custom mobile apps and POS systems take between 4 to 8 weeks depending on screen count and hardware tests. We give you a strict milestone calendar and demo progress every single week.",
+        "category": "Timelines"
+      },
+      {
+        "question": "Can we visit your office in Model Town, Lahore to discuss our project?",
+        "answer": "Yes, absolutely! We love meeting our clients in person. Our office is located on Model Town Link Road, Lahore. You are welcome to visit Monday through Saturday between 9:00 AM and 6:00 PM. Please give us a quick call or WhatsApp message at 0315-4112925 so we can reserve a meeting room and have tea ready.",
+        "category": "Office & Meetings"
+      },
+      {
+        "question": "Who owns the code and intellectual property once the project is finished?",
+        "answer": "You do — 100%. Upon project completion and final milestone clearance, we hand over the full GitHub source code repository, production database backups, design files, and cloud credentials. You have complete legal ownership to host, modify, or scale your software however you choose.",
+        "category": "Ownership & Legal"
+      },
+      {
+        "question": "Do you train our staff on how to use our POS software or website dashboard?",
+        "answer": "Yes. We include dedicated training sessions for you and your staff. For Lahore clients, we can do in-person training at your premises or our office. For remote clients, we conduct live screen-share sessions and provide step-by-step video recordings that you can reference anytime when onboarding new staff.",
+        "category": "Training & Support"
+      },
+      {
+        "question": "What happens after launch if something breaks or needs updates?",
+        "answer": "Every project includes 60 days of complimentary post-launch warranty where we fix any unexpected bugs or glitches free of charge. After the warranty period, we offer flexible, affordable monthly maintenance packages to keep your servers patched, backups secure, and features updated.",
+        "category": "Maintenance"
+      }
+    ]
+  },
+  "ctaBanner": {
+    "badge": "Let's Get Started",
+    "heading": "Ready to Build Your Project or Grow Your",
+    "highlightedWord": "Sales Online?",
+    "subheading": "Whether you have a clear requirement specification or just an early idea on a notepad, reach out to our team. We'll give you honest technical guidance and a transparent price quote.",
+    "primaryCta": {
+      "label": "Get a Free Project Estimate",
+      "href": "#contact",
+      "icon": "ArrowRight"
+    },
+    "secondaryCta": {
+      "label": "Chat with Us on WhatsApp",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20want%20to%20consult%20about%20a%20project.",
+      "icon": "MessageSquare"
+    },
+    "guarantees": [
+      "100% Free Initial Discovery & Scoping Session",
+      "Itemized Technical Proposal within 48 Hours",
+      "Full Code Ownership & Non-Disclosure (NDA) Guaranteed"
+    ]
+  },
+  "contactSection": {
+    "badge": "Talk to Us",
+    "heading": "Tell Us About Your Project &",
+    "highlightedWord": "Get a Fast Estimate",
+    "subheading": "Fill out the quick inquiry form below or reach out directly via WhatsApp, phone, or email. Our technical team in Lahore reviews every inquiry and replies within 2 business hours.",
+    "formTitle": "Request a Free Project Proposal",
+    "formSubtitle": "Share your requirements, desired launch date, and budget range.",
+    "fields": {
+      "fullName": {
+        "name": "fullName",
+        "label": "Your Name",
+        "placeholder": "e.g., Muhammad Ali / Usman Sheikh",
+        "required": true
+      },
+      "email": {
+        "name": "email",
+        "label": "Email Address",
+        "placeholder": "e.g., ali@company.com",
+        "required": true
+      },
+      "phone": {
+        "name": "phone",
+        "label": "Phone / WhatsApp Number",
+        "placeholder": "e.g., 0315-4112925 or +92 300 1234567",
+        "required": true
+      },
+      "serviceSelect": {
+        "label": "Service You Need",
+        "placeholder": "Select a Service Pillar",
+        "required": true
+      },
+      "budgetRange": {
+        "label": "Estimated Budget Range",
+        "placeholder": "Select Budget Range (Optional)",
+        "options": [
+          "Under PKR 100,000 (Basic Site / Minor Project)",
+          "PKR 100,000 – 250,000 (Standard Website / Custom POS)",
+          "PKR 250,000 – 500,000 (E-Commerce / Mobile App / Multi-Store)",
+          "PKR 500,000+ (Full Custom SaaS / Enterprise System)",
+          "International / USD Budget ($1,000 – $5,000+)"
+        ]
+      },
+      "projectDetails": {
+        "name": "projectDetails",
+        "label": "Tell Us About What You Want to Build",
+        "placeholder": "Describe your business, key features needed, reference websites you like, and your target launch timeline...",
+        "required": true
+      }
+    },
+    "submitButtonText": "Send Project Inquiry",
+    "successMessage": {
+      "title": "Inquiry Received! We'll Be in Touch Shortly.",
+      "message": "Thank you for reaching out to EBRICKS SOLUTIONS. A senior technical lead from our Lahore office will review your specifications and contact you within 2 hours."
+    },
+    "directContactTitle": "Direct Lahore Contacts",
+    "directContactSubtitle": "Prefer to chat or speak directly? Reach our team anytime:"
+  },
+  "footer": {
+    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a software engineering and performance digital marketing agency registered in Lahore, Pakistan. We partner with ambitious companies to build scalable technology, retail POS software, modern websites, and profitable digital marketing channels.",
+    "linkGroups": [
+      {
+        "title": "Software & Web",
+        "links": [
+          { "label": "Static & Dynamic Websites", "href": "#services" },
+          { "label": "Custom Web Applications", "href": "#services" },
+          { "label": "iOS & Android Mobile Apps", "href": "#services" },
+          { "label": "Desktop & Retail POS Software", "href": "#services" },
+          { "label": "Shopify & WordPress Stores", "href": "#services" }
+        ]
+      },
+      {
+        "title": "Growth & Ads",
+        "links": [
+          { "label": "Google Search & Display Ads", "href": "#services" },
+          { "label": "Search Engine Optimization (SEO)", "href": "#services" },
+          { "label": "Meta (Facebook & Instagram) Ads", "href": "#services" },
+          { "label": "TikTok & Reels Video Ads", "href": "#services" },
+          { "label": "Local Google Maps Ranking", "href": "#services" }
+        ]
+      },
+      {
+        "title": "Company & Trust",
+        "links": [
+          { "label": "How We Work (Process)", "href": "#process" },
+          { "label": "Why Choose EBRICKS", "href": "#why-us" },
+          { "label": "Frequently Asked Questions", "href": "#faqs" },
+          { "label": "Visit Lahore Office & Map", "href": "#contact" }
+        ]
+      }
+    ],
+    "socials": [
+      { "platform": "LinkedIn", "url": "https://linkedin.com/company/ebricks-solutions", "icon": "Linkedin" },
+      { "platform": "Facebook", "url": "https://facebook.com/ebricksSolutions", "icon": "Facebook" },
+      { "platform": "Instagram", "url": "https://instagram.com/ebricksSolutions", "icon": "Instagram" },
+      { "platform": "Twitter", "url": "https://twitter.com/ebricksSolutions", "icon": "Twitter" },
+      { "platform": "GitHub", "url": "https://github.com/ebricksSolutions", "icon": "Github" }
+    ],
+    "copyright": "© {year} EBRICKS SOLUTIONS (PRIVATE) LIMITED. All rights reserved.",
+    "disclaimer": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a legally registered corporate entity in Lahore, Pakistan. Operating from Model Town Link Road, Lahore."
+  },
+  "floatingWhatsApp": {
+    "enabled": true,
+    "tooltipText": "Chat with our Lahore Team on WhatsApp (0315-4112925)",
+    "initialMessage": "Hello EBRICKS SOLUTIONS! I would like to consult about a project."
+  }
+}

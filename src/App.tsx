@@ -1,58 +1,121 @@
-import React, { useEffect } from 'react';
-import type { SiteData } from './types/site-data';
-import siteDataRaw from './data/site-data.json';
+import React, { useState, useEffect } from 'react';
+import { useSiteContent } from './context/content-context';
 import { Navbar } from './components/sections/Navbar';
 import { Hero } from './components/sections/Hero';
-import { About } from './components/sections/About';
-import { Services } from './components/sections/Services';
-import { Clients } from './components/sections/Clients';
-import { Testimonials } from './components/sections/Testimonials';
-import { Contact } from './components/sections/Contact';
+import { TechStackSection } from './components/sections/TechStackSection';
+import { ServicesSection } from './components/sections/ServicesSection';
+import { IndustriesSection } from './components/sections/IndustriesSection';
+import { ProcessSection } from './components/sections/ProcessSection';
+import { TestimonialsSection } from './components/sections/TestimonialsSection';
+import { FaqSection } from './components/sections/FaqSection';
+import { CtaBanner } from './components/sections/CtaBanner';
+import { ContactSection } from './components/sections/ContactSection';
 import { Footer } from './components/sections/Footer';
-
-// Cast imported JSON into strict SiteData interface
-const data: SiteData = siteDataRaw as SiteData;
+import { FloatingWhatsApp } from './components/sections/FloatingWhatsApp';
 
 export const App: React.FC = () => {
-  // Sync document title and meta description dynamically from JSON meta
-  useEffect(() => {
-    document.title = data.meta.title;
-    document.documentElement.lang = data.meta.language;
+  const content = useSiteContent();
+  const [selectedService, setSelectedService] = useState<string>('');
 
+  // Dynamically synchronize document title, language, and meta tags from siteContent.json
+  useEffect(() => {
+    document.title = content.meta.title;
+    document.documentElement.lang = content.meta.language;
+
+    // Sync Meta Description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', data.meta.description);
-  }, []);
+    metaDesc.setAttribute('content', content.meta.description);
+
+    // Sync Meta Keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', content.meta.keywords.join(', '));
+  }, [content.meta]);
+
+  const handleSelectService = (serviceTitle: string) => {
+    setSelectedService(serviceTitle);
+  };
 
   return (
-    <div className="min-h-screen bg-background text-text-primary flex flex-col font-sans selection:bg-primary-100 selection:text-primary-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-primary-500 selection:text-white antialiased">
       {/* Accessible Skip Link */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-primary-600 focus:text-text-onPrimary focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 font-medium"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-500 font-medium text-sm"
       >
         Skip to main content
       </a>
 
-      {/* Header & Sticky Navbar */}
-      <Navbar brand={data.brand} navbar={data.navbar} />
+      {/* Top Bar & Sticky Glassmorphism Navbar */}
+      <Navbar
+        brand={content.brand}
+        contact={content.contact}
+        topBar={content.topBar}
+        navbar={content.navbar}
+      />
 
       {/* Main Content Sections */}
       <main id="main-content" className="flex-1 focus:outline-none">
-        <Hero hero={data.hero} />
-        <About about={data.about} />
-        <Services services={data.services} />
-        <Clients clients={data.clients} />
-        <Testimonials testimonials={data.testimonials} />
-        <Contact contact={data.contact} />
+        {/* 1. Hero Section */}
+        <Hero hero={content.hero} />
+
+        {/* 2. Modern Tech Stack Grid */}
+        <TechStackSection techStack={content.techStack} />
+
+        {/* 3. Categorized Services Grid */}
+        <ServicesSection
+          services={content.services}
+          onSelectService={handleSelectService}
+        />
+
+        {/* 4. Industries We Serve (Retail POS, E-Commerce, Clinics, Real Estate, etc.) */}
+        <IndustriesSection
+          industries={content.industries}
+          onConsultIndustry={handleSelectService}
+        />
+
+        {/* 5. Proven Execution Process & Why Choose EBRICKS */}
+        <ProcessSection process={content.process} />
+
+        {/* 6. Real Client Reviews & Case Studies */}
+        <TestimonialsSection testimonials={content.testimonials} />
+
+        {/* 7. Realistic Client FAQs Accordion */}
+        <FaqSection faqs={content.faqs} />
+
+        {/* 8. High-Contrast CTA Banner */}
+        <CtaBanner ctaBanner={content.ctaBanner} />
+
+        {/* 9. Contact & Lahore Location Section */}
+        <ContactSection
+          contactData={content.contact}
+          sectionData={content.contactSection}
+          services={content.services.items}
+          preselectedService={selectedService}
+        />
       </main>
 
       {/* Footer */}
-      <Footer brand={data.brand} footer={data.footer} />
+      <Footer
+        brand={content.brand}
+        contact={content.contact}
+        footer={content.footer}
+      />
+
+      {/* Floating Instant WhatsApp Action */}
+      <FloatingWhatsApp
+        contact={content.contact}
+        config={content.floatingWhatsApp}
+      />
     </div>
   );
 };

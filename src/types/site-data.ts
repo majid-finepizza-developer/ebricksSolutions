@@ -61,6 +61,7 @@ export interface BrandData {
   name: string;
   tagline: string;
   logo: string;
+  icon?: string;
 }
 
 export interface NavbarData {
