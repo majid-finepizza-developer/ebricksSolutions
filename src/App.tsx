@@ -105,17 +105,10 @@ export const App: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <Footer
-        brand={content.brand}
-        contact={content.contact}
-        footer={content.footer}
-      />
+      <Footer brand={content.brand} contact={content.contact} footer={content.footer} />
 
       {/* Floating Instant WhatsApp Action */}
-      <FloatingWhatsApp
-        contact={content.contact}
-        config={content.floatingWhatsApp}
-      />
+      <FloatingWhatsApp contact={content.contact} config={content.floatingWhatsApp} />
     </div>
   );
 };
