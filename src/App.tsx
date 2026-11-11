@@ -10,8 +10,43 @@ import { Testimonials } from './components/sections/Testimonials';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/sections/Footer';
 
-// Cast imported JSON into strict SiteData interface
-const data: SiteData = siteDataRaw as SiteData;
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
+const data: SiteData = {
+  ...(siteDataRaw as SiteData),
+  brand: {
+    ...siteDataRaw.brand,
+    logo: assetUrl(siteDataRaw.brand.logo),
+  },
+  hero: {
+    ...siteDataRaw.hero,
+    image: {
+      ...siteDataRaw.hero.image,
+      src: assetUrl(siteDataRaw.hero.image.src),
+    },
+  },
+  about: {
+    ...siteDataRaw.about,
+    image: {
+      ...siteDataRaw.about.image,
+      src: assetUrl(siteDataRaw.about.image.src),
+    },
+  },
+  clients: {
+    ...siteDataRaw.clients,
+    logos: siteDataRaw.clients.logos.map((client) => ({
+      ...client,
+      logo: assetUrl(client.logo),
+    })),
+  },
+  testimonials: {
+    ...siteDataRaw.testimonials,
+    items: siteDataRaw.testimonials.items.map((testimonial) => ({
+      ...testimonial,
+      avatar: assetUrl(testimonial.avatar),
+    })),
+  },
+};
 
 export const App: React.FC = () => {
   // Sync document title and meta description dynamically from JSON meta

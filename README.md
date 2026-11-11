@@ -12,6 +12,7 @@ A high-performance, accessible, data-driven enterprise landing page built with R
 5. [How to Change the Theme](#how-to-change-the-theme)
 6. [How to Change Content](#how-to-change-content)
 7. [Responsive & Accessibility Verification](#responsive--accessibility-verification)
+8. [Deploy to GitHub Pages](#deploy-to-github-pages)
 
 ---
 
@@ -194,3 +195,16 @@ To modify content:
   - Accessible names and ARIA attributes on interactive buttons (`aria-label`, `aria-expanded`, `aria-controls`).
   - Carousel supports keyboard arrow navigation (`ArrowLeft` / `ArrowRight`).
   - Strict absence of horizontal layout overflow (`overflow-x: hidden`).
+
+---
+
+## Deploy to GitHub Pages
+
+The site is configured for the repository URL `https://majid-finepizza-developer.github.io/ebricksSolutions/`. A GitHub Actions workflow builds and deploys the site whenever changes are pushed to `main`.
+
+1. Push the workflow and site changes to the `main` branch.
+2. In the repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**.
+3. Open the **Actions** tab and wait for the **Deploy to GitHub Pages** workflow to complete.
+4. Visit `https://majid-finepizza-developer.github.io/ebricksSolutions/`.
+
+To publish from a different branch, update the branch in `.github/workflows/deploy.yml`. If the repository name changes, update the `base` value in `vite.config.ts` and the site URL above.
