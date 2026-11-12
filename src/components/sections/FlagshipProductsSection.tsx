@@ -330,41 +330,6 @@ export const FlagshipProductsSection: React.FC<FlagshipProductsSectionProps> = (
             </div>
           </div>
         )}
-
-        {/* ========================================================================= */}
-        {/* COMBINED POS + CLOUD SYNERGY BANNER (Deliberate High-Contrast Anchor) */}
-        {/* ========================================================================= */}
-        <div className="mt-20 p-8 sm:p-12 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 border border-amber-800/80 px-3 py-1 rounded-md">
-              Complete Ecosystem
-            </span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white font-heading">
-              Fast POS on Counters + Cloud Portal at Head Office = Zero Operational Blindspots
-            </h3>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Your counters ring sales at high speed offline, kitchen printers fire without delay, and your central call center distributes delivery orders while you monitor live branch profits from anywhere on your phone.
-            </p>
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-              <a
-                href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 transition-colors shadow-md"
-              >
-                <span>Request Combined Package Demo</span>
-                <IconRenderer name="ArrowRight" className="w-4 h-4" />
-              </a>
-              <a
-                href="https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20want%20to%20know%20pricing%20for%20Fast%20POS%20and%20the%20Cloud%20Multi-Branch%20Portal."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
-              >
-                <IconRenderer name="MessageSquare" className="w-4 h-4 text-emerald-400" />
-                <span>Ask Pricing on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
