@@ -86,6 +86,16 @@ export interface HeroStat {
   description: string;
 }
 
+export interface HeroProductPreview {
+  id: string;
+  tabLabel: string;
+  name: string;
+  badge: string;
+  tagline: string;
+  image: string;
+  keyPoints: string[];
+}
+
 export interface HeroData {
   badge: {
     text: string;
@@ -109,6 +119,7 @@ export interface HeroData {
   };
   trustBadges: HeroTrustBadge[];
   stats: HeroStat[];
+  previewProducts: HeroProductPreview[];
 }
 
 export interface TechItem {
@@ -122,6 +133,52 @@ export interface TechStackData {
   heading: string;
   subheading: string;
   technologies: TechItem[];
+}
+
+export interface ProductScreenshot {
+  title: string;
+  caption: string;
+  image: string;
+  badge: string;
+}
+
+export interface ProductFeature {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface ReportQuestion {
+  question: string;
+  description: string;
+  icon: string;
+}
+
+export interface FlagshipProduct {
+  id: string;
+  name: string;
+  tagline: string;
+  category: string;
+  badge: string;
+  summary: string;
+  primaryImage: string;
+  screenshots: ProductScreenshot[];
+  highlights: string[];
+  features: ProductFeature[];
+  reportQuestions?: ReportQuestion[];
+  hardwareSupport?: string[];
+  cta: {
+    label: string;
+    href: string;
+  };
+}
+
+export interface FlagshipProductsData {
+  badge: string;
+  heading: string;
+  highlightedWord: string;
+  subheading: string;
+  products: FlagshipProduct[];
 }
 
 export interface ServiceCategory {
@@ -321,6 +378,7 @@ export interface SiteContent {
   topBar: TopBarData;
   navbar: NavbarData;
   hero: HeroData;
+  flagshipProducts: FlagshipProductsData;
   techStack: TechStackData;
   services: ServicesSectionData;
   industries: IndustriesSectionData;

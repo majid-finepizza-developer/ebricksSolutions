@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSiteContent } from './context/content-context';
 import { Navbar } from './components/sections/Navbar';
 import { Hero } from './components/sections/Hero';
+import { FlagshipProductsSection } from './components/sections/FlagshipProductsSection';
 import { TechStackSection } from './components/sections/TechStackSection';
 import { ServicesSection } from './components/sections/ServicesSection';
 import { IndustriesSection } from './components/sections/IndustriesSection';
@@ -65,37 +66,43 @@ export const App: React.FC = () => {
 
       {/* Main Content Sections */}
       <main id="main-content" className="flex-1 focus:outline-none">
-        {/* 1. Hero Section */}
+        {/* 1. Hero Section with Live Product Switcher */}
         <Hero hero={content.hero} />
 
-        {/* 2. Modern Tech Stack Grid */}
-        <TechStackSection techStack={content.techStack} />
-
-        {/* 3. Categorized Services Grid */}
-        <ServicesSection
-          services={content.services}
-          onSelectService={handleSelectService}
+        {/* 2. Dedicated Flagship Products Deep-Dive (Fast POS & Cloud Multi-Branch Portal) */}
+        <FlagshipProductsSection
+          data={content.flagshipProducts}
+          onSelectProduct={handleSelectService}
         />
 
-        {/* 4. Industries We Serve (Retail POS, E-Commerce, Clinics, Real Estate, etc.) */}
+        {/* 3. Modern Tech Stack Grid */}
+        <TechStackSection techStack={content.techStack} />
+
+        {/* 4. Industries Powered by Our POS & Cloud Systems */}
         <IndustriesSection
           industries={content.industries}
           onConsultIndustry={handleSelectService}
         />
 
-        {/* 5. Proven Execution Process & Why Choose EBRICKS */}
+        {/* 5. Custom Software & Growth Services */}
+        <ServicesSection
+          services={content.services}
+          onSelectService={handleSelectService}
+        />
+
+        {/* 6. Onboarding & Deployment Process */}
         <ProcessSection process={content.process} />
 
-        {/* 6. Real Client Reviews & Case Studies */}
+        {/* 7. Client Reviews & Case Studies */}
         <TestimonialsSection testimonials={content.testimonials} />
 
-        {/* 7. Realistic Client FAQs Accordion */}
+        {/* 8. FAQs on POS & Cloud Systems */}
         <FaqSection faqs={content.faqs} />
 
-        {/* 8. High-Contrast CTA Banner */}
+        {/* 9. High-Contrast CTA Banner */}
         <CtaBanner ctaBanner={content.ctaBanner} />
 
-        {/* 9. Contact & Lahore Location Section */}
+        {/* 10. Contact & Demo Scheduling Section */}
         <ContactSection
           contactData={content.contact}
           sectionData={content.contactSection}

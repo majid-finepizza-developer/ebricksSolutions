@@ -26,6 +26,24 @@ export const siteContent: SiteContent = {
     ...raw.meta,
     ogImage: assetUrl(raw.meta.ogImage),
   },
+  hero: {
+    ...raw.hero,
+    previewProducts: raw.hero.previewProducts.map((p) => ({
+      ...p,
+      image: assetUrl(p.image),
+    })),
+  },
+  flagshipProducts: {
+    ...raw.flagshipProducts,
+    products: raw.flagshipProducts.products.map((p) => ({
+      ...p,
+      primaryImage: assetUrl(p.primaryImage),
+      screenshots: p.screenshots.map((s) => ({
+        ...s,
+        image: assetUrl(s.image),
+      })),
+    })),
+  },
 };
 
 export interface ContentContextValue {

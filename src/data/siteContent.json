@@ -1,18 +1,17 @@
 {
   "meta": {
-    "title": "EBRICKS SOLUTIONS | Custom Software, Web, Mobile & Digital Marketing Agency Lahore",
-    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a Lahore-based software house and digital marketing agency. We build custom web apps, mobile apps, desktop POS software, Shopify stores, and run high-converting digital marketing campaigns. Visit our office on Model Town Link Road, Lahore.",
+    "title": "EBRICKS SOLUTIONS | Fast POS & Cloud Multi-Branch Management Systems | Lahore, Pakistan",
+    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED builds high-speed Fast POS counter software for restaurants & retail, centralized Cloud Multi-Branch Franchise SaaS portals, and custom digital software solutions in Lahore, Pakistan.",
     "keywords": [
-      "software house lahore",
-      "eBricks Solutions Lahore",
-      "custom POS software lahore",
-      "mobile app development pakistan",
-      "web development agency model town lahore",
-      "shopify ecommerce experts pakistan",
-      "digital marketing company lahore",
-      "social media marketing lahore",
-      "flutter app development pakistan",
-      "desktop software point of sale"
+      "Fast POS software Pakistan",
+      "restaurant POS system Lahore",
+      "supermarket POS software",
+      "cloud multi-branch management SaaS",
+      "franchise management software",
+      "call center order management system",
+      "software house Lahore",
+      "eBricks Solutions Model Town Lahore",
+      "desktop retail billing software"
     ],
     "ogImage": "/images/ebricks-logo.png",
     "language": "en"
@@ -34,10 +33,10 @@
       "icon": "PhoneCall"
     },
     "whatsapp": {
-      "label": "WhatsApp Support",
+      "label": "WhatsApp Live Demo",
       "value": "03154112925",
       "display": "+92 315 4112925",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20a%20project.",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20see%20a%20live%20demo%20of%20Fast%20POS%20and%20the%20Cloud%20Multi-Branch%20Portal.",
       "icon": "MessageSquare"
     },
     "email": {
@@ -64,117 +63,312 @@
   "topBar": {
     "enabled": true,
     "announcement": {
-      "badge": "Lahore In-Person & Remote Consultations",
-      "text": "Meet our development team at Model Town Link Road or book a Zoom call."
+      "badge": "Live Demos Available in Lahore",
+      "text": "Experience Fast POS and Cloud Multi-Branch Management live at Model Town Link Road."
     }
   },
   "navbar": {
     "links": [
-      { "label": "Services", "href": "#services" },
-      { "label": "Industries", "href": "#industries" },
+      { "label": "Hero Products", "href": "#products", "badge": "Flagship" },
+      { "label": "Fast POS", "href": "#fast-pos" },
+      { "label": "Cloud Franchise Portal", "href": "#cloud-franchise" },
       { "label": "Tech Stack", "href": "#tech-stack" },
+      { "label": "Agency Services", "href": "#services" },
       { "label": "Process", "href": "#process" },
-      { "label": "Why Us", "href": "#why-us" },
       { "label": "FAQs", "href": "#faqs" },
       { "label": "Contact", "href": "#contact" }
     ],
     "ctaButton": {
-      "label": "Get a Free Quote",
+      "label": "Book Live Demo",
       "href": "#contact",
       "icon": "ArrowRight"
     },
     "whatsappButton": {
-      "label": "Chat on WhatsApp",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20am%20interested%20in%20your%20services.",
+      "label": "WhatsApp Demo",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20am%20interested%20in%20a%20live%20demo%20of%20your%20POS%20and%20Cloud%20systems.",
       "icon": "MessageSquare"
     }
   },
   "hero": {
     "badge": {
-      "text": "Software House & Digital Marketing Agency • Lahore, Pakistan",
+      "text": "Flagship Enterprise Products • Built by EBRICKS SOLUTIONS Lahore",
       "icon": "Sparkles"
     },
     "headline": {
-      "prefix": "We Build Reliable Software,",
-      "highlight": "High-Speed Websites & Targeted Marketing",
-      "suffix": "That Actually Grow Your Revenue."
+      "prefix": "Transform Counter & Multi-Branch Operations with",
+      "highlight": "Fast POS & Cloud Franchise",
+      "suffix": "Management Systems."
     },
-    "subheadline": "No buzzword fluff, no endless delays. Whether you need a custom POS software for your retail shops, a scalable mobile app, a high-converting Shopify store, or performance Google & Meta ads — EBRICKS SOLUTIONS (PRIVATE) LIMITED delivers clean code, full source code ownership, and measurable growth.",
+    "subheadline": "Stop struggling with slow billing, stock shrinkage, and blind multi-branch management. Fast POS powers lightning-fast counter checkout and deep 7-pillar financial auditing on your front line, while our Cloud Franchise Portal lets you manage branches, menus, staff roles, and centralized call center orders from anywhere.",
     "primaryCta": {
-      "label": "Get a Free Project Estimate",
+      "label": "Book a 1-on-1 Product Demo",
       "href": "#contact",
       "icon": "ArrowRight"
     },
     "secondaryCta": {
-      "label": "Message on WhatsApp (0315-4112925)",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20a%20project.",
+      "label": "Chat Directly on WhatsApp (0315-4112925)",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20Fast%20POS%20and%20the%20Cloud%20Portal.",
       "icon": "MessageCircle"
     },
     "trustBadges": [
       {
-        "label": "100% In-House Lahore Team",
-        "icon": "Users"
+        "label": "Ultra-Fast Offline POS Engine",
+        "icon": "Monitor"
       },
       {
-        "label": "Full Code & IP Ownership",
-        "icon": "ShieldCheck"
+        "label": "Central Multi-Branch Cloud",
+        "icon": "Globe"
       },
       {
-        "label": "Milestone-Based Transparent Pricing",
-        "icon": "Award"
+        "label": "Hardware Tested (Printers/Scanners)",
+        "icon": "Cpu"
       },
       {
-        "label": "Dedicated Post-Launch Warranty",
-        "icon": "Headphones"
+        "label": "Lahore On-Site Setup & Training",
+        "icon": "MapPin"
       }
     ],
     "stats": [
       {
-        "value": "120+",
-        "label": "Live Projects Delivered",
-        "description": "Custom websites, mobile apps, POS software & web apps"
+        "value": "Under 1s",
+        "label": "Counter Checkout Speed",
+        "description": "Instant keyboard shortcuts & touch grid billing with zero lag"
       },
       {
-        "value": "48 Hrs",
-        "label": "Average Proposal Turnaround",
-        "description": "Clear technical scope, timeline, and exact milestone costs"
+        "value": "100%",
+        "label": "Offline Billing Reliability",
+        "description": "Never stop ringing sales even when your internet connection drops"
       },
       {
-        "value": "98%",
-        "label": "Client Recommendation Rate",
-        "description": "Long-term relationships across Pakistan, UAE, UK & USA"
+        "value": "7 Core",
+        "label": "Financial Questions Answered",
+        "description": "P&L, cash drawer shift reconciliation, stock shrinkage & cancellations audit"
       },
       {
-        "value": "60 Days",
-        "label": "Complimentary Bug Warranty",
-        "description": "Free post-launch support and bug fixes for peace of mind"
+        "value": "50+ Branches",
+        "label": "Centralized Cloud Control",
+        "description": "Real-time consolidated sales, stock transfers & call center order routing"
+      }
+    ],
+    "previewProducts": [
+      {
+        "id": "fast-pos",
+        "tabLabel": "1. Fast POS Counter & Touch Terminal",
+        "name": "Fast POS: Counter Register & Shift Accounting",
+        "badge": "Offline-First Desktop Terminal",
+        "tagline": "Built for Restaurants, Supermarkets, Bakeries & Retail Outlets.",
+        "image": "/images/products/pos-billing-register.jpg",
+        "keyPoints": [
+          "Touch Product Grid with deals, combos & picture catalog",
+          "Dedicated Hotkeys (F1 Cash, F2 Online, F3 Search, F4 Scan, F8 Cart, F10 Tender)",
+          "Order Types: Dine-In with table map, Takeaway, and Rider Delivery dispatch",
+          "Shift-by-shift Cash Drawer Reconciliation & End-of-Day Z-Report"
+        ]
+      },
+      {
+        "id": "cloud-franchise",
+        "tabLabel": "2. Cloud Multi-Branch & Franchise SaaS",
+        "name": "Cloud Multi-Branch, Franchise & Call Center Portal",
+        "badge": "Centralized Web Management",
+        "tagline": "Run 1 to 50+ branches, central call centers, and franchise royalties from a single login.",
+        "image": "/images/products/cloud-branch-admin.jpg",
+        "keyPoints": [
+          "Centralized Call Center Order routing to nearest branch or kitchen",
+          "Granular Role Management (Admin, Branch Head, Manager, Agent, Rider)",
+          "Live Multi-Branch Sales Dashboard and Branch Revenue Comparison",
+          "Central Warehouse stock transfers, audit logs & inventory tracking"
+        ]
+      }
+    ]
+  },
+  "flagshipProducts": {
+    "badge": "Proprietary Software Systems",
+    "heading": "Two Powerful Platforms Built to Modernize",
+    "highlightedWord": "Every Level of Your Business",
+    "subheading": "Whether you manage a single busy counter or a growing chain of 20+ franchise outlets, our software duo handles the front-counter hustle and back-office control seamlessly.",
+    "products": [
+      {
+        "id": "fast-pos",
+        "name": "Fast POS — High-Speed Point of Sale & Shift Accounting System",
+        "category": "Front-Counter & Restaurant Operations",
+        "badge": "Hero Product #1",
+        "tagline": "Lightning-Fast Billing, Table Tracking & Deep Financial Control for Retail & Restaurants.",
+        "summary": "Fast POS is engineered for high-volume retail counters, supermarkets, bakeries, cafes, and family restaurants. Designed to eliminate checkout queues, prevent cashier leakage, and answer every critical financial question with complete audit trails.",
+        "primaryImage": "/images/products/pos-billing-register.jpg",
+        "screenshots": [
+          {
+            "title": "Visual Touch Register Screen",
+            "caption": "Fast order assembly with food thumbnails, categories (Deals, Drinks, Pizza, Turkish), keyboard shortcuts, and instant Cash/Online tender buttons.",
+            "image": "/images/products/pos-billing-register.jpg",
+            "badge": "Counter Register"
+          },
+          {
+            "title": "7-Pillar Financial & Report Center",
+            "caption": "Executive KPI overview answering: How much did we sell? Are we making money? Where is the cash? What is our stock worth? Who owes us? What went wrong?",
+            "image": "/images/products/pos-financial-reports.jpg",
+            "badge": "Financial Intelligence"
+          },
+          {
+            "title": "Live Orders, Dine-In & Delivery Dispatch",
+            "caption": "Unified order management with table numbers, customer telephone recall, credit accounts, order timelines, and delivery rider assignment.",
+            "image": "/images/products/pos-orders-dinein.jpg",
+            "badge": "Kitchen & Orders"
+          }
+        ],
+        "highlights": [
+          "Works 100% Offline with zero internet dependency during rush hours",
+          "Instant thermal slip printing (58mm/80mm) with customizable logo and tax receipts",
+          "Automatic cash drawer kick and digital weighing scale hardware integration",
+          "End-of-day shift closing with blind cashier reconciliation (prevents under-reporting)",
+          "Complete cancellation and item void trail with supervisor password protection"
+        ],
+        "features": [
+          {
+            "title": "Visual Touch Register & Speed Billing",
+            "description": "Color-coded category tabs, deal combos, customer phone lookup, and one-key cash tenders (PKR 100, 500, 1000, 5000) for sub-second checkout.",
+            "icon": "Monitor"
+          },
+          {
+            "title": "Dine-In, Takeaway & Rider Delivery",
+            "description": "Manage table status, waiter orders, kitchen KOT printouts, customer addresses, and track dispatched delivery riders in real time.",
+            "icon": "Smartphone"
+          },
+          {
+            "title": "Cash Drawer Reconciliation & Z-Reports",
+            "description": "Track opening cash balance, cash sales, digital card/online tenders, petty cash expenses, and exact closing balance with zero guesswork.",
+            "icon": "Layers"
+          },
+          {
+            "title": "Live Inventory & Recipe Spoilage Control",
+            "description": "Raw material deductions on every burger or pizza sold, low-stock warnings, purchase bills ledger, and supplier payment aging.",
+            "icon": "ShoppingBag"
+          }
+        ],
+        "reportQuestions": [
+          {
+            "question": "1. How much did we sell and what is trending?",
+            "description": "Executive KPI overview, daily performance ledger, product velocity, and fast-moving menu item rankings.",
+            "icon": "TrendingUp"
+          },
+          {
+            "question": "2. Are we making money?",
+            "description": "True Profit & Loss (P&L) statement, gross margins, product profitability, and category-level cost breakdown.",
+            "icon": "BarChart3"
+          },
+          {
+            "question": "3. Where is the cash?",
+            "description": "Cash drawer shift reconciliation, daily Z-report, direct cash flow ledger, and online tender splits.",
+            "icon": "Layers"
+          },
+          {
+            "question": "4. What is our stock worth and what are we losing?",
+            "description": "Inventory valuation, shrinkage & spoilage loss calculation, unit counts, and automated reorder alerts.",
+            "icon": "ShoppingBag"
+          },
+          {
+            "question": "5. Who owes us and whom do we owe?",
+            "description": "Customer Account Receivables (A/R) aging schedule and Supplier Accounts Payable (A/P) bill ledgers.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "question": "6. What went wrong? (Audit & Security)",
+            "description": "Order cancellations audit, credit notes register, item returns, and supervisor void history trail.",
+            "icon": "Clock"
+          },
+          {
+            "question": "7. Expenses & Sales Tax Audit",
+            "description": "Categorized operational expenses, petty cash vouchers, and sales tax compliance (FBR / PRA ready).",
+            "icon": "Award"
+          }
+        ],
+        "hardwareSupport": [
+          "58mm & 80mm Thermal Receipt Printers (USB, LAN, Bluetooth)",
+          "1D & 2D Barcode Scanners (Handheld & Omnidirectional)",
+          "Electronic Weight Scales (for delis, meat & supermarkets)",
+          "Automatic RJ11 / USB Cash Drawers",
+          "Customer-Facing Dual Displays & Touch Terminals"
+        ],
+        "cta": {
+          "label": "Schedule In-Person Fast POS Demo",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "cloud-franchise",
+        "name": "Cloud Multi-Branch & Franchise Management SaaS Portal",
+        "category": "Head Office & Centralized Chain Governance",
+        "badge": "Hero Product #2",
+        "tagline": "Connect All Branches, Central Call Center Orders & Staff Roles in One Web Dashboard.",
+        "summary": "The master web application built for restaurant owners, multi-branch retail directors, and franchise operators. Oversee all branch revenues, manage call center order distribution, control role permissions, and sync stock across all locations in real-time.",
+        "primaryImage": "/images/products/cloud-branch-admin.jpg",
+        "screenshots": [
+          {
+            "title": "Centralized User & Role Management",
+            "caption": "Granular role configuration: System Administrator, Branch Head, Restaurant Manager, Call Center Agent, Rider, and Customer permissions.",
+            "image": "/images/products/cloud-branch-admin.jpg",
+            "badge": "Enterprise Roles"
+          }
+        ],
+        "highlights": [
+          "Accessible from any web browser on laptop, iPad, or mobile phone with 2FA security",
+          "Central Call Center module: agents book orders and auto-dispatch to the nearest branch",
+          "Centralized menu & pricing control: update deals and prices across all branches in one click",
+          "Multi-branch inventory transfers: track stock sent from central kitchen to branches",
+          "Live comparative analytics: see which branch is leading in sales and profitability"
+        ],
+        "features": [
+          {
+            "title": "Central Call Center Order Routing",
+            "description": "Customers call your central number; your phone agents enter the order and the system automatically sends the kitchen KOT to the nearest branch for delivery.",
+            "icon": "PhoneCall"
+          },
+          {
+            "title": "Granular Roles & Permission Control",
+            "description": "Control exactly what each employee can see. Branch heads cannot see owner profit margins, and cashiers cannot access administrative settings.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "Real-Time Branch Revenue Telemetry",
+            "description": "Live sales ticker comparing revenue across all branches and franchises with hourly velocity charts and tender breakdowns.",
+            "icon": "TrendingUp"
+          },
+          {
+            "title": "Franchise Royalty & Central Warehouse",
+            "description": "Manage raw material dispatches from the central prep kitchen, calculate franchise royalties, and maintain standardized recipes across all outlets.",
+            "icon": "Globe"
+          }
+        ],
+        "cta": {
+          "label": "Request Cloud Franchise Portal Demo",
+          "href": "#contact"
+        }
       }
     ]
   },
   "techStack": {
-    "badge": "Battle-Tested Technologies",
-    "heading": "Modern Technologies We Use Daily",
-    "subheading": "We choose reliable, widely-supported frameworks so your software remains fast, secure, easily maintainable, and free from obsolete lock-in.",
+    "badge": "Modern Engineering Standards",
+    "heading": "Technologies Powering Our Platforms & Client Systems",
+    "subheading": "We build with resilient, high-speed technologies that guarantee zero-lag counter transactions and scalable cloud management.",
     "technologies": [
-      { "name": "React & Next.js", "category": "Frontend & Web Apps", "icon": "Code2" },
-      { "name": "Node.js & Express", "category": "Backend & Microservices", "icon": "Cpu" },
-      { "name": "Flutter & React Native", "category": "Cross-Platform Mobile Apps", "icon": "Smartphone" },
-      { "name": "Python & Django", "category": "Data & Backend Logic", "icon": "Laptop" },
-      { "name": "Laravel & PHP", "category": "Enterprise Web Portals", "icon": "Globe" },
+      { "name": "React & Next.js", "category": "Cloud Web Portals", "icon": "Code2" },
+      { "name": "Electron & C# .NET", "category": "Desktop POS Engine", "icon": "Monitor" },
+      { "name": "Node.js & Express", "category": "High-Concurrency APIs", "icon": "Cpu" },
+      { "name": "Flutter & Mobile", "category": "Manager & Rider Apps", "icon": "Smartphone" },
+      { "name": "PostgreSQL & SQLite", "category": "Offline & Cloud Sync DB", "icon": "Layers" },
+      { "name": "Thermal ESC/POS", "category": "Hardware Printer Driver", "icon": "Award" },
       { "name": "Shopify & Liquid", "category": "E-Commerce Stores", "icon": "ShoppingBag" },
-      { "name": "WordPress & WooCommerce", "category": "CMS & Online Stores", "icon": "Layout" },
-      { "name": "Electron & C# .NET", "category": "Desktop & POS Systems", "icon": "Monitor" },
-      { "name": "PostgreSQL & MySQL", "category": "Secure Relational Databases", "icon": "Layers" },
-      { "name": "Google Ads & Meta Ads", "category": "Paid Advertising Funnels", "icon": "TrendingUp" },
-      { "name": "Tailwind CSS", "category": "Modern Responsive UI", "icon": "Sparkles" },
-      { "name": "AWS & Cloud VPS", "category": "Scalable Infrastructure", "icon": "ShieldCheck" }
+      { "name": "WordPress & WooCommerce", "category": "Content & Shopping", "icon": "Layout" },
+      { "name": "Python & Django", "category": "Analytics & AI Logic", "icon": "Laptop" },
+      { "name": "Tailwind CSS", "category": "Fluid Responsive UI", "icon": "Sparkles" },
+      { "name": "Google Ads & Meta Ads", "category": "Customer Growth", "icon": "TrendingUp" },
+      { "name": "AWS & DigitalOcean", "category": "Cloud Infrastructure", "icon": "ShieldCheck" }
     ]
   },
   "services": {
-    "badge": "What We Build & Scale",
-    "heading": "End-to-End Technology & Growth Services Under",
-    "highlightedWord": "One Roof",
-    "subheading": "You don't need to hire one agency for development and another for marketing. We align engineering rigor with performance marketing so every digital asset actually generates revenue.",
+    "badge": "Agency Customization & Growth",
+    "heading": "Need Custom Software or High-Growth",
+    "highlightedWord": "Marketing Services?",
+    "subheading": "In addition to our flagship POS and Cloud Management platforms, our engineering team in Lahore builds custom web portals, mobile apps, and executes performance digital marketing campaigns.",
     "categories": [
       {
         "id": "all",
@@ -183,13 +377,13 @@
       },
       {
         "id": "engineering",
-        "label": "Software & App Engineering",
-        "description": "High-performance web, mobile apps, desktop POS, and online store development."
+        "label": "Custom Software & Web Engineering",
+        "description": "Tailored mobile apps, custom SaaS portals, desktop tools, and Shopify stores."
       },
       {
         "id": "marketing",
         "label": "Growth & Digital Marketing",
-        "description": "Proven SEO, high-ROI Google Ads, and social media audience acquisition."
+        "description": "Proven SEO, high-ROI Google Ads, and social media brand growth."
       }
     ],
     "items": [
@@ -343,320 +537,320 @@
     ]
   },
   "industries": {
-    "badge": "Real-World Experience",
-    "heading": "Industries We Help Grow in",
-    "highlightedWord": "Pakistan & Globally",
-    "subheading": "We don't just write code; we understand how different businesses actually operate on the ground — from retail cash counters to corporate consulting.",
+    "badge": "Where Our Systems Run Daily",
+    "heading": "Industries Powered by Our POS & Cloud",
+    "highlightedWord": "Management Systems",
+    "subheading": "Built to tackle the real challenges of Pakistani and international businesses — from fast-food counter rushes to multi-branch franchise stock controls.",
     "items": [
       {
-        "id": "retail-pos",
-        "title": "Retail & Supermarkets",
-        "summary": "Multi-counter POS software, barcode scanners, stock inventory, and branch-level cash reconciliations.",
+        "id": "restaurants-fastfood",
+        "title": "Restaurants & Fast Food Chains",
+        "summary": "Dine-in tables, kitchen KOT printers, takeaway counter speed, and central phone call order delivery dispatch.",
         "icon": "Monitor",
-        "solutions": ["Multi-till POS systems", "Batch & expiry tracking", "Offline thermal printing", "Vendor payment records"]
+        "solutions": ["Multi-till touch POS", "Dine-in table mapping", "Kitchen KOT thermal slips", "Rider dispatch & phone recall"]
       },
       {
-        "id": "ecommerce-brands",
-        "title": "E-Commerce & D2C Brands",
-        "summary": "Custom Shopify and WooCommerce stores with automatic courier booking, Cash on Delivery (COD), and Meta retargeting.",
+        "id": "supermarkets-groceries",
+        "title": "Supermarkets & Retail Stores",
+        "summary": "High-volume barcode scanning, barcode weighing scales, batch expiry dates, and supplier purchase bills.",
         "icon": "ShoppingBag",
-        "solutions": ["Custom Shopify themes", "Courier slip automation", "High-converting checkout", "Abandoned cart WhatsApp bots"]
+        "solutions": ["Barcode scanner support", "Weighing scale sync", "Multi-branch stock transfer", "End-of-day Z-Report audit"]
       },
       {
-        "id": "healthcare-clinics",
-        "title": "Healthcare & Clinics",
-        "summary": "Patient appointment scheduling, electronic medical records, and local clinic Google Maps visibility.",
-        "icon": "ShieldCheck",
-        "solutions": ["Online doctor bookings", "Digital prescription portals", "Patient history logs", "Local SEO for clinics"]
+        "id": "bakeries-confectionery",
+        "title": "Bakeries & Cafes",
+        "summary": "Custom deals and combos, cake booking advances, daily production loss tracking, and cash drawer security.",
+        "icon": "Layers",
+        "solutions": ["Quick combo touch grid", "Advance booking receipts", "Recipe ingredient deduction", "Cash drawer audit trails"]
       },
       {
-        "id": "real-estate",
-        "title": "Real Estate & Builders",
-        "summary": "High-impact property listing websites, lead capture landing pages, and targeted Google Ads for property investors.",
-        "icon": "Layout",
-        "solutions": ["Property search portals", "WhatsApp inquiry capture", "Video tour showcases", "High-intent investor ads"]
-      },
-      {
-        "id": "education-academies",
-        "title": "Academies & Institutes",
-        "summary": "Student admission management, fee voucher generation, online course delivery, and social media student enrollments.",
-        "icon": "Award",
-        "solutions": ["Student registration systems", "Fee tracking & invoicing", "Online lecture portals", "Social ad enrollment funnels"]
-      },
-      {
-        "id": "corporate-b2b",
-        "title": "Corporate & B2B Services",
-        "summary": "Credible corporate web presence, custom client portals, and LinkedIn B2B lead generation campaigns.",
+        "id": "franchise-networks",
+        "title": "Multi-Branch Franchises",
+        "summary": "Centralized headquarters portal, menu pricing synchronization, royalty calculations, and raw material logistics.",
         "icon": "Globe",
-        "solutions": ["Custom corporate websites", "Staff intranet dashboards", "B2B LinkedIn outreach", "Client document vaults"]
+        "solutions": ["One-click menu updates", "Central call center", "Live branch P&L comparison", "Warehouse dispatch slips"]
+      },
+      {
+        "id": "ecommerce-retail",
+        "title": "E-Commerce & Online Stores",
+        "summary": "Synchronize online Shopify/WooCommerce orders with physical retail inventory, preventing double selling.",
+        "icon": "ShoppingBag",
+        "solutions": ["Shopify store sync", "Courier COD tracking", "Omnichannel inventory", "Customer WhatsApp bots"]
+      },
+      {
+        "id": "healthcare-pharmacies",
+        "title": "Pharmacies & Clinics",
+        "summary": "Batch tracking, medicine expiry alerts, customer credit accounts, and doctor prescription attachments.",
+        "icon": "ShieldCheck",
+        "solutions": ["Medicine expiry alerts", "Formula & batch search", "Customer credit ledger", "FBR sales tax receipts"]
       }
     ]
   },
   "process": {
-    "badge": "How We Work With You",
-    "heading": "A Straightforward 4-Step Process with",
-    "highlightedWord": "Zero Surprises",
-    "subheading": "You work directly with the developers and marketers doing the actual work. We break projects into clear weekly deliverables so you stay in complete control from day one.",
+    "badge": "Fast Onboarding & Rollout",
+    "heading": "How We Deploy & Set Up Your Systems in",
+    "highlightedWord": "4 Clear Steps",
+    "subheading": "Whether you want Fast POS installed on your counter terminals or need the Cloud Franchise Portal configured for multiple branches, we make rollout painless.",
     "steps": [
       {
         "number": "01",
-        "title": "Free Discovery & Project Scoping",
-        "timeline": "Days 1 – 3",
-        "summary": "We sit down (in person at Model Town, Lahore or via Zoom) to understand your exact business workflow, target budget, and deadlines. We deliver a crystal-clear proposal within 48 hours.",
+        "title": "1-on-1 Demo & Requirements Walkthrough",
+        "timeline": "Day 1",
+        "summary": "We demonstrate Fast POS and the Cloud Portal (in person at Model Town, Lahore or via live Zoom). We test your menu items, branch hierarchy, and hardware needs.",
         "icon": "Compass",
         "activities": [
-          "Detailed feature-by-feature requirements checklist",
-          "Honest advice on the right technology stack (no over-engineering)",
-          "Fixed milestone budget and realistic go-live date",
-          "Direct WhatsApp group created with technical lead"
+          "Hands-on demonstration of counter register and reports",
+          "Review of thermal printers, scanners, and cash drawer hardware",
+          "Menu and product category data template handover",
+          "Direct WhatsApp group created with our technical setup team"
         ]
       },
       {
         "number": "02",
-        "title": "Interactive Wireframes & UI Design",
-        "timeline": "Week 1 – 2",
-        "summary": "You see exactly how your website, app, or POS interface will look and feel before we write code. We iterate on Figma designs until you are 100% satisfied.",
+        "title": "System Configuration & Menu Upload",
+        "timeline": "Days 2 – 4",
+        "summary": "Our team uploads your entire menu, product barcodes, pricing, deals, and configures roles (Admins, Branch Heads, Cashiers, Call Center Agents).",
         "icon": "Layout",
         "activities": [
-          "Figma visual prototypes you can click and test on your phone",
-          "User-friendly navigation flow designed for fast customer action",
-          "Brand typography, colors, and layout review sessions",
-          "Approval of all database fields and screen structures"
+          "Complete database configuration with product photos and prices",
+          "Tax settings (FBR/PRA receipts) and receipt template branding",
+          "Role permissions and secure user credentials creation",
+          "Call center routing and branch delivery radius setup"
         ]
       },
       {
         "number": "03",
-        "title": "Development & Weekly Demos",
-        "timeline": "Weeks 3 – 6",
-        "summary": "We build in weekly sprints. You receive a live staging link every week so you can test features as they are completed — no blackout periods where you wonder what's happening.",
+        "title": "Hardware Installation & On-Site Testing",
+        "timeline": "Days 5 – 7",
+        "summary": "For Lahore clients, our technicians visit your branch to set up thermal printers, barcode scanners, and cash drawers. Remote clients receive assisted remote installation.",
         "icon": "Cpu",
         "activities": [
-          "Clean, modern TypeScript, Flutter, or desktop software code",
-          "Weekly progress updates and live staging server demonstrations",
-          "Rigorous testing on multiple real mobile devices and browsers",
-          "Hardware testing for POS (printers, barcode scanners, cash drawers)"
+          "Thermal printer speed calibration and automatic drawer kick testing",
+          "Offline mode stress-testing and cloud sync verification",
+          "Live test orders across Dine-In, Takeaway, and Delivery",
+          "Network and backup power configuration review"
         ]
       },
       {
         "number": "04",
-        "title": "Launch, Staff Training & 60-Day Warranty",
-        "timeline": "Go-Live & Beyond",
-        "summary": "We deploy your project to your domain and cloud servers, train your team on how to use it, hand over all source code, and stand by with 60 days of free bug support.",
+        "title": "Staff Training & Live Go-Live Support",
+        "timeline": "Go-Live & 60-Day Warranty",
+        "summary": "We train your cashiers, branch managers, and call center team. On your go-live day, our team stands by to ensure smooth operation with 60 days of free technical warranty.",
         "icon": "Rocket",
         "activities": [
-          "Zero-downtime production deployment and SSL security setup",
-          "Hands-on staff training session (video recording provided)",
-          "100% source code, admin credentials, and database handover",
-          "60 days of complimentary technical warranty and bug fixing"
+          "Hands-on staff training session with step-by-step video guides",
+          "End-of-day Z-Report and shift reconciliation training for managers",
+          "Full administrative master credentials and database ownership handover",
+          "60 days of complimentary priority technical warranty and phone support"
         ]
       }
     ],
-    "differentiatorsBadge": "The EBRICKS Advantage",
-    "differentiatorsHeading": "Why Clients Choose Us Over Freelancers & Big Agencies",
+    "differentiatorsBadge": "Why Business Owners Trust EBRICKS",
+    "differentiatorsHeading": "Why Retail & Restaurant Owners Choose Us",
     "differentiators": [
       {
-        "title": "Direct Communication, No Bureaucracy",
-        "description": "You talk directly to senior developers and marketers on WhatsApp or phone. No junior account managers playing telephone with your requirements.",
-        "icon": "MessageSquare"
+        "title": "100% Offline Resilience",
+        "description": "Never lose a sale when internet slows down. Fast POS rings orders, prints receipts, and opens cash drawers offline with zero interruption.",
+        "icon": "Monitor"
       },
       {
-        "title": "You Own 100% of Your Code & Data",
-        "description": "We never hold your domain, hosting, source code, or accounts hostage. Everything is registered in your business name from day one.",
+        "title": "Deep Financial Auditing (Zero Leakage)",
+        "description": "Blind shift closing, cancellation logs, and 7-question financial intelligence reveal exactly where every rupee went.",
         "icon": "ShieldCheck"
       },
       {
-        "title": "Lahore Office You Can Visit Anytime",
-        "description": "We are a real, registered company based on Model Town Link Road, Lahore. You are always welcome to visit for meetings and product reviews.",
-        "icon": "MapPin"
+        "title": "Central Multi-Branch Call Center",
+        "description": "Single telephone order center automatically routes orders to the correct branch kitchen with rider dispatch tracking.",
+        "icon": "PhoneCall"
       },
       {
-        "title": "Engineering + Real Marketing Synergy",
-        "description": "Most developers don't know how to run Google Ads, and most marketers don't know code. We bridge both disciplines seamlessly.",
-        "icon": "Layers"
+        "title": "Lahore Office & On-Site Team",
+        "description": "Our headquarters is right on Model Town Link Road, Lahore. We provide in-person meetings, physical hardware setup, and direct WhatsApp support.",
+        "icon": "MapPin"
       }
     ]
   },
   "testimonials": {
-    "badge": "Client Feedback",
-    "heading": "What Business Owners Say About Working with",
-    "highlightedWord": "EBRICKS",
-    "subheading": "Real reviews from retail store owners, e-commerce founders, and corporate clients we partner with in Lahore and across the globe.",
+    "badge": "Proven Results in the Field",
+    "heading": "What Restaurant & Retail Owners Say About",
+    "highlightedWord": "Fast POS & Our Cloud Portal",
+    "subheading": "Real feedback from restaurant chains, supermarkets, and multi-branch retail brands operating in Lahore and across Pakistan.",
     "items": [
       {
-        "quote": "EBRICKS developed our multi-counter supermarket POS software in Lahore. Thermal receipt printing is instant, barcode scanning never lags, and end-of-day cash reconciliation saves us 2 hours every evening. Their team personally came to our store to test everything.",
-        "author": "Haji Tariq Mehmood",
-        "role": "Owner & Managing Director",
-        "company": "Mehmood Mart & Supermarket",
+        "quote": "We implemented Fast POS across our family restaurant branches in Lahore. Counter checkout is instantaneous, thermal receipt printing never jams, and our end-of-day cash reconciliation is completed in under 10 minutes. The cancellations audit alone saved us thousands of rupees.",
+        "author": "M. Imran Sheikh",
+        "role": "General Manager & Operations Lead",
+        "company": "Fine Pizza Family Restaurant",
         "location": "Lahore, Pakistan",
-        "service": "Custom Desktop POS Software",
+        "service": "Fast POS & Cloud Multi-Branch System",
         "rating": 5
       },
       {
-        "quote": "Our previous WordPress website took 8 seconds to load on mobile. EBRICKS rebuilt our platform on modern Next.js; loading speed dropped to under 1.2 seconds and our Google organic leads tripled in the first 90 days. Professional, honest, and always responsive on WhatsApp.",
-        "author": "Dr. Kamran Qureshi",
-        "role": "Founder & Clinical Director",
-        "company": "Qureshi Dental & Aesthetic Clinic",
-        "location": "Model Town, Lahore",
-        "service": "Dynamic Website Development & Local SEO",
+        "quote": "Running a high-rush burger and shawarma joint with dine-in tables, takeaway, and delivery used to create total kitchen chaos. Fast POS streamlined our table tickets and rider dispatch. The system runs flawlessly even when our PTCL internet disconnects.",
+        "author": "Haji Munawar Hussain",
+        "role": "Managing Partner",
+        "company": "Munna Bhai Fresh Burger & Shawarma",
+        "location": "Lahore, Pakistan",
+        "service": "Fast POS Restaurant Touch Counter",
         "rating": 5
       },
       {
-        "quote": "Finding a software team that actually understands Shopify and courier APIs in Pakistan is rare. EBRICKS built our custom store, integrated Trax and Leopards COD booking, and manages our Meta ads. Our monthly order volume grew 4x within 4 months.",
-        "author": "Zainab Raza",
-        "role": "Co-Founder",
-        "company": "Lumina Apparel & Home",
-        "location": "Karachi / UAE",
-        "service": "Shopify E-Commerce & Performance Meta Ads",
+        "quote": "Managing 5 branches and a central call center was a nightmare before EBRICKS deployed their Cloud Franchise Portal. Now our call center takes calls and sends orders straight to the nearest branch kitchen. True game-changer for scaling our franchise.",
+        "author": "Shahid Rasheed",
+        "role": "Franchise Director",
+        "company": "Crispy Crave Food Network",
+        "location": "Lahore & Gujranwala",
+        "service": "Cloud Franchise & Call Center Portal",
         "rating": 5
       }
     ]
   },
   "faqs": {
     "badge": "Clear Answers",
-    "heading": "Frequently Asked Questions Before",
-    "highlightedWord": "Getting Started",
-    "subheading": "We believe in complete transparency. Here are honest answers to the common questions clients ask us before signing a proposal.",
+    "heading": "Frequently Asked Questions About",
+    "highlightedWord": "Fast POS & Cloud Portal",
+    "subheading": "Everything you need to know about pricing, hardware, installation, and multi-branch expansion.",
     "items": [
       {
-        "question": "How much does a website, custom mobile app, or retail POS system cost?",
-        "answer": "Costs depend on scope and feature complexity. A high-speed corporate business website typically ranges between PKR 45,000 to PKR 150,000. Custom POS desktop software ranges between PKR 60,000 to PKR 250,000 depending on hardware integrations and multi-branch inventory. Mobile apps and custom SaaS portals are scoped on milestone sprints. We provide an exact, itemized quotation within 48 hours with zero hidden fees.",
-        "category": "Pricing & Budget"
+        "question": "Does Fast POS work when our internet is disconnected?",
+        "answer": "Yes, absolutely! Fast POS is engineered with an offline-first architecture. All sales, barcode scanning, receipt printing, and cash drawer operations run locally at high speed without needing internet. Once your internet connection restores, all shift data and sales sync automatically with the cloud portal.",
+        "category": "Offline Capability"
       },
       {
-        "question": "How long does a typical project take from start to launch?",
-        "answer": "A standard professional corporate website is typically delivered in 2 to 3 weeks. An e-commerce Shopify or WooCommerce store usually takes 2 to 4 weeks. Custom mobile apps and POS systems take between 4 to 8 weeks depending on screen count and hardware tests. We give you a strict milestone calendar and demo progress every single week.",
-        "category": "Timelines"
+        "question": "Can I manage multiple restaurant or retail branches from home or my phone?",
+        "answer": "Yes! Our Cloud Multi-Branch & Franchise Management Portal allows owners and executives to log in from any smartphone, tablet, or laptop to view live sales, branch revenue rankings, stock levels, and staff shifts in real time from anywhere in the world.",
+        "category": "Multi-Branch Cloud"
       },
       {
-        "question": "Can we visit your office in Model Town, Lahore to discuss our project?",
-        "answer": "Yes, absolutely! We love meeting our clients in person. Our office is located on Model Town Link Road, Lahore. You are welcome to visit Monday through Saturday between 9:00 AM and 6:00 PM. Please give us a quick call or WhatsApp message at 0315-4112925 so we can reserve a meeting room and have tea ready.",
-        "category": "Office & Meetings"
+        "question": "What hardware do I need, and can you provide it in Lahore?",
+        "answer": "Fast POS runs on any Windows PC, laptop, or touch terminal. It supports standard 58mm/80mm thermal receipt printers, USB/wireless barcode scanners, cash drawers, and digital weighing scales. If you already have hardware, we can configure our software on it. If you need hardware, our Lahore team can provide and set up complete packages.",
+        "category": "Hardware Setup"
       },
       {
-        "question": "Who owns the code and intellectual property once the project is finished?",
-        "answer": "You do — 100%. Upon project completion and final milestone clearance, we hand over the full GitHub source code repository, production database backups, design files, and cloud credentials. You have complete legal ownership to host, modify, or scale your software however you choose.",
-        "category": "Ownership & Legal"
+        "question": "How does the Central Call Center order dispatching work?",
+        "answer": "Customers call your central business number. Your telephone agents enter the customer's phone and order details in the Cloud Portal. The system automatically identifies the customer's delivery area and routes the order directly to the nearest branch kitchen printer or screen with rider assignment.",
+        "category": "Call Center Operations"
       },
       {
-        "question": "Do you train our staff on how to use our POS software or website dashboard?",
-        "answer": "Yes. We include dedicated training sessions for you and your staff. For Lahore clients, we can do in-person training at your premises or our office. For remote clients, we conduct live screen-share sessions and provide step-by-step video recordings that you can reference anytime when onboarding new staff.",
-        "category": "Training & Support"
+        "question": "Can we visit your office in Model Town, Lahore to see a live demo?",
+        "answer": "Yes, we encourage it! You can visit our office on Model Town Link Road, Lahore, Monday through Saturday between 9:00 AM and 6:00 PM. We will demonstrate Fast POS on touch hardware and show you the live Cloud Portal. Please call or WhatsApp us at 0315-4112925 to schedule your time.",
+        "category": "Office Visits"
       },
       {
-        "question": "What happens after launch if something breaks or needs updates?",
-        "answer": "Every project includes 60 days of complimentary post-launch warranty where we fix any unexpected bugs or glitches free of charge. After the warranty period, we offer flexible, affordable monthly maintenance packages to keep your servers patched, backups secure, and features updated.",
-        "category": "Maintenance"
+        "question": "What training and ongoing support do you provide?",
+        "answer": "We provide complete on-site and remote training for your cashiers, branch managers, and call center agents. Every license includes 60 days of complimentary priority technical warranty, and our Lahore team provides fast WhatsApp and on-site support if any issues arise.",
+        "category": "Training & Warranty"
       }
     ]
   },
   "ctaBanner": {
-    "badge": "Let's Get Started",
-    "heading": "Ready to Build Your Project or Grow Your",
-    "highlightedWord": "Sales Online?",
-    "subheading": "Whether you have a clear requirement specification or just an early idea on a notepad, reach out to our team. We'll give you honest technical guidance and a transparent price quote.",
+    "badge": "Ready for Speed & Control?",
+    "heading": "Ready to Transform Your Counter &",
+    "highlightedWord": "Branch Operations?",
+    "subheading": "Schedule a free 20-minute live demonstration of Fast POS and the Cloud Franchise Portal with our technical team in Lahore.",
     "primaryCta": {
-      "label": "Get a Free Project Estimate",
+      "label": "Book Your Free Live Demo",
       "href": "#contact",
       "icon": "ArrowRight"
     },
     "secondaryCta": {
-      "label": "Chat with Us on WhatsApp",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20want%20to%20consult%20about%20a%20project.",
+      "label": "Message on WhatsApp (0315-4112925)",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20want%20to%20book%20a%20live%20demo%20of%20Fast%20POS%20and%20the%20Cloud%20Portal.",
       "icon": "MessageSquare"
     },
     "guarantees": [
-      "100% Free Initial Discovery & Scoping Session",
-      "Itemized Technical Proposal within 48 Hours",
-      "Full Code Ownership & Non-Disclosure (NDA) Guaranteed"
+      "Free 1-on-1 Interactive Demo (In-Person or Zoom)",
+      "Itemized System & Hardware Quotation in 24 Hours",
+      "Full On-Site Setup, Staff Training & 60-Day Warranty"
     ]
   },
   "contactSection": {
-    "badge": "Talk to Us",
-    "heading": "Tell Us About Your Project &",
-    "highlightedWord": "Get a Fast Estimate",
-    "subheading": "Fill out the quick inquiry form below or reach out directly via WhatsApp, phone, or email. Our technical team in Lahore reviews every inquiry and replies within 2 business hours.",
-    "formTitle": "Request a Free Project Proposal",
-    "formSubtitle": "Share your requirements, desired launch date, and budget range.",
+    "badge": "Schedule a Demo",
+    "heading": "See Fast POS & Cloud Portal",
+    "highlightedWord": "In Action",
+    "subheading": "Fill out the inquiry form below to schedule a free demonstration or reach our team directly via WhatsApp or phone. We typically respond within 15 minutes during business hours.",
+    "formTitle": "Request a Free Live Demo & Price Quote",
+    "formSubtitle": "Select your system interest and tell us about your business or branch count.",
     "fields": {
       "fullName": {
         "name": "fullName",
         "label": "Your Name",
-        "placeholder": "e.g., Muhammad Ali / Usman Sheikh",
+        "placeholder": "e.g., Tariq Mehmood / Usman Sheikh",
         "required": true
       },
       "email": {
         "name": "email",
         "label": "Email Address",
-        "placeholder": "e.g., ali@company.com",
+        "placeholder": "e.g., tariq@restaurant.com",
         "required": true
       },
       "phone": {
         "name": "phone",
         "label": "Phone / WhatsApp Number",
-        "placeholder": "e.g., 0315-4112925 or +92 300 1234567",
+        "placeholder": "e.g., 0315-4112925 or 0300-1234567",
         "required": true
       },
       "serviceSelect": {
-        "label": "Service You Need",
-        "placeholder": "Select a Service Pillar",
+        "label": "System / Service Needed",
+        "placeholder": "Select System Interest",
         "required": true
       },
       "budgetRange": {
-        "label": "Estimated Budget Range",
-        "placeholder": "Select Budget Range (Optional)",
+        "label": "Number of Outlets / Branches",
+        "placeholder": "Select Outlet Scale",
         "options": [
-          "Under PKR 100,000 (Basic Site / Minor Project)",
-          "PKR 100,000 – 250,000 (Standard Website / Custom POS)",
-          "PKR 250,000 – 500,000 (E-Commerce / Mobile App / Multi-Store)",
-          "PKR 500,000+ (Full Custom SaaS / Enterprise System)",
-          "International / USD Budget ($1,000 – $5,000+)"
+          "Single Store / 1 Counter Setup",
+          "2 to 3 Branches (Multi-Branch POS)",
+          "4 to 10 Branches (Franchise & Call Center)",
+          "10+ Branches / Enterprise Chain",
+          "Custom Software / Web Development Project"
         ]
       },
       "projectDetails": {
         "name": "projectDetails",
-        "label": "Tell Us About What You Want to Build",
-        "placeholder": "Describe your business, key features needed, reference websites you like, and your target launch timeline...",
+        "label": "Tell Us About Your Business & Hardware Needs",
+        "placeholder": "e.g., Restaurant, Supermarket, Bakery; number of billing counters, whether you need thermal printers or already have hardware...",
         "required": true
       }
     },
-    "submitButtonText": "Send Project Inquiry",
+    "submitButtonText": "Schedule My Free Demo",
     "successMessage": {
-      "title": "Inquiry Received! We'll Be in Touch Shortly.",
-      "message": "Thank you for reaching out to EBRICKS SOLUTIONS. A senior technical lead from our Lahore office will review your specifications and contact you within 2 hours."
+      "title": "Demo Request Received Successfully!",
+      "message": "Thank you for reaching out to EBRICKS SOLUTIONS. A senior technical specialist from our Lahore office will contact you within 2 hours to confirm your demonstration schedule."
     },
     "directContactTitle": "Direct Lahore Contacts",
-    "directContactSubtitle": "Prefer to chat or speak directly? Reach our team anytime:"
+    "directContactSubtitle": "Want an immediate demo or quote? Reach our technical directors directly:"
   },
   "footer": {
-    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a software engineering and performance digital marketing agency registered in Lahore, Pakistan. We partner with ambitious companies to build scalable technology, retail POS software, modern websites, and profitable digital marketing channels.",
+    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a software engineering company based in Lahore, Pakistan. Creators of Fast POS — high-speed desktop point of sale software for retail & restaurants, and the Cloud Multi-Branch & Franchise Management SaaS portal.",
     "linkGroups": [
       {
-        "title": "Software & Web",
+        "title": "Hero Products",
         "links": [
-          { "label": "Static & Dynamic Websites", "href": "#services" },
-          { "label": "Custom Web Applications", "href": "#services" },
-          { "label": "iOS & Android Mobile Apps", "href": "#services" },
-          { "label": "Desktop & Retail POS Software", "href": "#services" },
-          { "label": "Shopify & WordPress Stores", "href": "#services" }
+          { "label": "Fast POS Counter Terminal", "href": "#fast-pos" },
+          { "label": "7-Pillar Financial Reports", "href": "#fast-pos" },
+          { "label": "Cloud Franchise Portal", "href": "#cloud-franchise" },
+          { "label": "Call Center Order Routing", "href": "#cloud-franchise" },
+          { "label": "Hardware Compatibility", "href": "#fast-pos" }
         ]
       },
       {
-        "title": "Growth & Ads",
+        "title": "Agency & Custom",
         "links": [
-          { "label": "Google Search & Display Ads", "href": "#services" },
-          { "label": "Search Engine Optimization (SEO)", "href": "#services" },
-          { "label": "Meta (Facebook & Instagram) Ads", "href": "#services" },
-          { "label": "TikTok & Reels Video Ads", "href": "#services" },
-          { "label": "Local Google Maps Ranking", "href": "#services" }
+          { "label": "Custom Web Applications", "href": "#services" },
+          { "label": "Mobile App Development", "href": "#services" },
+          { "label": "Shopify & WooCommerce", "href": "#services" },
+          { "label": "Google & Meta Ads", "href": "#services" },
+          { "label": "Technologies & Stack", "href": "#tech-stack" }
         ]
       },
       {
         "title": "Company & Trust",
         "links": [
-          { "label": "How We Work (Process)", "href": "#process" },
-          { "label": "Why Choose EBRICKS", "href": "#why-us" },
+          { "label": "Onboarding Process", "href": "#process" },
+          { "label": "Client Case Studies", "href": "#testimonials" },
           { "label": "Frequently Asked Questions", "href": "#faqs" },
-          { "label": "Visit Lahore Office & Map", "href": "#contact" }
+          { "label": "Model Town Lahore Office", "href": "#contact" }
         ]
       }
     ],
@@ -672,7 +866,7 @@
   },
   "floatingWhatsApp": {
     "enabled": true,
-    "tooltipText": "Chat with our Lahore Team on WhatsApp (0315-4112925)",
-    "initialMessage": "Hello EBRICKS SOLUTIONS! I would like to consult about a project."
+    "tooltipText": "Chat on WhatsApp for Fast POS Demo (0315-4112925)",
+    "initialMessage": "Hello EBRICKS SOLUTIONS! I would like to see a demo of Fast POS and the Cloud Multi-Branch Management Portal."
   }
 }
