@@ -69,11 +69,29 @@
   },
   "navbar": {
     "links": [
-      { "label": "Hero Products", "href": "#products", "badge": "Flagship" },
-      { "label": "Fast POS", "href": "#fast-pos" },
-      { "label": "Cloud Franchise Portal", "href": "#cloud-franchise" },
+      {
+        "label": "Products",
+        "href": "#products",
+        "badge": "Flagship",
+        "subLinks": [
+          {
+            "label": "Fast POS System",
+            "href": "#fast-pos",
+            "description": "Offline counter register, dine-in tables, rider dispatch & 7-pillar shift accounting",
+            "badge": "Offline-First",
+            "icon": "Monitor"
+          },
+          {
+            "label": "Cloud Franchise Portal",
+            "href": "#cloud-franchise",
+            "description": "Central multi-branch SaaS, call center routing, roles & consolidated P&L",
+            "badge": "Multi-Branch",
+            "icon": "Globe"
+          }
+        ]
+      },
+      { "label": "Services", "href": "#services" },
       { "label": "Tech Stack", "href": "#tech-stack" },
-      { "label": "Agency Services", "href": "#services" },
       { "label": "Process", "href": "#process" },
       { "label": "FAQs", "href": "#faqs" },
       { "label": "Contact", "href": "#contact" }

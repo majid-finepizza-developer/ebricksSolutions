@@ -55,10 +55,19 @@ export interface TopBarData {
   };
 }
 
+export interface NavSubLink {
+  label: string;
+  href: string;
+  description?: string;
+  badge?: string;
+  icon?: string;
+}
+
 export interface NavLink {
   label: string;
   href: string;
   badge?: string;
+  subLinks?: NavSubLink[];
 }
 
 export interface NavbarData {

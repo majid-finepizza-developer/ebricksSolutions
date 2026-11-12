@@ -73,7 +73,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         </div>
 
         {/* Category Tabs Filter */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <div className="mt-10 sm:mt-12 flex items-center sm:justify-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar pb-2 sm:pb-0">
           {services.categories.map((cat) => {
             const isActive = activeCategory === cat.id;
             return (
@@ -82,7 +82,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 type="button"
                 onClick={() => setActiveCategory(cat.id)}
                 className={cn(
-                  'px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 shadow-sm',
+                  'px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xs whitespace-nowrap cursor-pointer shrink-0',
                   isActive
                     ? 'bg-slate-900 text-white shadow-md scale-[1.02]'
                     : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200',

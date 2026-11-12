@@ -86,7 +86,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {/* Content Grid: Form on Left, Direct Contact Cards & Map on Right */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Interactive Project Inquiry Form */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl relative">
+          <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200 shadow-xl relative">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-slate-900">{sectionData.formTitle}</h3>
               <p className="mt-1 text-sm text-slate-500">{sectionData.formSubtitle}</p>

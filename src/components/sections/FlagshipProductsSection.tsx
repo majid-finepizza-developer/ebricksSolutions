@@ -72,11 +72,11 @@ export const FlagshipProductsSection: React.FC<FlagshipProductsSectionProps> = (
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto shrink-0">
                 <a
                   href="#contact"
                   onClick={(e) => handleDemoClick(e, fastPosProduct)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md shadow-primary-600/20 transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md shadow-primary-600/20 transition-all hover:-translate-y-0.5 whitespace-nowrap"
                 >
                   <span>{fastPosProduct.cta.label}</span>
                   <IconRenderer name="ArrowRight" className="w-4 h-4" />
@@ -86,7 +86,7 @@ export const FlagshipProductsSection: React.FC<FlagshipProductsSectionProps> = (
                   href="https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20see%20a%20Fast%20POS%20demo."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-xs transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-xs transition-all whitespace-nowrap"
                 >
                   <IconRenderer name="MessageSquare" className="w-4 h-4 text-emerald-600" />
                   <span>WhatsApp POS Demo</span>
@@ -96,18 +96,18 @@ export const FlagshipProductsSection: React.FC<FlagshipProductsSectionProps> = (
 
             {/* Interactive Screenshot Showcase with Tabs */}
             <div className="rounded-3xl bg-white border border-slate-200 p-4 sm:p-6 lg:p-8 shadow-sm">
-              <div className="flex flex-wrap items-center gap-2 pb-5 border-b border-slate-200">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mr-2">
+              <div className="flex items-center gap-2 pb-4 sm:pb-5 border-b border-slate-200 overflow-x-auto no-scrollbar">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mr-1 whitespace-nowrap shrink-0">
                   System Screens:
                 </span>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex items-center gap-2 shrink-0">
                   {fastPosProduct.screenshots.map((s, idx) => (
                     <button
                       key={idx}
                       type="button"
                       onClick={() => setActiveFastPosTab(idx)}
                       className={cn(
-                        'px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all',
+                        'px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer',
                         activeFastPosTab === idx
                           ? 'bg-slate-900 text-white shadow-sm'
                           : 'bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200/80 border border-slate-200',
@@ -250,11 +250,11 @@ export const FlagshipProductsSection: React.FC<FlagshipProductsSectionProps> = (
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto shrink-0">
                 <a
                   href="#contact"
                   onClick={(e) => handleDemoClick(e, cloudProduct)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md shadow-primary-600/20 transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md shadow-primary-600/20 transition-all hover:-translate-y-0.5 whitespace-nowrap"
                 >
                   <span>{cloudProduct.cta.label}</span>
                   <IconRenderer name="ArrowRight" className="w-4 h-4" />
@@ -264,7 +264,7 @@ export const FlagshipProductsSection: React.FC<FlagshipProductsSectionProps> = (
                   href="https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20am%20interested%20in%20the%20Cloud%20Multi-Branch%20Portal."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-xs transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-xs transition-all whitespace-nowrap"
                 >
                   <IconRenderer name="MessageSquare" className="w-4 h-4 text-emerald-600" />
                   <span>WhatsApp Portal Demo</span>

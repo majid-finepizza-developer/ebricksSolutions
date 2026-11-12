@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
           </div>
 
           {/* Main Headline - Solid High-Craft Typography (No AI Rainbow Gradients) */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.14] font-heading">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.2] sm:leading-[1.14] font-heading">
             {hero.headline.prefix}{' '}
             <span className="text-primary-600 underline decoration-primary-300 decoration-wavy decoration-2 underline-offset-4">
               {hero.headline.highlight}
@@ -95,14 +95,14 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
 
           {/* Trust Metrics / Real Operational Capabilities */}
           <div className="pt-4 border-t border-slate-200/80">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5 max-w-4xl mx-auto">
               {hero.trustBadges.map((badge, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white/90 border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-xs"
+                  className="flex items-center justify-center sm:justify-start gap-2 px-3 py-2 rounded-lg bg-white/90 border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-xs"
                 >
                   <IconRenderer name={badge.icon} className="w-4 h-4 text-primary-600 shrink-0" />
-                  <span className="truncate">{badge.label}</span>
+                  <span className="leading-snug">{badge.label}</span>
                 </div>
               ))}
             </div>
@@ -110,10 +110,10 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
         </div>
 
         {/* HERO PRODUCT SHOWCASE IN HERO SECTION */}
-        <div className="mt-12 max-w-6xl mx-auto">
+        <div className="mt-10 sm:mt-12 max-w-6xl mx-auto">
           {/* Segmented Control / Interactive Product Switcher */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-6">
-            <div className="inline-flex p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300/80 shadow-xs w-full sm:w-auto">
+          <div className="flex items-center justify-center mb-6">
+            <div className="inline-flex flex-col sm:flex-row p-1 sm:p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300/80 shadow-xs w-full sm:w-auto gap-1">
               {hero.previewProducts.map((p, idx) => {
                 const isSelected = activePreviewIndex === idx;
                 return (
@@ -122,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
                     type="button"
                     onClick={() => setActivePreviewIndex(idx)}
                     className={cn(
-                      'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200',
+                      'flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer',
                       isSelected
                         ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-white/50',
@@ -131,11 +131,11 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
                   >
                     <span
                       className={cn(
-                        'w-2 h-2 rounded-full',
+                        'w-2 h-2 rounded-full shrink-0',
                         isSelected ? 'bg-primary-600' : 'bg-slate-400',
                       )}
                     />
-                    <span>{p.tabLabel}</span>
+                    <span className="text-center sm:text-left">{p.tabLabel}</span>
                   </button>
                 );
               })}
