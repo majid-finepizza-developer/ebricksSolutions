@@ -19,29 +19,25 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ ctaBanner }) => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-slate-950 text-white relative overflow-hidden">
-      {/* Decorative Glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-primary-600/20 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-accent-600/20 blur-[130px] rounded-full pointer-events-none" />
-
+    <section className="py-16 sm:py-20 bg-slate-900 text-white relative overflow-hidden">
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-b from-slate-900/90 to-slate-900/50 border border-slate-800 p-8 sm:p-12 lg:p-16 text-center shadow-2xl backdrop-blur-md">
+        <div className="rounded-3xl bg-slate-950 border border-slate-800 p-8 sm:p-12 lg:p-16 text-center shadow-xl">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent-500/10 border border-accent-500/30 text-accent-400 text-xs font-semibold uppercase tracking-wider mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800 text-amber-400 border border-slate-700 text-xs font-semibold uppercase tracking-wider mb-6">
             <IconRenderer name="Sparkles" className="w-3.5 h-3.5" />
             <span>{ctaBanner.badge}</span>
           </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-3xl mx-auto leading-tight">
+          {/* Heading - Solid High-Contrast Typography */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-3xl mx-auto leading-tight font-heading">
             {ctaBanner.heading}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-400 to-amber-300">
+            <span className="text-amber-400">
               {ctaBanner.highlightedWord}
             </span>
           </h2>
 
           {/* Subheading */}
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
             {ctaBanner.subheading}
           </p>
 
@@ -50,19 +46,19 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ ctaBanner }) => {
             <a
               href={ctaBanner.primaryCta.href}
               onClick={(e) => handleScrollTo(e, ctaBanner.primaryCta.href)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-500 shadow-lg shadow-primary-900/40 hover:shadow-primary-600/30 transition-all duration-200 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm sm:text-base font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 shadow-md transition-all duration-200 hover:-translate-y-0.5"
             >
               <span>{ctaBanner.primaryCta.label}</span>
-              <IconRenderer name={ctaBanner.primaryCta.icon} className="w-5 h-5" />
+              <IconRenderer name={ctaBanner.primaryCta.icon} className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
 
             <a
               href={ctaBanner.secondaryCta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-emerald-400 bg-emerald-950/60 hover:bg-emerald-950/90 border border-emerald-800/80 transition-all duration-200 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm sm:text-base font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all duration-200 hover:-translate-y-0.5"
             >
-              <IconRenderer name={ctaBanner.secondaryCta.icon} className="w-5 h-5 text-emerald-400" />
+              <IconRenderer name="MessageSquare" className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
               <span>{ctaBanner.secondaryCta.label}</span>
             </a>
           </div>

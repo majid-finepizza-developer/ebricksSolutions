@@ -30,9 +30,9 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
             <span>{industries.badge}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight font-heading">
             {industries.heading}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">
+            <span className="text-primary-600">
               {industries.highlightedWord}
             </span>
           </h2>

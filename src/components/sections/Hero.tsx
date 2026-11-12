@@ -23,76 +23,86 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-white pt-12 pb-20 lg:pt-16 lg:pb-28">
-      {/* Background Tech Gradients & Grid Pattern */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-slate-100/80 text-slate-900 pt-10 pb-16 lg:pt-14 lg:pb-24 border-b border-slate-200/80">
+      {/* Subtle Architectural Grid Pattern (Human Craft / Swiss Style) */}
       <div
-        className="absolute inset-0 opacity-20 pointer-events-none"
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.45] pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.15) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.05) 2%, transparent 0%)',
-          backgroundSize: '100px 100px',
+            'linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
         }}
       />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-primary-600/20 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 right-10 w-[500px] h-[300px] bg-accent-600/15 blur-[120px] rounded-full pointer-events-none" />
+
+      {/* Soft Ambient Radial Accents */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[350px] bg-primary-100/50 blur-[120px] rounded-full pointer-events-none"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute top-48 right-10 w-[450px] h-[260px] bg-accent-100/40 blur-[100px] rounded-full pointer-events-none"
+      />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Top Text Header */}
         <div className="text-center max-w-4xl mx-auto space-y-6">
-          {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 shadow-inner backdrop-blur-md">
-            <IconRenderer name={hero.badge.icon} className="w-4 h-4 text-accent-400" />
-            <span className="text-xs sm:text-sm font-semibold text-slate-200 tracking-wide">
+          {/* Eyebrow Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 shadow-xs hover:border-slate-300 transition-colors">
+            <span className="flex h-2 w-2 rounded-full bg-primary-600 animate-pulse" />
+            <IconRenderer name={hero.badge.icon} className="w-4 h-4 text-primary-600" />
+            <span className="text-xs sm:text-sm font-semibold tracking-wide">
               {hero.badge.text}
             </span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+          {/* Main Headline - Solid High-Craft Typography (No AI Rainbow Gradients) */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.14] font-heading">
             {hero.headline.prefix}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-400 to-amber-300">
+            <span className="text-primary-600 underline decoration-primary-300 decoration-wavy decoration-2 underline-offset-4">
               {hero.headline.highlight}
             </span>{' '}
             {hero.headline.suffix}
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto font-normal">
+          {/* Subheadline - Clear, Readable, Authentic */}
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-normal">
             {hero.subheadline}
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
             <a
               href={hero.primaryCta.href}
               onClick={(e) => handleScrollTo(e, hero.primaryCta.href)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 shadow-xl shadow-primary-900/40 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl text-sm sm:text-base font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md shadow-primary-600/20 hover:shadow-lg hover:shadow-primary-600/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>{hero.primaryCta.label}</span>
-              <IconRenderer name={hero.primaryCta.icon} className="w-5 h-5" />
+              <IconRenderer name={hero.primaryCta.icon} className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
 
             <a
               href={hero.secondaryCta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-all duration-200 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-sm sm:text-base font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 shadow-xs hover:shadow transition-all duration-200 hover:-translate-y-0.5"
             >
-              <IconRenderer name={hero.secondaryCta.icon} className="w-5 h-5 text-emerald-400" />
+              <IconRenderer name="MessageSquare" className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
               <span>{hero.secondaryCta.label}</span>
             </a>
           </div>
 
-          {/* Trust Metrics / Pillar Badges */}
-          <div className="pt-4 border-t border-slate-800/80">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+          {/* Trust Metrics / Real Operational Capabilities */}
+          <div className="pt-4 border-t border-slate-200/80">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 max-w-4xl mx-auto">
               {hero.trustBadges.map((badge, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 text-xs sm:text-sm font-medium"
+                  className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white/90 border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-xs"
                 >
-                  <IconRenderer name={badge.icon} className="w-4 h-4 text-primary-400 shrink-0" />
-                  <span>{badge.label}</span>
+                  <IconRenderer name={badge.icon} className="w-4 h-4 text-primary-600 shrink-0" />
+                  <span className="truncate">{badge.label}</span>
                 </div>
               ))}
             </div>
@@ -100,105 +110,105 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
         </div>
 
         {/* HERO PRODUCT SHOWCASE IN HERO SECTION */}
-        <div className="mt-14 max-w-6xl mx-auto">
-          {/* Interactive Product Tabs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-            {hero.previewProducts.map((p, idx) => {
-              const isSelected = activePreviewIndex === idx;
-              return (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => setActivePreviewIndex(idx)}
-                  className={cn(
-                    'w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 border',
-                    isSelected
-                      ? 'bg-primary-600 text-white border-primary-500 shadow-lg shadow-primary-900/50 scale-[1.02]'
-                      : 'bg-slate-900/80 text-slate-300 hover:text-white border-slate-800 hover:border-slate-700 hover:bg-slate-850',
-                  )}
-                  aria-pressed={isSelected}
-                >
-                  <span
+        <div className="mt-12 max-w-6xl mx-auto">
+          {/* Segmented Control / Interactive Product Switcher */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-6">
+            <div className="inline-flex p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300/80 shadow-xs w-full sm:w-auto">
+              {hero.previewProducts.map((p, idx) => {
+                const isSelected = activePreviewIndex === idx;
+                return (
+                  <button
+                    key={p.id}
+                    type="button"
+                    onClick={() => setActivePreviewIndex(idx)}
                     className={cn(
-                      'w-2 h-2 rounded-full',
-                      isSelected ? 'bg-amber-300 animate-pulse' : 'bg-slate-500',
+                      'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200',
+                      isSelected
+                        ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/50',
                     )}
-                  />
-                  <span>{p.tabLabel}</span>
-                </button>
-              );
-            })}
+                    aria-pressed={isSelected}
+                  >
+                    <span
+                      className={cn(
+                        'w-2 h-2 rounded-full',
+                        isSelected ? 'bg-primary-600' : 'bg-slate-400',
+                      )}
+                    />
+                    <span>{p.tabLabel}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Main Visual Display Card */}
-          <div className="relative rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-slate-700 shadow-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-xl">
-            {/* Window Top Bar (Mac/Windows Desktop Mockup Style) */}
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+          {/* Main Visual Display Card: Realistic OS Desktop Software Window */}
+          <div className="relative rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-900/5 ring-1 ring-slate-900/5 p-4 sm:p-6 lg:p-7">
+            {/* Desktop Window Title Bar */}
+            <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-200">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 text-xs font-mono text-slate-400 hidden sm:inline">
-                  {activeProduct.name}
+                <span className="w-3 h-3 rounded-full bg-red-400 border border-red-500/20" />
+                <span className="w-3 h-3 rounded-full bg-amber-400 border border-amber-500/20" />
+                <span className="w-3 h-3 rounded-full bg-emerald-400 border border-emerald-500/20" />
+                <span className="ml-2 text-xs font-mono text-slate-500 font-medium hidden sm:inline">
+                  {activeProduct.id === 'fast-pos' ? 'Fast Point Of Sale — Counter Register BD-202611' : 'eBricks Cloud Management Portal — Admin Dashboard'}
                 </span>
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-accent-400 bg-accent-950/80 border border-accent-800/80 px-2.5 py-0.5 rounded-md">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-primary-700 bg-primary-50 border border-primary-200 px-2.5 py-0.5 rounded-md">
                 {activeProduct.badge}
               </span>
             </div>
 
-            {/* Product Grid / Preview Body */}
+            {/* Product Body: Screenshot on Left, High-Craft Detail on Right */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-              {/* Product Screenshot with Zoom & Floating Annotations */}
-              <div className="lg:col-span-8 relative rounded-xl overflow-hidden border border-slate-800 shadow-inner group">
+              {/* Product Screenshot */}
+              <div className="lg:col-span-8 relative rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm group">
                 <img
                   src={activeProduct.image}
                   alt={activeProduct.name}
-                  className="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.01]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <span className="text-xs text-slate-200 font-semibold bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-700">
-                    Live UI Preview: {activeProduct.name}
-                  </span>
+                <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-semibold text-white border border-slate-700 shadow-xs hidden sm:block">
+                  Live Software Interface • {activeProduct.name}
                 </div>
               </div>
 
               {/* Product Feature Highlights Sidebar */}
               <div className="lg:col-span-4 flex flex-col justify-between space-y-4">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white leading-snug">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug font-heading">
                     {activeProduct.name}
                   </h3>
-                  <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {activeProduct.tagline}
                   </p>
                 </div>
 
-                <div className="space-y-2.5 pt-2">
-                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                    Key Live Capabilities:
+                <div className="space-y-2 pt-1">
+                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                    Live Operational Features:
                   </h4>
                   {activeProduct.keyPoints.map((pt, ptIdx) => (
                     <div
                       key={ptIdx}
-                      className="flex items-start gap-2 text-xs text-slate-200 bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80"
+                      className="flex items-start gap-2.5 text-xs text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200/80"
                     >
                       <IconRenderer
                         name="CheckCircle2"
-                        className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"
+                        className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"
                       />
                       <span className="leading-snug">{pt}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="pt-3">
+                <div className="pt-2">
                   <a
                     href={`#${activeProduct.id}`}
                     onClick={(e) => handleScrollTo(e, `#${activeProduct.id}`)}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 transition-colors shadow"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 transition-colors shadow-sm"
                   >
-                    <span>Deep-Dive & Explore {activeProduct.id === 'fast-pos' ? 'Fast POS' : 'Cloud Portal'}</span>
+                    <span>Explore Full Specs & Screens</span>
                     <IconRenderer name="ArrowRight" className="w-4 h-4" />
                   </a>
                 </div>
@@ -207,20 +217,20 @@ export const Hero: React.FC<HeroProps> = ({ hero }) => {
           </div>
         </div>
 
-        {/* 4 Performance Metric Cards */}
-        <div className="mt-14 lg:mt-18 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* 4 Performance Metric Cards - Clean Swiss / SaaS Style */}
+        <div className="mt-12 lg:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {hero.stats.map((stat, idx) => (
             <div
               key={idx}
-              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-slate-800/80 shadow-xl backdrop-blur-sm group hover:border-slate-700 transition-colors"
+              className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-primary-200 hover:shadow-md transition-all group"
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400 tracking-tight">
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-heading group-hover:text-primary-600 transition-colors">
                 {stat.value}
               </div>
-              <div className="mt-1.5 text-xs sm:text-sm font-bold text-white">
+              <div className="mt-1 text-xs sm:text-sm font-bold text-slate-800">
                 {stat.label}
               </div>
-              <p className="mt-1 text-[11px] text-slate-400 leading-normal">
+              <p className="mt-1 text-[11px] text-slate-500 leading-normal">
                 {stat.description}
               </p>
             </div>
