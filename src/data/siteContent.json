@@ -169,9 +169,9 @@
         "badge": "Product #1 · Restaurant Ecosystem",
         "name": "Full-Fledged Restaurant Management System",
         "tagline": "Every online, dine-in, takeaway, call center & delivery rider order unified in one platform.",
-        "image": "/images/products/cloud-branch-admin.jpg",
+        "image": "/images/products/customer-ordering-website.jpg",
         "width": 1024,
-        "height": 542,
+        "height": 540,
         "href": "#restaurant-system",
         "ctaLabel": "View Product #1",
         "keyPoints": [
@@ -211,21 +211,21 @@
         "tagline": "Unite Website Orders, In-Store Dine-In/Takeaway POS, Call Center Desk, Inventory & Riders in One Hub.",
         "summary": "An all-in-one, end-to-end connected restaurant ecosystem engineered so every multi-channel order lands in one unified central system — eliminating missed tickets, third-party commission leakage, and manual end-of-day reconciliation.",
         "inquiryOption": "Full-Fledged Restaurant Management System (Web + POS + Call Center + Inventory + Rider)",
-        "primaryImage": "/images/products/cloud-branch-admin.jpg",
+        "primaryImage": "/images/products/customer-ordering-website.jpg",
         "screenshots": [
           {
-            "title": "Unified Command Hub & Role Control",
-            "caption": "Central operations cockpit managing online website menus, call center permissions, branch settings, and live order traffic.",
-            "image": "/images/products/cloud-branch-admin.jpg",
+            "title": "Customer Ordering Website Portal",
+            "caption": "Branded website portal for customer orders — browse food categories, choose a branch, add deals or menu items to cart, and place online orders directly.",
+            "image": "/images/products/customer-ordering-website.jpg",
             "width": 1024,
-            "height": 542
+            "height": 540
           },
           {
-            "title": "Dine-In, Takeaway & Rider Queue",
-            "caption": "Real-time restaurant order board unifying table seating, telephone bookings, kitchen tickets, and rider assignment in one view.",
-            "image": "/images/products/pos-orders-dinein.jpg",
+            "title": "Call Center & Point of Sale Order Screen",
+            "caption": "Unified ordering interface used for both call center bookings and in-store POS counter sales — select items, assign tables or waiters, choose Dine-In, Pickup, Delivery, or Schedule, and complete orders fast.",
+            "image": "/images/products/call-center-and-pos-order.jpg",
             "width": 1024,
-            "height": 543
+            "height": 535
           }
         ],
         "highlights": [
