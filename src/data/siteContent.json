@@ -77,14 +77,14 @@
             "label": "Restaurant Management System",
             "href": "#restaurant-system",
             "description": "5-in-1 connected ecosystem: Website, In-Store POS, Call Center, Inventory & Riders",
-            "badge": "Product #1",
+            "badge": "Pro #1",
             "icon": "Utensils"
           },
           {
             "label": "Fast POS (Offline Desktop)",
             "href": "#fast-pos",
             "description": "100% standalone single-PC desktop POS — zero internet & zero monthly hosting fees",
-            "badge": "Product #2",
+            "badge": "Pro #2",
             "icon": "Monitor"
           }
         ]
@@ -166,14 +166,14 @@
     "previewProducts": [
       {
         "id": "restaurant-system",
-        "badge": "Product #1 · Restaurant Ecosystem",
+        "badge": "Pro #1 · Restaurant Ecosystem",
         "name": "Full-Fledged Restaurant Management System",
         "tagline": "Every online, dine-in, takeaway, call center & delivery rider order unified in one platform.",
         "image": "/images/products/customer-ordering-website.jpg",
         "width": 1024,
         "height": 540,
         "href": "#restaurant-system",
-        "ctaLabel": "View Product #1",
+        "ctaLabel": "View Pro #1",
         "keyPoints": [
           "Customer Website, In-Store POS & Call Center Portal feed one central queue",
           "Real-time recipe/ingredient inventory & delivery rider dispatch management",
@@ -182,14 +182,14 @@
       },
       {
         "id": "fast-pos",
-        "badge": "Product #2 · Offline Desktop POS",
+        "badge": "Pro #2 · Offline Desktop POS",
         "name": "Fast POS (Standalone Offline PC System)",
         "tagline": "Runs 100% locally on one computer — zero internet required, zero monthly hosting fees.",
         "image": "/images/products/pos-billing-register.jpg",
         "width": 1024,
         "height": 614,
         "href": "#fast-pos",
-        "ctaLabel": "View Product #2",
+        "ctaLabel": "View Pro #2",
         "keyPoints": [
           "Works completely offline on a single Windows PC with zero server dependency",
           "Barcode checkout, thermal slip printing, local stock, khata & expenses",
@@ -205,7 +205,7 @@
     "products": [
       {
         "id": "restaurant-system",
-        "productNumber": "Flagship Product #1 · End-to-End Restaurant Ecosystem",
+        "productNumber": "Flagship Pro #1 · End-to-End Restaurant Ecosystem",
         "name": "Full-Fledged Restaurant Management System",
         "category": "All-in-One Connected Restaurant Ecosystem",
         "tagline": "Unite Website Orders, In-Store Dine-In/Takeaway POS, Call Center Desk, Inventory & Riders in One Hub.",
@@ -320,7 +320,7 @@
       },
       {
         "id": "fast-pos",
-        "productNumber": "Flagship Product #2 · 100% Standalone Offline Desktop System",
+        "productNumber": "Flagship Pro #2 · 100% Standalone Offline Desktop System",
         "name": "Fast POS — Standalone Offline Desktop POS",
         "category": "Single-PC Offline Retail & Counter Software",
         "tagline": "100% Local Point of Sale Software — Zero Internet Dependency, Zero Monthly Cloud or Hosting Fees.",
@@ -416,11 +416,19 @@
     "technologies": [
       { "name": "React & Next.js", "category": "Restaurant Web & SaaS UI", "icon": "Code2" },
       { "name": "C# .NET & Electron", "category": "Standalone Desktop POS", "icon": "Monitor" },
-      { "name": "SQLite Local Engine", "category": "100% Offline Single-PC DB", "icon": "ShieldCheck" },
+      {
+        "name": "SQLite Local Engine",
+        "category": "100% Offline Single-PC DB",
+        "icon": "ShieldCheck"
+      },
       { "name": "PostgreSQL & Redis", "category": "Restaurant Order Queues", "icon": "Layers" },
       { "name": "Node.js & Express", "category": "Webhooks & Dispatch APIs", "icon": "Cpu" },
       { "name": "Thermal ESC/POS", "category": "Printer & Drawer Drivers", "icon": "Award" },
-      { "name": "Flutter & React Native", "category": "iOS, Android & Rider Apps", "icon": "Smartphone" },
+      {
+        "name": "Flutter & React Native",
+        "category": "iOS, Android & Rider Apps",
+        "icon": "Smartphone"
+      },
       { "name": "Shopify & Liquid", "category": "Custom Online Stores", "icon": "ShoppingBag" },
       { "name": "WordPress & WooCommerce", "category": "E-Commerce & CMS Sites", "icon": "Layout" },
       { "name": "Python & Django", "category": "Custom Analytics & APIs", "icon": "Laptop" },
@@ -654,11 +662,11 @@
   "industries": {
     "heading": "Industries Mapped to Our",
     "highlightedWord": "Standalone Systems",
-    "subheading": "We pair multi-channel food brands with Product #1 (Full-Fledged Restaurant Management System) and single-counter / offline retail stores with Product #2 (Fast POS Offline Desktop).",
+    "subheading": "We pair multi-channel food brands with Pro #1 (Full-Fledged Restaurant Management System) and single-counter / offline retail stores with Pro #2 (Fast POS Offline Desktop).",
     "items": [
       {
         "id": "restaurants-dinein-chains",
-        "productTag": "Product #1 · Restaurant System",
+        "productTag": "Pro #1 · Restaurant System",
         "inquiryOption": "Full-Fledged Restaurant Management System (Web + POS + Call Center + Inventory + Rider)",
         "title": "Restaurants & Family Dining",
         "summary": "Unify branded web ordering, dine-in table POS, call center phone orders, recipe inventory, and rider delivery in one system.",
@@ -672,7 +680,7 @@
       },
       {
         "id": "fastfood-callcenter-brands",
-        "productTag": "Product #1 · Restaurant System",
+        "productTag": "Pro #1 · Restaurant System",
         "inquiryOption": "Full-Fledged Restaurant Management System (Web + POS + Call Center + Inventory + Rider)",
         "title": "Fast Food & Telephone Delivery",
         "summary": "Route direct website orders, takeaway counters, and busy phone-desk orders into one zero-leakage kitchen workflow.",
@@ -686,7 +694,7 @@
       },
       {
         "id": "retail-general-stores",
-        "productTag": "Product #2 · Offline Fast POS",
+        "productTag": "Pro #2 · Offline Fast POS",
         "inquiryOption": "Fast POS (100% Offline Standalone Desktop System)",
         "title": "Retail Shops & General Stores",
         "summary": "Single-PC 100% offline Fast POS built for neighborhood stores and mini-marts wanting zero monthly cloud or hosting fees.",
@@ -700,7 +708,7 @@
       },
       {
         "id": "pharmacies-medical-stores",
-        "productTag": "Product #2 · Offline Fast POS",
+        "productTag": "Pro #2 · Offline Fast POS",
         "inquiryOption": "Fast POS (100% Offline Standalone Desktop System)",
         "title": "Pharmacies & Medical Counters",
         "summary": "Reliable offline counter PC billing with rapid formula lookup, batch expiry alerts, customer credit ledgers, and thermal slips.",
@@ -714,7 +722,7 @@
       },
       {
         "id": "bakeries-hardware-stores",
-        "productTag": "Product #2 · Offline Fast POS",
+        "productTag": "Pro #2 · Offline Fast POS",
         "inquiryOption": "Fast POS (100% Offline Standalone Desktop System)",
         "title": "Bakeries, Hardware & Counter Shops",
         "summary": "Weighing scale, barcode scanning, cash drawer security, and daily expenses tracked locally on one standalone PC.",
@@ -769,7 +777,7 @@
         "number": "02",
         "title": "Configuration & Data Setup",
         "timeline": "Days 2 – 4",
-        "summary": "For Product #1 we set up your digital menu, recipes, phone portal & rider zones; for Product #2 we configure local barcodes, khata templates & thermal receipts on your store PC.",
+        "summary": "For Pro #1 we set up your digital menu, recipes, phone portal & rider zones; for Pro #2 we configure local barcodes, khata templates & thermal receipts on your store PC.",
         "icon": "Layout",
         "highlights": [
           "Menu, recipes or barcode import",
@@ -796,8 +804,8 @@
         ],
         "activities": [
           "Physical thermal printer calibration and automatic RJ11 drawer kick test",
-          "Product #1 live order flow test (Website + POS + Call Center + Riders)",
-          "Product #2 offline single-PC stress test with disconnected Wi-Fi",
+          "Pro #1 live order flow test (Website + POS + Call Center + Riders)",
+          "Pro #2 offline single-PC stress test with disconnected Wi-Fi",
           "Backup procedure verification for local databases or cloud servers"
         ]
       },
@@ -844,10 +852,7 @@
         "badge": "Cost Control",
         "title": "Zero Mandatory Cloud Fees",
         "tagline": "Fast POS runs offline with zero hosting bills",
-        "highlights": [
-          "Zero monthly SaaS fees on Fast POS",
-          "Runs completely on one Windows PC"
-        ],
+        "highlights": ["Zero monthly SaaS fees on Fast POS", "Runs completely on one Windows PC"],
         "description": "If your shop prefers zero recurring hosting charges or suffers frequent internet outages, Fast POS runs 100% locally on your counter computer forever.",
         "details": [
           "Local desktop database requires zero external servers or domain renewals",
@@ -861,10 +866,7 @@
         "badge": "Leakage Protection",
         "title": "Total Cash & Stock Accountability",
         "tagline": "Account for every ticket, rupee & item",
-        "highlights": [
-          "Cancellation & void audit trails",
-          "Recipe stock or local khata tracking"
-        ],
+        "highlights": ["Cancellation & void audit trails", "Recipe stock or local khata tracking"],
         "description": "Both standalone products stop silent leakage — tracking shift closings, order voids, customer credit, expenses, and exact profit margins clearly.",
         "details": [
           "Supervisor password checks on voids, refunds, and manual discounts",
@@ -878,10 +880,7 @@
         "badge": "Model Town, Lahore",
         "title": "Lahore HQ & On-Site Team",
         "tagline": "In-person meetings & hardware setup",
-        "highlights": [
-          "Model Town Link Road live demos",
-          "Direct WhatsApp & 60-day warranty"
-        ],
+        "highlights": ["Model Town Link Road live demos", "Direct WhatsApp & 60-day warranty"],
         "description": "Our engineers operate directly from Model Town Link Road, Lahore — offering face-to-face product demos, physical printer installation, and rapid WhatsApp support.",
         "details": [
           "Visit our Model Town Link Road, Lahore office for live demonstrations",
@@ -899,7 +898,7 @@
     "items": [
       {
         "id": "fine-pizza",
-        "badge": "Product #1 · Restaurant",
+        "badge": "Pro #1 · Restaurant",
         "headline": "Unified Dine-In, Website & Recipe Control",
         "quote": "Deploying EBRICKS' Full-Fledged Restaurant Management System brought our customer website, dine-in counter POS, and kitchen inventory into one place. End-of-day shift reconciliation finishes in minutes, and recipe tracking immediately cut kitchen waste.",
         "highlights": [
@@ -915,7 +914,7 @@
       },
       {
         "id": "munna-bhai",
-        "badge": "Product #1 · 5-in-1",
+        "badge": "Pro #1 · 5-in-1",
         "headline": "Call Center & Rider Dispatch Without Chaos",
         "quote": "Peak rush with dine-in tables, takeaway pickups, phone orders, and delivery riders used to cause constant ticket mistakes. Now phone agents book orders in the Call Center Portal, kitchen tickets print automatically, and riders stay organized.",
         "highlights": [
@@ -931,7 +930,7 @@
       },
       {
         "id": "crispy-crave",
-        "badge": "Product #1 · Ecosystem",
+        "badge": "Pro #1 · Ecosystem",
         "headline": "Zero Missed Orders Across Web & Phone Desk",
         "quote": "Before EBRICKS built our 5-in-1 Restaurant Management System, third-party orders, counter bills, and phone deliveries were tracked separately. Having website orders, call center desk, inventory, and riders unified inside one system transformed our speed.",
         "highlights": [
@@ -947,7 +946,7 @@
       },
       {
         "id": "city-mart",
-        "badge": "Product #2 · Fast POS",
+        "badge": "Pro #2 · Fast POS",
         "headline": "100% Offline Single-PC Speed, Zero Cloud Fees",
         "quote": "We wanted a reliable retail POS on our single store computer without paying monthly cloud fees or worrying when Wi-Fi drops. Fast POS scans 12,000+ barcodes locally, handles customer khata and expenses, and gives clear daily profit reports.",
         "highlights": [
