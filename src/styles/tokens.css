@@ -1,0 +1,112 @@
+@layer tokens {
+  :root {
+    --in-oklab: ;
+
+    /* Palette mapped dynamically from src/theme/colors.ts RGB channel variables */
+    --brand-primary: rgb(var(--color-primary-600));
+    --brand-primary-strong: rgb(var(--color-primary-700));
+    --brand-primary-deep: rgb(var(--color-primary-800));
+    --brand-primary-soft: color-mix(in oklab, var(--brand-primary) 11%, rgb(var(--color-surface)));
+    --brand-primary-tint: color-mix(in oklab, var(--brand-primary) 18%, rgb(var(--color-surface)));
+
+    --brand-accent: rgb(var(--color-accent-600));
+    --brand-accent-strong: rgb(var(--color-accent-700));
+    --brand-accent-soft: color-mix(in oklab, var(--brand-accent) 12%, rgb(var(--color-surface)));
+
+    --brand-secondary: rgb(var(--color-secondary-600));
+    --brand-secondary-strong: rgb(var(--color-secondary-700));
+    --brand-secondary-soft: color-mix(in oklab, var(--brand-secondary) 12%, rgb(var(--color-surface)));
+
+    /* Semantic surfaces & accessible ink (WCAG AA >= 4.5:1) */
+    --surface-page: rgb(var(--color-background));
+    --surface-card: rgb(var(--color-surface));
+    --surface-subtle: rgb(var(--color-surfaceAlt));
+    --surface-dark: rgb(var(--color-text-primary));
+    --surface-dark-elevated: color-mix(
+      in oklab,
+      rgb(var(--color-text-primary)) 86%,
+      rgb(var(--color-surface))
+    );
+
+    --ink-primary: rgb(var(--color-text-primary));
+    --ink-secondary: rgb(var(--color-text-secondary));
+    /* Strengthened muted ink for strict >= 4.5:1 AA contrast across #fff / #f8fafc / #f1f5f9 */
+    --ink-muted: color-mix(
+      in oklab,
+      rgb(var(--color-text-secondary)) 68%,
+      rgb(var(--color-text-muted))
+    );
+    --ink-inverse: rgb(var(--color-text-onPrimary));
+    --ink-inverse-muted: color-mix(
+      in oklab,
+      rgb(var(--color-text-onPrimary)) 78%,
+      rgb(var(--color-text-muted))
+    );
+
+    /* UI boundaries & status tones (>= 3:1 control border contrast) */
+    --border-subtle: rgb(var(--color-border));
+    --border-strong: color-mix(
+      in oklab,
+      rgb(var(--color-text-muted)) 80%,
+      rgb(var(--color-text-secondary))
+    );
+    --status-success: color-mix(in oklab, rgb(var(--color-success)) 88%, rgb(var(--color-text-primary)));
+    --status-success-soft: color-mix(in oklab, rgb(var(--color-success)) 11%, rgb(var(--color-surface)));
+    --status-danger: rgb(var(--color-danger));
+    --status-danger-soft: color-mix(in oklab, rgb(var(--color-danger)) 10%, rgb(var(--color-surface)));
+    --status-star: rgb(var(--color-star));
+
+    /* Focus indicator token (>= 3:1 contrast) */
+    --focus-ring: var(--brand-primary-strong);
+
+    /* Shadows composed from theme ink channel */
+    --shadow-sm: 0 1px 2px rgb(var(--color-text-primary) / 0.06);
+    --shadow-md:
+      0 4px 10px -2px rgb(var(--color-text-primary) / 0.08),
+      0 2px 4px -2px rgb(var(--color-text-primary) / 0.05);
+    --shadow-lg:
+      0 14px 28px -8px rgb(var(--color-text-primary) / 0.12),
+      0 4px 10px -4px rgb(var(--color-text-primary) / 0.06);
+    --shadow-xl:
+      0 24px 48px -12px rgb(var(--color-text-primary) / 0.2),
+      0 8px 18px -6px rgb(var(--color-text-primary) / 0.08);
+
+    /* Typography families & scale (never set font-size on :root/html so meta text-scale works) */
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Poppins', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+    --text-h1: clamp(1.85rem, 1.25rem + 1.8vw, 2.9rem);
+    --text-h2: clamp(1.625rem, 1.2rem + 1.55vw, 2.75rem);
+    --text-h3: clamp(1.125rem, 1.02rem + 0.5vw, 1.5rem);
+    --text-h4: clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+
+    /* Radii, layout measures & interactive target dimensions (WCAG 2.5.5 / 2.5.8) */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.625rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-pill: 9999px;
+
+    --container-max: 80rem;
+    --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.25rem);
+    --section-space: clamp(2rem, 1.5rem + 1.8vw, 3.25rem);
+    --sticky-header-height: 4rem;
+    --target-size: 24px;
+  }
+
+  @supports (linear-gradient(in oklab, white, black)) {
+    :root {
+      --in-oklab: in oklab;
+    }
+  }
+
+  @media (pointer: coarse) {
+    :root {
+      --target-size: 44px;
+    }
+  }
+}

@@ -1,458 +1,611 @@
-import React, { useState, useEffect, useRef } from 'react';
-import type { BrandData, CompanyContact, NavbarData, TopBarData, NavLink } from '../../types/content';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import type {
+  BrandData,
+  CompanyContact,
+  NavbarData,
+  NavLink,
+  SiteUiLabels,
+  TopBarData,
+} from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
-import { cn } from '../../utils/cn';
+import { resolveAssetUrl } from '../../utils/assets';
 
 interface NavbarProps {
   brand: BrandData;
   contact: CompanyContact;
   topBar: TopBarData;
   navbar: NavbarData;
-  onNavigate?: (href: string) => void;
+  ui: SiteUiLabels['navbar'];
 }
 
-export const Navbar: React.FC<NavbarProps> = ({
-  brand,
-  contact,
-  topBar,
-  navbar,
-  onNavigate,
-}) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+const MENU_ID = 'site-menu';
+const SUBMENU_ID = 'products-submenu';
 
-  // Handle scroll detection for sticky navbar style & active section
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+type PopoverEl = HTMLElement & {
+  showPopover?: (options?: { source?: HTMLElement }) => void;
+  hidePopover?: () => void;
+};
 
-      const sectionIds = navbar.links
-        .map((link) => link.href.replace('#', ''))
-        .filter(Boolean);
+export const Navbar: React.FC<NavbarProps> = ({ brand, contact, topBar, navbar, ui }) => {
+  const headerRef = useRef<HTMLElement>(null);
+  const stickySentinelRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const menuRef = useRef<HTMLUListElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const submenuRef = useRef<HTMLDivElement>(null);
+  const hoverCloseTimer = useRef<number | undefined>(undefined);
 
-      const scrollPos = window.scrollY + 200;
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(`#${sectionIds[i]}`);
-          return;
-        }
+  const [navLayout, setNavLayout] = useState<'measuring' | 'wide' | 'compact'>('measuring');
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState<string>('');
+
+  const isWide = navLayout === 'wide';
+
+  // Container-fit navigation measurement via ResizeObserver (synchronous class toggling prevents FOUC).
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const menu = menuRef.current;
+    if (!nav || !menu) return;
+
+    let rafId = 0;
+    let lastMeasuredNavWidth = -1;
+
+    const measureFit = (force = false) => {
+      const currentNavWidth = Math.round(nav.clientWidth);
+      if (!force && Math.abs(currentNavWidth - lastMeasuredNavWidth) < 2) {
+        return;
       }
-      if (window.scrollY < 200) {
-        setActiveSection('');
+      lastMeasuredNavWidth = currentNavWidth;
+
+      // Close drawer cleanly before measuring across viewport changes.
+      const popMenu = menu as PopoverEl;
+      try {
+        if (menu.matches(':popover-open')) {
+          popMenu.hidePopover?.();
+        }
+      } catch {
+        // Ignore when browser lacks native :popover-open prior to polyfill init
+      }
+
+      // Toggle measuring classes synchronously on DOM so React delay never exposes vertical list.
+      nav.classList.add('is-measuring');
+      nav.classList.remove('is-wide');
+      menu.removeAttribute('popover');
+
+      void menu.offsetWidth;
+
+      const brandEl = nav.querySelector('.brand-link') as HTMLElement | null;
+      const brandWidth = brandEl ? brandEl.getBoundingClientRect().width : 0;
+      const navStyle = getComputedStyle(nav);
+      const gap = parseFloat(navStyle.columnGap || navStyle.gap || '16') || 16;
+      const availableForMenu = nav.clientWidth - brandWidth - gap - 8;
+      const neededWidth = menu.getBoundingClientRect().width;
+      const fits = neededWidth <= Math.max(0, availableForMenu);
+
+      nav.classList.remove('is-measuring');
+      if (fits) {
+        menu.removeAttribute('popover');
+        nav.classList.add('is-wide');
+        setNavLayout('wide');
+      } else {
+        menu.setAttribute('popover', 'auto');
+        setNavLayout('compact');
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const scheduleMeasure = (force = false) => {
+      window.cancelAnimationFrame(rafId);
+      rafId = window.requestAnimationFrame(() => measureFit(force));
+    };
+
+    measureFit(true);
+
+    const ro = new ResizeObserver(() => scheduleMeasure(false));
+    ro.observe(nav);
+    document.fonts?.ready.then(() => measureFit(true));
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      ro.disconnect();
+    };
   }, [navbar.links]);
 
-  // Lock body scroll when mobile menu is open
+  // Sticky header height variable, IntersectionObserver stuck-state fallback, and reading progress fallback.
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
+    const header = headerRef.current;
+    const sentinel = stickySentinelRef.current;
+    const progressEl = progressRef.current;
+    if (!header) return;
+
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        '--sticky-header-height',
+        `${header.getBoundingClientRect().height}px`,
+      );
     };
-  }, [mobileMenuOpen]);
+    updateHeaderHeight();
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      setMobileMenuOpen(false);
-      setOpenDropdown(null);
-      const targetId = href.replace('#', '');
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: 'smooth' });
+    const headerRo = new ResizeObserver(updateHeaderHeight);
+    headerRo.observe(header);
+
+    const supportsScrollState =
+      typeof CSS !== 'undefined' &&
+      typeof CSS.supports === 'function' &&
+      CSS.supports('container-type', 'scroll-state');
+
+    let stuckObserver: IntersectionObserver | null = null;
+    if (!supportsScrollState && sentinel && typeof IntersectionObserver !== 'undefined') {
+      stuckObserver = new IntersectionObserver(
+        ([entry]) => {
+          header.classList.toggle('is-stuck', !entry.isIntersecting);
+        },
+        { threshold: 0 },
+      );
+      stuckObserver.observe(sentinel);
+    }
+
+    const supportsScrollTimeline =
+      typeof CSS !== 'undefined' &&
+      typeof CSS.supports === 'function' &&
+      CSS.supports('(animation-timeline: scroll()) and (animation-range: 0% 100%)');
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking || !progressEl) return;
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const doc = document.documentElement;
+        const scrollable = Math.max(1, doc.scrollHeight - window.innerHeight);
+        const ratio = Math.min(1, Math.max(0, y / scrollable));
+        progressEl.style.transform = `scaleX(${ratio})`;
+        ticking = false;
+      });
+    };
+
+    if (!supportsScrollTimeline) {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    return () => {
+      headerRo.disconnect();
+      stuckObserver?.disconnect();
+      if (!supportsScrollTimeline) {
+        window.removeEventListener('scroll', onScroll);
       }
-      if (onNavigate) onNavigate(href);
+    };
+  }, []);
+
+  // Scrollspy active section highlight (fallback when CSS scroll-target-group is unavailable).
+  useEffect(() => {
+    const supportsScrollTargetGroup =
+      typeof CSS !== 'undefined' &&
+      typeof CSS.supports === 'function' &&
+      CSS.supports('scroll-target-group', 'auto');
+
+    if (supportsScrollTargetGroup || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    const targets = navbar.links
+      .filter((l) => l.href.startsWith('#'))
+      .map((l) => ({
+        href: l.href,
+        el: document.getElementById(l.href.slice(1)),
+      }))
+      .filter((entry): entry is { href: string; el: HTMLElement } => Boolean(entry.el));
+
+    if (targets.length === 0) return;
+
+    const visibleMap = new Map<string, boolean>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          visibleMap.set(`#${entry.target.id}`, entry.isIntersecting);
+        }
+        const firstVisible = targets.find((t) => visibleMap.get(t.href));
+        if (firstVisible) {
+          setActiveHref(firstVisible.href);
+        } else if (window.scrollY < 160) {
+          setActiveHref('');
+        }
+      },
+      { rootMargin: '-25% 0px -60% 0px', threshold: 0.01 },
+    );
+
+    for (const target of targets) observer.observe(target.el);
+    return () => observer.disconnect();
+  }, [navbar.links]);
+
+  // Anchor-positioned dropdown submenu state + synchronous safety fallback if anchor fails or flips upward.
+  useEffect(() => {
+    const submenu = submenuRef.current;
+    const trigger = triggerRef.current;
+    if (!submenu || !trigger) return;
+
+    const syncFallbackPosition = () => {
+      if (!submenu.matches(':popover-open')) return;
+
+      const supportsExplicitAnchor =
+        typeof CSS !== 'undefined' &&
+        typeof CSS.supports === 'function' &&
+        CSS.supports('position-anchor', 'auto') &&
+        CSS.supports('top', 'anchor(bottom)');
+
+      const triggerRect = trigger.getBoundingClientRect();
+      const rect = submenu.getBoundingClientRect();
+
+      // Enforce safe coordinates cleanly below the trigger when native CSS anchor positioning isn't active or sits above trigger bottom
+      if (!supportsExplicitAnchor || rect.top < triggerRect.bottom + 2) {
+        const maxLeft = Math.max(8, window.innerWidth - submenu.offsetWidth - 16);
+        submenu.style.top = `${Math.round(triggerRect.bottom + 8)}px`;
+        submenu.style.left = `${Math.max(8, Math.min(Math.round(triggerRect.left), maxLeft))}px`;
+      } else {
+        submenu.style.removeProperty('top');
+        submenu.style.removeProperty('left');
+      }
+    };
+
+    const handleToggle = (event: Event) => {
+      const toggleEv = event as ToggleEvent;
+      const openNow = toggleEv.newState === 'open';
+      setSubmenuOpen(openNow);
+      if (openNow) {
+        syncFallbackPosition();
+        window.requestAnimationFrame(syncFallbackPosition);
+      }
+    };
+
+    submenu.addEventListener('toggle', handleToggle);
+    window.addEventListener('resize', syncFallbackPosition);
+    window.addEventListener('scroll', syncFallbackPosition, { passive: true });
+
+    return () => {
+      submenu.removeEventListener('toggle', handleToggle);
+      window.removeEventListener('resize', syncFallbackPosition);
+      window.removeEventListener('scroll', syncFallbackPosition);
+    };
+  }, [isWide]);
+
+  // Mobile popover drawer horizontal swipe-right-to-dismiss gesture.
+  useEffect(() => {
+    const menu = menuRef.current as PopoverEl | null;
+    if (!menu || isWide) return;
+
+    let startX = 0;
+    let deltaX = 0;
+    let dragging = false;
+
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length !== 1) return;
+      startX = e.touches[0].clientX;
+      deltaX = 0;
+      dragging = true;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (!dragging || e.touches.length !== 1) return;
+      const dx = e.touches[0].clientX - startX;
+      if (dx > 0) {
+        deltaX = dx;
+        menu.style.translate = `${Math.min(dx, 240)}px 0`;
+      }
+    };
+
+    const onTouchEnd = () => {
+      if (!dragging) return;
+      dragging = false;
+      menu.style.removeProperty('translate');
+      if (deltaX > 72) {
+        try {
+          menu.hidePopover?.();
+        } catch {
+          // Safe noop
+        }
+      }
+    };
+
+    menu.addEventListener('touchstart', onTouchStart, { passive: true });
+    menu.addEventListener('touchmove', onTouchMove, { passive: true });
+    menu.addEventListener('touchend', onTouchEnd, { passive: true });
+
+    return () => {
+      menu.removeEventListener('touchstart', onTouchStart);
+      menu.removeEventListener('touchmove', onTouchMove);
+      menu.removeEventListener('touchend', onTouchEnd);
+    };
+  }, [isWide]);
+
+  const closeMenus = () => {
+    const menu = menuRef.current as PopoverEl | null;
+    const submenu = submenuRef.current as PopoverEl | null;
+    try {
+      submenu?.hidePopover?.();
+    } catch {
+      // Ignore if already closed
+    }
+    if (!isWide) {
+      try {
+        menu?.hidePopover?.();
+      } catch {
+        // Ignore if already closed
+      }
     }
   };
 
-  const handleMouseEnter = (label: string) => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
+  const openSubmenuOnHover = () => {
+    if (!window.matchMedia?.('(hover: hover)').matches) return;
+    window.clearTimeout(hoverCloseTimer.current);
+    const submenu = submenuRef.current as PopoverEl | null;
+    const trigger = triggerRef.current;
+    if (!submenu || !trigger) return;
+    try {
+      if (!submenu.matches(':popover-open')) {
+        submenu.showPopover?.({ source: trigger });
+      }
+    } catch {
+      try {
+        submenu.showPopover?.();
+      } catch {
+        // Safe noop
+      }
     }
-    setOpenDropdown(label);
   };
 
-  const handleMouseLeave = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 150);
+  const scheduleCloseSubmenu = () => {
+    if (!window.matchMedia?.('(hover: hover)').matches) return;
+    window.clearTimeout(hoverCloseTimer.current);
+    hoverCloseTimer.current = window.setTimeout(() => {
+      const submenu = submenuRef.current as PopoverEl | null;
+      if (!submenu) return;
+      if (submenu.contains(document.activeElement)) return;
+      try {
+        submenu.hidePopover?.();
+      } catch {
+        // Safe noop
+      }
+    }, 160);
   };
+
+  const navClassName = [
+    'site-nav',
+    navLayout === 'measuring' ? 'is-measuring' : '',
+    navLayout === 'wide' ? 'is-wide' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-300">
-      {/* Top Bar with Direct Contact Info */}
+    <>
       {topBar.enabled && (
-        <div className="bg-slate-900 text-slate-300 text-xs border-b border-slate-800 transition-colors">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
-            {/* Announcement / Tagline */}
-            {topBar.announcement && (
-              <div className="hidden lg:flex items-center gap-2 min-w-0">
-                <span className="bg-accent-600/20 text-accent-400 border border-accent-600/30 px-2 py-0.5 rounded-full font-semibold text-[11px] whitespace-nowrap shrink-0">
-                  {topBar.announcement.badge}
-                </span>
-                <span className="text-slate-300 truncate max-w-md xl:max-w-xl text-xs">
-                  {topBar.announcement.text}
-                </span>
+        <div className="site-utility-bar">
+          <div className="mwg-container site-utility-inner">
+            {topBar.announcement ? (
+              <div className="site-utility-promo">
+                <span className="site-utility-pill">{topBar.announcement.badge}</span>
+                {topBar.announcement.text ? <span>{topBar.announcement.text}</span> : null}
               </div>
-            )}
+            ) : null}
 
-            {/* Quick Contacts - Clean & Non-Wrapping */}
-            <div className="flex items-center gap-4 sm:gap-6 ml-auto shrink-0">
+            <div className="site-utility-contacts">
               <a
                 href={contact.phone.href}
-                className="flex items-center gap-1.5 hover:text-white transition-colors group whitespace-nowrap"
+                className="site-utility-link"
                 aria-label={contact.phone.label}
               >
-                <IconRenderer name={contact.phone.icon} className="w-3.5 h-3.5 text-accent-400 shrink-0" />
-                <span className="font-semibold tracking-wide text-xs">{contact.phone.display}</span>
+                <IconRenderer name={contact.phone.icon} size={14} aria-hidden="true" />
+                <span>{contact.phone.display}</span>
               </a>
 
               <a
                 href={contact.email.href}
-                className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors group whitespace-nowrap"
+                className="site-utility-link"
                 aria-label={contact.email.label}
               >
-                <IconRenderer name={contact.email.icon} className="w-3.5 h-3.5 text-primary-400 shrink-0" />
-                <span className="text-xs">{contact.email.display}</span>
+                <IconRenderer name={contact.email.icon} size={14} aria-hidden="true" />
+                <span>{contact.email.display}</span>
               </a>
 
-              <span className="hidden xl:flex items-center gap-1.5 text-slate-400 whitespace-nowrap text-xs">
-                <IconRenderer name={contact.address.icon} className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+              <a
+                href={contact.address.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="site-utility-link"
+              >
+                <IconRenderer name={contact.address.icon} size={14} aria-hidden="true" />
                 <span>{contact.address.formatted}</span>
-              </span>
+              </a>
             </div>
           </div>
         </div>
       )}
 
-      {/* Main Glassmorphic Navigation Bar */}
-      <nav
-        className={cn(
-          'transition-all duration-200 w-full',
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-2.5'
-            : 'bg-white/90 backdrop-blur-sm border-b border-slate-200/50 py-3 sm:py-3.5',
-        )}
-        aria-label="Main Corporate Navigation"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
-            {/* Brand Logo & Registration Name */}
-            <a
-              href="#"
-              className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 rounded-lg p-0.5 transition-transform hover:scale-[1.01] shrink-0"
-              aria-label={brand.name}
-            >
-              <img
-                src={brand.logo}
-                alt={brand.name}
-                className="h-8 sm:h-10 w-auto max-w-[170px] sm:max-w-[210px] object-contain"
-              />
-            </a>
-
-            {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
-              {navbar.links.map((link: NavLink) => {
-                const isActive = activeSection === link.href;
-                const hasSubLinks = Boolean(link.subLinks && link.subLinks.length > 0);
-                const isDropdownOpen = openDropdown === link.label;
-
-                if (hasSubLinks) {
-                  return (
-                    <div
-                      key={link.href}
-                      className="relative"
-                      onMouseEnter={() => handleMouseEnter(link.label)}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setOpenDropdown(isDropdownOpen ? null : link.label);
-                        }}
-                        className={cn(
-                          'inline-flex items-center gap-1.5 px-3 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap cursor-pointer',
-                          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600',
-                          isActive || isDropdownOpen
-                            ? 'text-primary-600 bg-primary-50/80'
-                            : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80',
-                        )}
-                        aria-expanded={isDropdownOpen}
-                      >
-                        <span>{link.label}</span>
-                        {link.badge && (
-                          <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-amber-100 text-amber-800">
-                            {link.badge}
-                          </span>
-                        )}
-                        <IconRenderer
-                          name="ChevronDown"
-                          className={cn(
-                            'w-3.5 h-3.5 transition-transform duration-200 text-slate-500',
-                            isDropdownOpen && 'rotate-180 text-primary-600',
-                          )}
-                        />
-                      </button>
-
-                      {/* Dropdown Menu Card */}
-                      {isDropdownOpen && (
-                        <div className="absolute top-full left-0 pt-1.5 w-88 z-50">
-                          <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-2 space-y-1">
-                            {link.subLinks?.map((sub) => (
-                              <a
-                                key={sub.href}
-                                href={sub.href}
-                                onClick={(e) => handleLinkClick(e, sub.href)}
-                                className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item"
-                              >
-                                {sub.icon && (
-                                  <div className="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-primary-600 group-hover/item:text-white transition-colors">
-                                    <IconRenderer name={sub.icon} className="w-4 h-4" />
-                                  </div>
-                                )}
-                                <div className="min-w-0 flex-1">
-                                  <div className="flex items-center gap-2">
-                                    <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover/item:text-primary-600 transition-colors whitespace-nowrap">
-                                      {sub.label}
-                                    </span>
-                                    {sub.badge && (
-                                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">
-                                        {sub.badge}
-                                      </span>
-                                    )}
-                                  </div>
-                                  {sub.description && (
-                                    <p className="text-[11px] text-slate-500 mt-0.5 leading-snug line-clamp-2">
-                                      {sub.description}
-                                    </p>
-                                  )}
-                                </div>
-                              </a>
-                            ))}
-
-                            <div className="pt-2 border-t border-slate-100 px-2 pb-1">
-                              <a
-                                href="#products"
-                                onClick={(e) => handleLinkClick(e, '#products')}
-                                className="text-xs font-bold text-primary-600 hover:text-primary-700 flex items-center justify-between p-1.5 rounded-lg hover:bg-primary-50/50 transition-colors"
-                              >
-                                <span>View All Flagship Systems</span>
-                                <IconRenderer name="ArrowRight" className="w-3.5 h-3.5" />
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className={cn(
-                      'px-3 py-2 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap',
-                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600',
-                      isActive
-                        ? 'text-primary-600 bg-primary-50'
-                        : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80',
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                );
-              })}
-            </div>
-
-            {/* Right Action CTAs */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-              {/* WhatsApp Quick CTA (Tablet & Desktop) */}
-              <a
-                href={navbar.whatsappButton.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-1.5 xl:gap-2 px-3 py-2 xl:px-3.5 xl:py-2 rounded-lg text-xs xl:text-sm font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all shadow-xs whitespace-nowrap"
-              >
-                <IconRenderer name={navbar.whatsappButton.icon} className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>{navbar.whatsappButton.label}</span>
+      <div ref={stickySentinelRef} className="sticky-header-sentinel" aria-hidden="true" />
+      <header ref={headerRef} className="site-sticky-header">
+        <div className="site-header-surface" aria-hidden="true" />
+        <div className="site-header-inner">
+          <div className="mwg-container">
+            <nav ref={navRef} className={navClassName} aria-label={ui.primaryLabel}>
+              <a href="#" className="brand-link" aria-label={ui.homeLabel}>
+                <img
+                  src={resolveAssetUrl(brand.logo)}
+                  alt={brand.name}
+                  width={1024}
+                  height={448}
+                  className="brand-logo"
+                />
               </a>
 
-              {/* Primary Quote CTA Button */}
-              <a
-                href={navbar.ctaButton.href}
-                onClick={(e) => handleLinkClick(e, navbar.ctaButton.href)}
-                className="inline-flex items-center gap-1.5 xl:gap-2 px-3.5 py-2 xl:px-4 xl:py-2.5 rounded-lg text-xs xl:text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-sm hover:shadow transition-all whitespace-nowrap active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-              >
-                <span>{navbar.ctaButton.label}</span>
-                {navbar.ctaButton.icon && (
-                  <IconRenderer name={navbar.ctaButton.icon} className="w-3.5 h-3.5 xl:w-4 xl:h-4 shrink-0" />
-                )}
-              </a>
-
-              {/* Mobile Menu Toggle Button */}
               <button
                 type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-600"
-                aria-expanded={mobileMenuOpen}
-                aria-label={mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
+                className="nav-trigger-btn"
+                popovertarget={MENU_ID}
+                popovertargetaction="show"
+                aria-label={ui.menuButtonLabel}
               >
-                <IconRenderer name={mobileMenuOpen ? 'X' : 'Menu'} className="w-5 h-5 sm:w-6 sm:h-6" />
+                <IconRenderer name="Menu" size={18} aria-hidden="true" />
+                <span>{ui.menuButtonLabel}</span>
               </button>
-            </div>
-          </div>
-        </div>
 
-        {/* Mobile Full-Screen/Drawer Navigation Panel */}
-        {mobileMenuOpen && (
-          <div className="fixed inset-0 z-50 lg:hidden">
-            {/* Backdrop */}
-            <div
-              className="fixed inset-0 bg-slate-900/50 backdrop-blur-xs transition-opacity"
-              onClick={() => setMobileMenuOpen(false)}
-            />
-
-            {/* Sliding Drawer Content */}
-            <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col z-50 overflow-y-auto">
-              {/* Drawer Top Header */}
-              <div className="p-4 flex items-center justify-between border-b border-slate-200">
-                <a
-                  href="#"
-                  onClick={(e) => handleLinkClick(e, '#')}
-                  className="flex items-center"
-                >
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    className="h-8 w-auto max-w-[170px] object-contain"
-                  />
-                </a>
-                <button
-                  type="button"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                  aria-label="Close menu"
-                >
-                  <IconRenderer name="X" className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Drawer Navigation Links */}
-              <div className="p-4 space-y-3 flex-1">
-                {/* Hero Products Special Highlight in Mobile Menu */}
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center justify-between">
-                    <span>Flagship Systems</span>
-                    <span className="text-[10px] bg-primary-100 text-primary-700 px-1.5 py-0.5 rounded font-bold">
-                      Lahore Tested
-                    </span>
+              <ul ref={menuRef} id={MENU_ID} className="site-menu">
+                <li className="drawer-header-item">
+                  <div className="drawer-header-row">
+                    <strong>{brand.name}</strong>
+                    <button
+                      type="button"
+                      className="drawer-close-btn"
+                      popovertarget={MENU_ID}
+                      popovertargetaction="hide"
+                      aria-label={ui.closeMenuLabel}
+                    >
+                      <IconRenderer name="X" size={18} aria-hidden="true" />
+                    </button>
                   </div>
-                  <a
-                    href="#fast-pos"
-                    onClick={(e) => handleLinkClick(e, '#fast-pos')}
-                    className="flex items-center gap-2.5 p-2 rounded-xl bg-white border border-slate-200 shadow-xs"
-                  >
-                    <IconRenderer name="Monitor" className="w-4 h-4 text-primary-600 shrink-0" />
-                    <div>
-                      <div className="text-xs font-bold text-slate-900">Fast POS System</div>
-                      <div className="text-[10px] text-slate-500">Touch counter register & shift reports</div>
-                    </div>
-                  </a>
-                  <a
-                    href="#cloud-franchise"
-                    onClick={(e) => handleLinkClick(e, '#cloud-franchise')}
-                    className="flex items-center gap-2.5 p-2 rounded-xl bg-white border border-slate-200 shadow-xs"
-                  >
-                    <IconRenderer name="Globe" className="w-4 h-4 text-primary-600 shrink-0" />
-                    <div>
-                      <div className="text-xs font-bold text-slate-900">Cloud Franchise Portal</div>
-                      <div className="text-[10px] text-slate-500">Multi-branch SaaS & call center routing</div>
-                    </div>
-                  </a>
-                </div>
+                </li>
 
-                {/* Primary Site Sections */}
-                <div className="space-y-1">
-                  {navbar.links.map((link) => {
-                    const isActive = activeSection === link.href;
+                {navbar.links.map((link: NavLink) => {
+                  const hasSubLinks = Boolean(link.subLinks && link.subLinks.length > 0);
+                  const isCurrent = activeHref === link.href;
+
+                  if (hasSubLinks && (navLayout === 'wide' || navLayout === 'measuring')) {
                     return (
-                      <a
+                      <li
                         key={link.href}
+                        onMouseEnter={openSubmenuOnHover}
+                        onMouseLeave={scheduleCloseSubmenu}
+                      >
+                        <button
+                          ref={triggerRef}
+                          type="button"
+                          popovertarget={SUBMENU_ID}
+                          className="site-nav-dropdown-trigger"
+                          aria-expanded={submenuOpen}
+                          aria-haspopup="true"
+                        >
+                          <span>{link.label}</span>
+                          <IconRenderer name="ChevronDown" size={15} aria-hidden="true" />
+                        </button>
+
+                        <div
+                          ref={submenuRef}
+                          id={SUBMENU_ID}
+                          popover="auto"
+                          className="products-submenu-popover"
+                          onMouseEnter={openSubmenuOnHover}
+                          onMouseLeave={scheduleCloseSubmenu}
+                        >
+                          {link.subLinks!.map((sub) => (
+                            <a
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={closeMenus}
+                              className="submenu-item-link"
+                            >
+                              <span className="icon-tile">
+                                <IconRenderer
+                                  name={sub.icon || 'Layers'}
+                                  size={18}
+                                  aria-hidden="true"
+                                />
+                              </span>
+                              <span>
+                                <span className="submenu-item-title-row">
+                                  <span>{sub.label}</span>
+                                  {sub.badge ? (
+                                    <span className="submenu-item-badge">{sub.badge}</span>
+                                  ) : null}
+                                </span>
+                                {sub.description ? (
+                                  <span className="submenu-item-desc">{sub.description}</span>
+                                ) : null}
+                              </span>
+                            </a>
+                          ))}
+                        </div>
+                      </li>
+                    );
+                  }
+
+                  if (hasSubLinks) {
+                    return (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          onClick={closeMenus}
+                          className={`site-nav-link ${isCurrent ? 'target-current' : ''}`.trim()}
+                          aria-current={isCurrent ? 'location' : undefined}
+                        >
+                          <span>{link.label}</span>
+                        </a>
+                        <ul className="mobile-submenu-list">
+                          {link.subLinks!.map((sub) => (
+                            <li key={sub.href}>
+                              <a href={sub.href} onClick={closeMenus} className="site-nav-link">
+                                <span>{sub.label}</span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    );
+                  }
+
+                  return (
+                    <li key={link.href}>
+                      <a
                         href={link.href}
-                        onClick={(e) => handleLinkClick(e, link.href)}
-                        className={cn(
-                          'flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-colors',
-                          isActive
-                            ? 'bg-primary-50 text-primary-600'
-                            : 'text-slate-800 hover:bg-slate-100',
-                        )}
+                        onClick={closeMenus}
+                        className={`site-nav-link ${isCurrent ? 'target-current' : ''}`.trim()}
+                        aria-current={isCurrent ? 'location' : undefined}
                       >
                         <span>{link.label}</span>
-                        <IconRenderer name="ChevronRight" className="w-4 h-4 text-slate-400" />
                       </a>
-                    );
-                  })}
-                </div>
+                    </li>
+                  );
+                })}
 
-                {/* CTAs */}
-                <div className="pt-2 space-y-2">
-                  <a
-                    href={navbar.whatsappButton.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold text-emerald-800 bg-emerald-50 border border-emerald-300"
-                  >
-                    <IconRenderer name={navbar.whatsappButton.icon} className="w-4 h-4 text-emerald-600" />
-                    <span>{navbar.whatsappButton.label} ({contact.phone.display})</span>
-                  </a>
+                <li>
+                  <div className="nav-cta-group">
+                    <a
+                      href={navbar.whatsappButton.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={closeMenus}
+                      className="btn btn-whatsapp nav-cta-btn"
+                    >
+                      <IconRenderer
+                        name={navbar.whatsappButton.icon}
+                        size={16}
+                        aria-hidden="true"
+                      />
+                      <span>{navbar.whatsappButton.label}</span>
+                    </a>
 
-                  <a
-                    href={navbar.ctaButton.href}
-                    onClick={(e) => handleLinkClick(e, navbar.ctaButton.href)}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md"
-                  >
-                    <span>{navbar.ctaButton.label}</span>
-                    <IconRenderer name="ArrowRight" className="w-4 h-4" />
-                  </a>
-                </div>
-
-                {/* Quick Info */}
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-2 mt-3">
-                  <div className="font-bold text-slate-900">{brand.legalName}</div>
-                  <div className="flex items-center gap-2">
-                    <IconRenderer name="PhoneCall" className="w-3.5 h-3.5 text-accent-500" />
-                    <span>{contact.phone.display}</span>
+                    <a
+                      href={navbar.ctaButton.href}
+                      onClick={closeMenus}
+                      className="btn btn-primary nav-cta-btn"
+                    >
+                      <span>{navbar.ctaButton.label}</span>
+                      <IconRenderer
+                        name={navbar.ctaButton.icon || 'ArrowRight'}
+                        size={16}
+                        aria-hidden="true"
+                      />
+                    </a>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <IconRenderer name="Mail" className="w-3.5 h-3.5 text-primary-500" />
-                    <span>{contact.email.display}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <IconRenderer name="MapPin" className="w-3.5 h-3.5 text-slate-400" />
-                    <span>{contact.address.formatted}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </li>
+              </ul>
+            </nav>
           </div>
-        )}
-      </nav>
-    </header>
+
+          <div ref={progressRef} className="scroll-progress-bar" aria-hidden="true" />
+        </div>
+      </header>
+    </>
   );
 };
 

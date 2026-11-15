@@ -1,118 +1,116 @@
 import React from 'react';
-import type { BrandData, CompanyContact, FooterData } from '../../types/content';
+import type {
+  BrandData,
+  CompanyContact,
+  FooterData,
+  SiteUiLabels,
+} from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
+import { resolveAssetUrl } from '../../utils/assets';
 
 interface FooterProps {
   brand: BrandData;
   contact: CompanyContact;
   footer: FooterData;
+  ui: SiteUiLabels['footer'];
 }
 
-export const Footer: React.FC<FooterProps> = ({ brand, contact, footer }) => {
+export const Footer: React.FC<FooterProps> = ({
+  brand,
+  contact,
+  footer,
+  ui,
+}) => {
   const currentYear = new Date().getFullYear();
-  const copyrightText = footer.copyright.replace('{year}', currentYear.toString());
-
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.replace('#', '');
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
+  const copyrightText = footer.copyright.replace('{year}', String(currentYear));
 
   return (
-    <footer className="w-full bg-slate-950 text-slate-300 border-t border-slate-800 pt-16 pb-12 transition-colors">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
-          {/* Brand Info & Legal Name */}
-          <div className="lg:col-span-2 flex flex-col items-start pr-0 lg:pr-8">
-            <a
-              href="#"
-              className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 rounded-lg p-1 transition-opacity hover:opacity-90"
-              aria-label={brand.name}
-            >
+    <footer className="site-footer">
+      <div className="mwg-container">
+        <div className="footer-grid">
+          <div>
+            <a href="#" className="brand-link" aria-label={brand.name}>
               <img
-                src={brand.logo}
+                src={resolveAssetUrl(brand.logo)}
                 alt={brand.name}
-                className="h-10 sm:h-12 w-auto max-w-[220px] object-contain brightness-105"
+                width={1024}
+                height={448}
+                loading="lazy"
+                decoding="async"
+                className="footer-brand-logo"
               />
             </a>
 
-            <div className="mt-3 text-xs font-semibold uppercase tracking-wider text-accent-400">
+            <p className="mwg-card-title" style={{ marginBlockStart: '0.85rem' }}>
               {brand.legalName}
-            </div>
-
-            <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-sm">
+            </p>
+            <p style={{ marginBlockStart: '0.65rem', maxInlineSize: '36ch', fontSize: '0.9rem' }}>
               {footer.description}
             </p>
 
-            {/* Direct Contact Snapshot */}
-            <div className="mt-6 space-y-2 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <IconRenderer name="PhoneCall" className="w-3.5 h-3.5 text-accent-400" />
-                <a href={contact.phone.href} className="hover:text-white transition-colors">
-                  {contact.phone.display}
+            <h2 className="visually-hidden">{ui.contactHeading}</h2>
+            <ul className="footer-link-list">
+              <li>
+                <a href={contact.phone.href} className="footer-link">
+                  <IconRenderer name={contact.phone.icon} size={15} aria-hidden="true" />
+                  <span>{contact.phone.display}</span>
                 </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <IconRenderer name="Mail" className="w-3.5 h-3.5 text-primary-400" />
-                <a href={contact.email.href} className="hover:text-white transition-colors">
-                  {contact.email.display}
+              </li>
+              <li>
+                <a href={contact.email.href} className="footer-link">
+                  <IconRenderer name={contact.email.icon} size={15} aria-hidden="true" />
+                  <span>{contact.email.display}</span>
                 </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <IconRenderer name="MapPin" className="w-3.5 h-3.5 text-slate-500" />
-                <span>{contact.address.formatted}</span>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="mt-6 flex items-center gap-2.5">
-              {footer.socials.map((social) => (
+              </li>
+              <li>
                 <a
-                  key={social.platform}
-                  href={social.url}
+                  href={contact.address.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-                  aria-label={social.platform}
+                  className="footer-link"
                 >
-                  <IconRenderer name={social.icon} className="w-4 h-4" />
+                  <IconRenderer name={contact.address.icon} size={15} aria-hidden="true" />
+                  <span>{contact.address.formatted}</span>
                 </a>
+              </li>
+            </ul>
+
+            <ul className="footer-social-list">
+              {footer.socials.map((social) => (
+                <li key={social.platform}>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.platform}
+                    className="footer-social-link"
+                  >
+                    <IconRenderer name={social.icon} size={17} aria-hidden="true" />
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Link Groups */}
           {footer.linkGroups.map((group, gIdx) => (
-            <div key={gIdx} className="flex flex-col">
-              <h4 className="font-heading font-bold text-sm text-white tracking-wide uppercase">
-                {group.title}
-              </h4>
-              <ul className="mt-4 space-y-2.5">
+            <nav key={gIdx} aria-label={`${group.title} — ${ui.legalNavLabel}`}>
+              <h2 className="mwg-card-title">{group.title}</h2>
+              <ul className="footer-link-list">
                 {group.links.map((link, lIdx) => (
                   <li key={lIdx}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleSmoothScroll(e, link.href)}
-                      className="text-sm text-slate-400 hover:text-white hover:translate-x-1 transition-all inline-block focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary-600 rounded"
-                    >
+                    <a href={link.href} className="footer-link">
                       {link.label}
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ))}
         </div>
 
-        {/* Bottom Bar: Copyright & Legal Disclaimer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="footer-bottom">
           <p>{copyrightText}</p>
-          <p className="text-center sm:text-right">{footer.disclaimer}</p>
+          <p>{footer.disclaimer}</p>
         </div>
       </div>
     </footer>

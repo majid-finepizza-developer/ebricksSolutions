@@ -1,17 +1,16 @@
 {
   "meta": {
-    "title": "EBRICKS SOLUTIONS | Fast POS & Cloud Multi-Branch Management Systems | Lahore, Pakistan",
-    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED builds high-speed Fast POS counter software for restaurants & retail, centralized Cloud Multi-Branch Franchise SaaS portals, and custom digital software solutions in Lahore, Pakistan.",
+    "title": "EBRICKS SOLUTIONS | Restaurant Management System, Offline Fast POS & Software Agency | Lahore, Pakistan",
+    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED engineers two standalone flagship products — a 5-in-1 Full-Fledged Restaurant Management System and 100% Offline Fast POS Desktop Software — plus custom web, mobile, and digital growth services in Lahore, Pakistan.",
     "keywords": [
-      "Fast POS software Pakistan",
-      "restaurant POS system Lahore",
-      "supermarket POS software",
-      "cloud multi-branch management SaaS",
-      "franchise management software",
-      "call center order management system",
-      "software house Lahore",
-      "eBricks Solutions Model Town Lahore",
-      "desktop retail billing software"
+      "Restaurant Management System Pakistan",
+      "5-in-1 Restaurant Ordering Website POS Call Center",
+      "Fast POS Offline Desktop Software",
+      "Standalone Offline Retail POS Pakistan",
+      "Single PC POS Software Zero Monthly Fee",
+      "Delivery Rider & Call Center Order System",
+      "Software House Model Town Lahore",
+      "Custom Web & Mobile App Development Lahore"
     ],
     "ogImage": "/images/ebricks-logo.png",
     "language": "en"
@@ -36,7 +35,7 @@
       "label": "WhatsApp Live Demo",
       "value": "03154112925",
       "display": "+92 315 4112925",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20see%20a%20live%20demo%20of%20Fast%20POS%20and%20the%20Cloud%20Multi-Branch%20Portal.",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20book%20a%20live%20demo%20or%20discuss%20a%20software%20project.",
       "icon": "MessageSquare"
     },
     "email": {
@@ -63,8 +62,8 @@
   "topBar": {
     "enabled": true,
     "announcement": {
-      "badge": "Live Demos Available in Lahore",
-      "text": "Experience Fast POS and Cloud Multi-Branch Management live at Model Town Link Road."
+      "badge": "Two Standalone Platforms + Custom Software Agency",
+      "text": ""
     }
   },
   "navbar": {
@@ -75,18 +74,18 @@
         "badge": "Flagship",
         "subLinks": [
           {
-            "label": "Fast POS System",
-            "href": "#fast-pos",
-            "description": "Offline counter register, dine-in tables, rider dispatch & 7-pillar shift accounting",
-            "badge": "Offline-First",
-            "icon": "Monitor"
+            "label": "Restaurant Management System",
+            "href": "#restaurant-system",
+            "description": "5-in-1 connected ecosystem: Website, In-Store POS, Call Center, Inventory & Riders",
+            "badge": "Product #1",
+            "icon": "Utensils"
           },
           {
-            "label": "Cloud Franchise Portal",
-            "href": "#cloud-franchise",
-            "description": "Central multi-branch SaaS, call center routing, roles & consolidated P&L",
-            "badge": "Multi-Branch",
-            "icon": "Globe"
+            "label": "Fast POS (Offline Desktop)",
+            "href": "#fast-pos",
+            "description": "100% standalone single-PC desktop POS — zero internet & zero monthly hosting fees",
+            "badge": "Product #2",
+            "icon": "Monitor"
           }
         ]
       },
@@ -97,322 +96,357 @@
       { "label": "Contact", "href": "#contact" }
     ],
     "ctaButton": {
-      "label": "Book Live Demo",
+      "label": "Request Live Demo",
       "href": "#contact",
       "icon": "ArrowRight"
     },
     "whatsappButton": {
       "label": "WhatsApp Demo",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20am%20interested%20in%20a%20live%20demo%20of%20your%20POS%20and%20Cloud%20systems.",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20information%20about%20your%20Restaurant%20System%2C%20Fast%20POS%2C%20or%20agency%20services.",
       "icon": "MessageSquare"
     }
   },
   "hero": {
-    "badge": {
-      "text": "Flagship Enterprise Products • Built by EBRICKS SOLUTIONS Lahore",
-      "icon": "Sparkles"
-    },
     "headline": {
-      "prefix": "Transform Counter & Multi-Branch Operations with",
-      "highlight": "Fast POS & Cloud Franchise",
-      "suffix": "Management Systems."
+      "prefix": "Two Standalone Platforms &",
+      "highlight": "Custom Software",
+      "suffix": "Engineered for Business Growth."
     },
-    "subheadline": "Stop struggling with slow billing, stock shrinkage, and blind multi-branch management. Fast POS powers lightning-fast counter checkout and deep 7-pillar financial auditing on your front line, while our Cloud Franchise Portal lets you manage branches, menus, staff roles, and centralized call center orders from anywhere.",
+    "subheadline": "EBRICKS SOLUTIONS is a Lahore-based software house delivering two completely separate flagship products — our 5-in-1 Full-Fledged Restaurant Management System and our 100% Offline Fast POS Desktop Software — alongside custom web, mobile, e-commerce, and digital marketing solutions.",
     "primaryCta": {
-      "label": "Book a 1-on-1 Product Demo",
+      "label": "Request a Live Demo",
       "href": "#contact",
       "icon": "ArrowRight"
     },
     "secondaryCta": {
-      "label": "Chat Directly on WhatsApp (0315-4112925)",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20Fast%20POS%20and%20the%20Cloud%20Portal.",
+      "label": "WhatsApp Directly (0315-4112925)",
+      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20your%20flagship%20products%20or%20custom%20software%20development.",
       "icon": "MessageCircle"
     },
     "trustBadges": [
       {
-        "label": "Ultra-Fast Offline POS Engine",
-        "icon": "Monitor"
+        "label": "5-in-1 Restaurant Ecosystem",
+        "icon": "Utensils"
       },
       {
-        "label": "Central Multi-Branch Cloud",
-        "icon": "Globe"
+        "label": "100% Offline Single-PC POS",
+        "icon": "WifiOff"
       },
       {
-        "label": "Hardware Tested (Printers/Scanners)",
-        "icon": "Cpu"
+        "label": "Web, Mobile & Growth Agency",
+        "icon": "Code2"
       },
       {
-        "label": "Lahore On-Site Setup & Training",
+        "label": "Model Town Lahore Support Team",
         "icon": "MapPin"
       }
     ],
     "stats": [
       {
-        "value": "Under 1s",
-        "label": "Counter Checkout Speed",
-        "description": "Instant keyboard shortcuts & touch grid billing with zero lag"
+        "value": "5-in-1",
+        "label": "Unified Restaurant Ecosystem",
+        "description": "Ordering website, in-store POS, call center, inventory & riders in one hub"
       },
       {
-        "value": "100%",
-        "label": "Offline Billing Reliability",
-        "description": "Never stop ringing sales even when your internet connection drops"
+        "value": "100% Offline",
+        "label": "Zero-Hosting Desktop POS",
+        "description": "Self-contained Fast POS runs locally on a single PC with zero cloud fees"
       },
       {
-        "value": "7 Core",
-        "label": "Financial Questions Answered",
-        "description": "P&L, cash drawer shift reconciliation, stock shrinkage & cancellations audit"
+        "value": "7+",
+        "label": "Core Agency Services",
+        "description": "Custom websites, SaaS web apps, mobile apps, desktop software & digital ads"
       },
       {
-        "value": "50+ Branches",
-        "label": "Centralized Cloud Control",
-        "description": "Real-time consolidated sales, stock transfers & call center order routing"
+        "value": "24/7",
+        "label": "Dedicated Support",
+        "description": "On-site hardware installation, staff training & 60-day priority warranty"
       }
     ],
     "previewProducts": [
       {
-        "id": "fast-pos",
-        "tabLabel": "1. Fast POS Counter & Touch Terminal",
-        "name": "Fast POS: Counter Register & Shift Accounting",
-        "badge": "Offline-First Desktop Terminal",
-        "tagline": "Built for Restaurants, Supermarkets, Bakeries & Retail Outlets.",
-        "image": "/images/products/pos-billing-register.jpg",
+        "id": "restaurant-system",
+        "badge": "Product #1 · Restaurant Ecosystem",
+        "name": "Full-Fledged Restaurant Management System",
+        "tagline": "Every online, dine-in, takeaway, call center & delivery rider order unified in one platform.",
+        "image": "/images/products/cloud-branch-admin.jpg",
+        "width": 1024,
+        "height": 542,
+        "href": "#restaurant-system",
+        "ctaLabel": "View Product #1",
         "keyPoints": [
-          "Touch Product Grid with deals, combos & picture catalog",
-          "Dedicated Hotkeys (F1 Cash, F2 Online, F3 Search, F4 Scan, F8 Cart, F10 Tender)",
-          "Order Types: Dine-In with table map, Takeaway, and Rider Delivery dispatch",
-          "Shift-by-shift Cash Drawer Reconciliation & End-of-Day Z-Report"
+          "Customer Website, In-Store POS & Call Center Portal feed one central queue",
+          "Real-time recipe/ingredient inventory & delivery rider dispatch management",
+          "Built specifically for connected multi-channel food brands & restaurants"
         ]
       },
       {
-        "id": "cloud-franchise",
-        "tabLabel": "2. Cloud Multi-Branch & Franchise SaaS",
-        "name": "Cloud Multi-Branch, Franchise & Call Center Portal",
-        "badge": "Centralized Web Management",
-        "tagline": "Run 1 to 50+ branches, central call centers, and franchise royalties from a single login.",
-        "image": "/images/products/cloud-branch-admin.jpg",
+        "id": "fast-pos",
+        "badge": "Product #2 · Offline Desktop POS",
+        "name": "Fast POS (Standalone Offline PC System)",
+        "tagline": "Runs 100% locally on one computer — zero internet required, zero monthly hosting fees.",
+        "image": "/images/products/pos-billing-register.jpg",
+        "width": 1024,
+        "height": 614,
+        "href": "#fast-pos",
+        "ctaLabel": "View Product #2",
         "keyPoints": [
-          "Centralized Call Center Order routing to nearest branch or kitchen",
-          "Granular Role Management (Admin, Branch Head, Manager, Agent, Rider)",
-          "Live Multi-Branch Sales Dashboard and Branch Revenue Comparison",
-          "Central Warehouse stock transfers, audit logs & inventory tracking"
+          "Works completely offline on a single Windows PC with zero server dependency",
+          "Barcode checkout, thermal slip printing, local stock, khata & expenses",
+          "Daily store sales & profit reports inside one self-contained installation"
         ]
       }
     ]
   },
   "flagshipProducts": {
-    "badge": "Proprietary Software Systems",
-    "heading": "Two Powerful Platforms Built to Modernize",
-    "highlightedWord": "Every Level of Your Business",
-    "subheading": "Whether you manage a single busy counter or a growing chain of 20+ franchise outlets, our software duo handles the front-counter hustle and back-office control seamlessly.",
+    "heading": "Two Independent Flagship Platforms Built for",
+    "highlightedWord": "Distinct Operations",
+    "subheading": "We offer two completely separate, standalone products built for different business models: choose our all-in-one connected Restaurant Management System or our 100% offline, zero-hosting-fee Fast POS desktop software.",
     "products": [
       {
-        "id": "fast-pos",
-        "name": "Fast POS — High-Speed Point of Sale & Shift Accounting System",
-        "category": "Front-Counter & Restaurant Operations",
-        "badge": "Hero Product #1",
-        "tagline": "Lightning-Fast Billing, Table Tracking & Deep Financial Control for Retail & Restaurants.",
-        "summary": "Fast POS is engineered for high-volume retail counters, supermarkets, bakeries, cafes, and family restaurants. Designed to eliminate checkout queues, prevent cashier leakage, and answer every critical financial question with complete audit trails.",
-        "primaryImage": "/images/products/pos-billing-register.jpg",
-        "screenshots": [
-          {
-            "title": "Visual Touch Register Screen",
-            "caption": "Fast order assembly with food thumbnails, categories (Deals, Drinks, Pizza, Turkish), keyboard shortcuts, and instant Cash/Online tender buttons.",
-            "image": "/images/products/pos-billing-register.jpg",
-            "badge": "Counter Register"
-          },
-          {
-            "title": "7-Pillar Financial & Report Center",
-            "caption": "Executive KPI overview answering: How much did we sell? Are we making money? Where is the cash? What is our stock worth? Who owes us? What went wrong?",
-            "image": "/images/products/pos-financial-reports.jpg",
-            "badge": "Financial Intelligence"
-          },
-          {
-            "title": "Live Orders, Dine-In & Delivery Dispatch",
-            "caption": "Unified order management with table numbers, customer telephone recall, credit accounts, order timelines, and delivery rider assignment.",
-            "image": "/images/products/pos-orders-dinein.jpg",
-            "badge": "Kitchen & Orders"
-          }
-        ],
-        "highlights": [
-          "Works 100% Offline with zero internet dependency during rush hours",
-          "Instant thermal slip printing (58mm/80mm) with customizable logo and tax receipts",
-          "Automatic cash drawer kick and digital weighing scale hardware integration",
-          "End-of-day shift closing with blind cashier reconciliation (prevents under-reporting)",
-          "Complete cancellation and item void trail with supervisor password protection"
-        ],
-        "features": [
-          {
-            "title": "Visual Touch Register & Speed Billing",
-            "description": "Color-coded category tabs, deal combos, customer phone lookup, and one-key cash tenders (PKR 100, 500, 1000, 5000) for sub-second checkout.",
-            "icon": "Monitor"
-          },
-          {
-            "title": "Dine-In, Takeaway & Rider Delivery",
-            "description": "Manage table status, waiter orders, kitchen KOT printouts, customer addresses, and track dispatched delivery riders in real time.",
-            "icon": "Smartphone"
-          },
-          {
-            "title": "Cash Drawer Reconciliation & Z-Reports",
-            "description": "Track opening cash balance, cash sales, digital card/online tenders, petty cash expenses, and exact closing balance with zero guesswork.",
-            "icon": "Layers"
-          },
-          {
-            "title": "Live Inventory & Recipe Spoilage Control",
-            "description": "Raw material deductions on every burger or pizza sold, low-stock warnings, purchase bills ledger, and supplier payment aging.",
-            "icon": "ShoppingBag"
-          }
-        ],
-        "reportQuestions": [
-          {
-            "question": "1. How much did we sell and what is trending?",
-            "description": "Executive KPI overview, daily performance ledger, product velocity, and fast-moving menu item rankings.",
-            "icon": "TrendingUp"
-          },
-          {
-            "question": "2. Are we making money?",
-            "description": "True Profit & Loss (P&L) statement, gross margins, product profitability, and category-level cost breakdown.",
-            "icon": "BarChart3"
-          },
-          {
-            "question": "3. Where is the cash?",
-            "description": "Cash drawer shift reconciliation, daily Z-report, direct cash flow ledger, and online tender splits.",
-            "icon": "Layers"
-          },
-          {
-            "question": "4. What is our stock worth and what are we losing?",
-            "description": "Inventory valuation, shrinkage & spoilage loss calculation, unit counts, and automated reorder alerts.",
-            "icon": "ShoppingBag"
-          },
-          {
-            "question": "5. Who owes us and whom do we owe?",
-            "description": "Customer Account Receivables (A/R) aging schedule and Supplier Accounts Payable (A/P) bill ledgers.",
-            "icon": "ShieldCheck"
-          },
-          {
-            "question": "6. What went wrong? (Audit & Security)",
-            "description": "Order cancellations audit, credit notes register, item returns, and supervisor void history trail.",
-            "icon": "Clock"
-          },
-          {
-            "question": "7. Expenses & Sales Tax Audit",
-            "description": "Categorized operational expenses, petty cash vouchers, and sales tax compliance (FBR / PRA ready).",
-            "icon": "Award"
-          }
-        ],
-        "hardwareSupport": [
-          "58mm & 80mm Thermal Receipt Printers (USB, LAN, Bluetooth)",
-          "1D & 2D Barcode Scanners (Handheld & Omnidirectional)",
-          "Electronic Weight Scales (for delis, meat & supermarkets)",
-          "Automatic RJ11 / USB Cash Drawers",
-          "Customer-Facing Dual Displays & Touch Terminals"
-        ],
-        "cta": {
-          "label": "Schedule In-Person Fast POS Demo",
-          "href": "#contact"
-        }
-      },
-      {
-        "id": "cloud-franchise",
-        "name": "Cloud Multi-Branch & Franchise Management SaaS Portal",
-        "category": "Head Office & Centralized Chain Governance",
-        "badge": "Hero Product #2",
-        "tagline": "Connect All Branches, Central Call Center Orders & Staff Roles in One Web Dashboard.",
-        "summary": "The master web application built for restaurant owners, multi-branch retail directors, and franchise operators. Oversee all branch revenues, manage call center order distribution, control role permissions, and sync stock across all locations in real-time.",
+        "id": "restaurant-system",
+        "productNumber": "Flagship Product #1 · End-to-End Restaurant Ecosystem",
+        "name": "Full-Fledged Restaurant Management System",
+        "category": "All-in-One Connected Restaurant Ecosystem",
+        "tagline": "Unite Website Orders, In-Store Dine-In/Takeaway POS, Call Center Desk, Inventory & Riders in One Hub.",
+        "summary": "An all-in-one, end-to-end connected restaurant ecosystem engineered so every multi-channel order lands in one unified central system — eliminating missed tickets, third-party commission leakage, and manual end-of-day reconciliation.",
+        "inquiryOption": "Full-Fledged Restaurant Management System (Web + POS + Call Center + Inventory + Rider)",
         "primaryImage": "/images/products/cloud-branch-admin.jpg",
         "screenshots": [
           {
-            "title": "Centralized User & Role Management",
-            "caption": "Granular role configuration: System Administrator, Branch Head, Restaurant Manager, Call Center Agent, Rider, and Customer permissions.",
+            "title": "Unified Command Hub & Role Control",
+            "caption": "Central operations cockpit managing online website menus, call center permissions, branch settings, and live order traffic.",
             "image": "/images/products/cloud-branch-admin.jpg",
-            "badge": "Enterprise Roles"
+            "width": 1024,
+            "height": 542
+          },
+          {
+            "title": "Dine-In, Takeaway & Rider Queue",
+            "caption": "Real-time restaurant order board unifying table seating, telephone bookings, kitchen tickets, and rider assignment in one view.",
+            "image": "/images/products/pos-orders-dinein.jpg",
+            "width": 1024,
+            "height": 543
           }
         ],
         "highlights": [
-          "Accessible from any web browser on laptop, iPad, or mobile phone with 2FA security",
-          "Central Call Center module: agents book orders and auto-dispatch to the nearest branch",
-          "Centralized menu & pricing control: update deals and prices across all branches in one click",
-          "Multi-branch inventory transfers: track stock sent from central kitchen to branches",
-          "Live comparative analytics: see which branch is leading in sales and profitability"
+          "Zero missed orders: website, in-store counter, and phone desk land in one live central queue",
+          "Automatic recipe & ingredient stock deductions whenever any channel confirms a sale",
+          "Eliminate heavy aggregator commissions with your own branded digital storefront",
+          "Live kitchen ticket routing (KOT) across grill, beverage, and packaging stations",
+          "End-to-end visibility from customer click or phone call through rider cash settlement"
+        ],
+        "ecosystemFlow": [
+          {
+            "label": "3 Order Channels",
+            "items": ["Ordering Website", "In-Store POS", "Call Center Portal"],
+            "role": "input"
+          },
+          {
+            "label": "Central Restaurant System",
+            "items": ["Unified Order Queue & Kitchen Control"],
+            "role": "hub"
+          },
+          {
+            "label": "Automated Fulfillment",
+            "items": ["Integrated Inventory", "Delivery Rider Dispatch"],
+            "role": "output"
+          }
         ],
         "features": [
           {
-            "title": "Central Call Center Order Routing",
-            "description": "Customers call your central number; your phone agents enter the order and the system automatically sends the kitchen KOT to the nearest branch for delivery.",
+            "number": "01",
+            "title": "Customer Ordering Website",
+            "badge": "Web Storefront",
+            "description": "Branded web storefront where customers browse your digital menu, customize deals & add-ons, and place direct online orders straight into your kitchen queue.",
+            "highlights": [
+              "Mobile-first digital menu & combos",
+              "Direct online delivery & pickup checkout"
+            ],
+            "icon": "Globe"
+          },
+          {
+            "number": "02",
+            "title": "In-Store Restaurant POS",
+            "badge": "Dine-In & Takeaway",
+            "description": "Fast counter and table-management POS built specifically for handling dine-in guests, split bills, kitchen KOT slips, and high-rush takeaway orders.",
+            "highlights": [
+              "Live floor plan & table statuses",
+              "Instant kitchen KOT & takeaway slips"
+            ],
+            "icon": "Monitor"
+          },
+          {
+            "number": "03",
+            "title": "Call Center Order Portal",
+            "badge": "Telephone Desk",
+            "description": "Dedicated web portal enabling telephone agents to answer incoming calls, recall saved customer addresses instantly, and push phone orders straight to the kitchen queue.",
+            "highlights": [
+              "Caller phone lookup & order history",
+              "Zero-delay kitchen order injection"
+            ],
             "icon": "PhoneCall"
           },
           {
-            "title": "Granular Roles & Permission Control",
-            "description": "Control exactly what each employee can see. Branch heads cannot see owner profit margins, and cashiers cannot access administrative settings.",
-            "icon": "ShieldCheck"
+            "number": "04",
+            "title": "Integrated Inventory Management",
+            "badge": "Stock & Recipes",
+            "description": "Real-time ingredient and recipe consumption synced automatically across website, dine-in, takeaway, and call-center orders with low-stock alerts.",
+            "highlights": [
+              "Bill-of-materials recipe deductions",
+              "Supplier purchases & spoilage tracking"
+            ],
+            "icon": "Layers"
           },
           {
-            "title": "Real-Time Branch Revenue Telemetry",
-            "description": "Live sales ticker comparing revenue across all branches and franchises with hourly velocity charts and tender breakdowns.",
-            "icon": "TrendingUp"
-          },
-          {
-            "title": "Franchise Royalty & Central Warehouse",
-            "description": "Manage raw material dispatches from the central prep kitchen, calculate franchise royalties, and maintain standardized recipes across all outlets.",
-            "icon": "Globe"
+            "number": "05",
+            "title": "Delivery Rider System",
+            "badge": "Fleet Dispatch",
+            "description": "Linked dispatch and rider management module to assign riders, track order handoff and delivery statuses, and reconcile rider cash-on-delivery settlements.",
+            "highlights": [
+              "One-click order-to-rider assignment",
+              "Live status & COD cash settlement"
+            ],
+            "icon": "Truck"
           }
         ],
         "cta": {
-          "label": "Request Cloud Franchise Portal Demo",
+          "label": "Request Live Demo",
+          "href": "#contact"
+        },
+        "secondaryCta": {
+          "label": "Explore Modules",
+          "href": "#restaurant-modules"
+        }
+      },
+      {
+        "id": "fast-pos",
+        "productNumber": "Flagship Product #2 · 100% Standalone Offline Desktop System",
+        "name": "Fast POS — Standalone Offline Desktop POS",
+        "category": "Single-PC Offline Retail & Counter Software",
+        "tagline": "100% Local Point of Sale Software — Zero Internet Dependency, Zero Monthly Cloud or Hosting Fees.",
+        "summary": "Fast POS is a 100% offline, single-PC desktop Point of Sale engineered specifically for retail shops and counter businesses that lack reliable internet or want zero recurring cloud or server costs. One self-contained Windows installation handles every daily store task locally.",
+        "inquiryOption": "Fast POS (100% Offline Standalone Desktop System)",
+        "primaryImage": "/images/products/pos-billing-register.jpg",
+        "screenshots": [
+          {
+            "title": "Fast Local Barcode & Touch Billing Screen",
+            "caption": "Self-contained single-PC billing register with barcode scanning, quick product buttons, keyboard hotkeys, customer khata credit, and instant receipt printing.",
+            "image": "/images/products/pos-billing-register.jpg",
+            "width": 1024,
+            "height": 614
+          },
+          {
+            "title": "Local Daily Profit, Sales & Expense Reports",
+            "caption": "Complete financial reporting stored 100% locally on your store computer — daily sales summaries, item profit margins, stock valuation, and shift cash reports.",
+            "image": "/images/products/pos-financial-reports.jpg",
+            "width": 1024,
+            "height": 617
+          }
+        ],
+        "highlights": [
+          "100% offline architecture runs completely inside one computer with zero internet needed",
+          "Zero recurring monthly fees — no hosting bills, no remote servers, no subscription lock-in",
+          "Sub-second barcode scanning & keyboard-hotkey checkout eliminate store counter queues",
+          "Built-in customer credit (Khata), supplier payables ledger & daily expense tracking",
+          "Instant local daily backup support to USB drive with 100% store owner database control"
+        ],
+        "features": [
+          {
+            "number": "01",
+            "title": "Zero Internet Dependency",
+            "badge": "100% Offline",
+            "description": "Runs 100% locally on a single computer — barcode billing, local stock adjustments, receipt printing, and shift reports never slow down or stop when Wi-Fi disconnects.",
+            "highlights": [
+              "Self-contained local database engine",
+              "Uninterrupted counter speed all day"
+            ],
+            "icon": "WifiOff"
+          },
+          {
+            "number": "02",
+            "title": "Zero Monthly Hosting or Cloud Fees",
+            "badge": "Zero Recurring Cost",
+            "description": "One standalone desktop installation directly on your shop computer — no cloud server hosting, no ongoing monthly SaaS fees, and no external server maintenance.",
+            "highlights": [
+              "No server hosting or subscription fees",
+              "100% on-PC local data ownership"
+            ],
+            "icon": "ShieldCheck"
+          },
+          {
+            "number": "03",
+            "title": "All-in-One Counter Operations",
+            "badge": "Complete Store Control",
+            "description": "Handles fast barcode billing, local stock management, 58mm/80mm thermal receipt printing, customer credit/khata, daily expenses, and local profit/sales reports in one unified app.",
+            "highlights": [
+              "Barcode billing, stock & thermal slips",
+              "Khata credit, expenses & daily profit"
+            ],
+            "icon": "Monitor"
+          }
+        ],
+        "hardwareSupport": [
+          "58mm & 80mm Thermal Receipt Printers (USB / LAN)",
+          "1D & 2D Handheld or Omnidirectional Barcode Scanners",
+          "Electronic Weighing Scales (Grocery, Bakery & General Stores)",
+          "Automatic RJ11 / USB Cash Drawers & Windows Counter PCs"
+        ],
+        "idealForBar": {
+          "label": "Ideal For Businesses Seeking Zero Recurring Hosting Costs",
+          "note": "One standalone Windows PC • Complete offline privacy • Zero monthly cloud overhead",
+          "items": [
+            "Retail Shops",
+            "General Stores",
+            "Pharmacies",
+            "Bakeries",
+            "Hardware Stores",
+            "Single-Counter Businesses"
+          ]
+        },
+        "cta": {
+          "label": "Request Fast POS Demo",
           "href": "#contact"
         }
       }
     ]
   },
   "techStack": {
-    "badge": "Modern Engineering Standards",
-    "heading": "Technologies Powering Our Platforms & Client Systems",
-    "subheading": "We build with resilient, high-speed technologies that guarantee zero-lag counter transactions and scalable cloud management.",
+    "heading": "Technologies Powering Both Products & Custom Builds",
+    "subheading": "Modern web architectures power our 5-in-1 Restaurant Management System and agency apps, while native desktop engines power offline Fast POS terminals.",
     "technologies": [
-      { "name": "React & Next.js", "category": "Cloud Web Portals", "icon": "Code2" },
-      { "name": "Electron & C# .NET", "category": "Desktop POS Engine", "icon": "Monitor" },
-      { "name": "Node.js & Express", "category": "High-Concurrency APIs", "icon": "Cpu" },
-      { "name": "Flutter & Mobile", "category": "Manager & Rider Apps", "icon": "Smartphone" },
-      { "name": "PostgreSQL & SQLite", "category": "Offline & Cloud Sync DB", "icon": "Layers" },
-      { "name": "Thermal ESC/POS", "category": "Hardware Printer Driver", "icon": "Award" },
-      { "name": "Shopify & Liquid", "category": "E-Commerce Stores", "icon": "ShoppingBag" },
-      { "name": "WordPress & WooCommerce", "category": "Content & Shopping", "icon": "Layout" },
-      { "name": "Python & Django", "category": "Analytics & AI Logic", "icon": "Laptop" },
-      { "name": "Tailwind CSS", "category": "Fluid Responsive UI", "icon": "Sparkles" },
-      { "name": "Google Ads & Meta Ads", "category": "Customer Growth", "icon": "TrendingUp" },
-      { "name": "AWS & DigitalOcean", "category": "Cloud Infrastructure", "icon": "ShieldCheck" }
+      { "name": "React & Next.js", "category": "Restaurant Web & SaaS UI", "icon": "Code2" },
+      { "name": "C# .NET & Electron", "category": "Standalone Desktop POS", "icon": "Monitor" },
+      { "name": "SQLite Local Engine", "category": "100% Offline Single-PC DB", "icon": "ShieldCheck" },
+      { "name": "PostgreSQL & Redis", "category": "Restaurant Order Queues", "icon": "Layers" },
+      { "name": "Node.js & Express", "category": "Webhooks & Dispatch APIs", "icon": "Cpu" },
+      { "name": "Thermal ESC/POS", "category": "Printer & Drawer Drivers", "icon": "Award" },
+      { "name": "Flutter & React Native", "category": "iOS, Android & Rider Apps", "icon": "Smartphone" },
+      { "name": "Shopify & Liquid", "category": "Custom Online Stores", "icon": "ShoppingBag" },
+      { "name": "WordPress & WooCommerce", "category": "E-Commerce & CMS Sites", "icon": "Layout" },
+      { "name": "Python & Django", "category": "Custom Analytics & APIs", "icon": "Laptop" },
+      { "name": "Tailwind CSS & HTML5", "category": "Responsive Interfaces", "icon": "Sparkles" },
+      { "name": "Google Ads & Meta Ads", "category": "Growth Campaigns", "icon": "TrendingUp" }
     ]
   },
   "services": {
-    "badge": "Agency Customization & Growth",
-    "heading": "Need Custom Software or High-Growth",
-    "highlightedWord": "Marketing Services?",
-    "subheading": "In addition to our flagship POS and Cloud Management platforms, our engineering team in Lahore builds custom web portals, mobile apps, and executes performance digital marketing campaigns.",
-    "categories": [
-      {
-        "id": "all",
-        "label": "All Services",
-        "description": "Complete breakdown of our custom engineering and marketing solutions."
-      },
-      {
-        "id": "engineering",
-        "label": "Custom Software & Web Engineering",
-        "description": "Tailored mobile apps, custom SaaS portals, desktop tools, and Shopify stores."
-      },
-      {
-        "id": "marketing",
-        "label": "Growth & Digital Marketing",
-        "description": "Proven SEO, high-ROI Google Ads, and social media brand growth."
-      }
-    ],
+    "heading": "Core Software & Digital Growth",
+    "highlightedWord": "Agency Services",
+    "subheading": "In addition to our two ready-to-deploy standalone products above, our engineering and marketing teams build custom client software and growth campaigns tailored to your exact business requirements.",
     "items": [
       {
         "id": "website-development",
         "categoryId": "engineering",
-        "title": "Website Static & Dynamic Development",
-        "tagline": "Fast, Clean & Built for Google Rankings",
-        "summary": "We develop custom websites that load instantly on mobile devices, present your business with world-class design credibility, and rank effectively on Google search results.",
+        "inquiryOption": "Custom Web / Mobile / Desktop Software Development",
+        "title": "Website Development",
+        "tagline": "Fast Static & Dynamic Business Sites",
+        "summary": "Custom business websites engineered cleanly from scratch to load fast on mobile devices, represent your brand credibly, and rank strongly on Google search results.",
         "icon": "Globe",
-        "badge": "Web Development",
+        "badge": "Websites",
+        "highlights": [
+          "90+ Google PageSpeed score",
+          "Built-in technical SEO & schema",
+          "Easy team content dashboard"
+        ],
         "techStack": ["Next.js", "React", "Tailwind CSS", "TypeScript", "Node.js"],
         "deliverables": [
           "Custom-designed responsive layout (no bloated bought templates)",
@@ -422,24 +456,30 @@
           "WhatsApp chat button, lead contact forms, and automated email alerts"
         ],
         "cta": {
-          "label": "Discuss Your Website Project",
+          "label": "Discuss Website Project",
           "href": "#contact"
         }
       },
       {
         "id": "web-app-development",
         "categoryId": "engineering",
+        "inquiryOption": "Custom Web / Mobile / Desktop Software Development",
         "title": "Web App Development",
-        "tagline": "Custom SaaS Platforms & Internal Business Portals",
-        "summary": "Automate manual spreadsheets and paper workflows. We engineer tailor-made cloud applications, staff management portals, client dashboards, and subscription SaaS products.",
+        "tagline": "Custom SaaS & Business Portals",
+        "summary": "Automate manual spreadsheets and paper workflows. We engineer tailor-made cloud applications, internal management portals, client dashboards, and subscription SaaS products.",
         "icon": "Layout",
-        "badge": "SaaS & Systems",
+        "badge": "Web Apps & SaaS",
+        "highlights": [
+          "Role-based access & 2FA security",
+          "Live KPIs, PDF & Excel exports",
+          "100% client-owned source code"
+        ],
         "techStack": ["React", "Node.js", "PostgreSQL", "REST APIs", "AWS"],
         "deliverables": [
           "Role-based staff and customer dashboards with granular permissions",
           "Real-time analytics, downloadable PDF/Excel reports, and business KPIs",
           "Secure user authentication with two-factor verification (2FA)",
-          "Third-party API integrations (Payment gateways, CRMs, WhatsApp APIs)",
+          "Third-party API integrations (payment gateways, CRMs, WhatsApp APIs)",
           "Clean, well-documented source code that your company completely owns"
         ],
         "cta": {
@@ -450,15 +490,21 @@
       {
         "id": "mobile-app-development",
         "categoryId": "engineering",
+        "inquiryOption": "Custom Web / Mobile / Desktop Software Development",
         "title": "Mobile App Development",
-        "tagline": "Intuitive iOS & Android Apps with Native Feel",
-        "summary": "Reach your customers directly on their smartphones. We build smooth, modern mobile apps for both Apple iOS and Android using unified Flutter or React Native codebases that save you time and budget.",
+        "tagline": "Native-Feel iOS & Android Apps",
+        "summary": "Reach your customers directly on their smartphones. We build smooth, modern mobile apps for Apple iOS and Android using unified Flutter or React Native codebases.",
         "icon": "Smartphone",
         "badge": "iOS & Android",
+        "highlights": [
+          "Single codebase for iOS & Android",
+          "Push alerts, GPS & offline storage",
+          "Full Play & App Store publishing"
+        ],
         "techStack": ["Flutter", "React Native", "Firebase", "Node.js", "SQLite"],
         "deliverables": [
           "Single codebase for both Google Play Store and Apple App Store",
-          "Fast performance, smooth animations, and offline-first data caching",
+          "Fast performance, smooth animations, and local data caching",
           "Push notifications for promotions, order updates, and customer retention",
           "In-app payments, biometric fingerprint/FaceID login, and Google Maps GPS",
           "Complete handling of Google Play and Apple App Store review and publishing"
@@ -471,32 +517,44 @@
       {
         "id": "desktop-app-development",
         "categoryId": "engineering",
-        "title": "Desktop App Development (POS & Enterprise)",
-        "tagline": "Fast, Offline-Capable POS & Windows Software",
-        "summary": "Built specifically for retail stores, supermarkets, pharmacies, restaurants, and warehouses. Our desktop Point of Sale (POS) software runs with zero internet dependency and syncs automatically to the cloud.",
+        "inquiryOption": "Custom Web / Mobile / Desktop Software Development",
+        "title": "Desktop App Development",
+        "tagline": "Custom Windows & Enterprise Software",
+        "summary": "Bespoke offline and LAN-based desktop software for factories, warehouses, clinics, distribution hubs, and specialized counter operations requiring direct hardware integration.",
         "icon": "Monitor",
-        "badge": "POS Software",
-        "techStack": ["Electron", "C# .NET", "SQLite", "Node.js", "Thermal Printers"],
+        "badge": "Desktop Apps",
+        "highlights": [
+          "Fast native Windows performance",
+          "Printer, scanner & scale hardware",
+          "Secure local SQLite / LAN databases"
+        ],
+        "techStack": ["Electron", "C# .NET", "SQLite", "Node.js", "Hardware SDKs"],
         "deliverables": [
-          "Full POS software: barcode scanning, fast checkout, and thermal receipt printing",
-          "Cash drawer, barcode weight scale, and dual-customer display hardware support",
-          "Multi-branch inventory tracking, expiry alerts, and batch management",
-          "Daily cash register closing, sales tax (FBR / PRA) compliant invoicing",
-          "Works 100% offline; seamlessly syncs sales and stock once internet connects"
+          "Custom Windows applications tailored to warehouse, factory, or office workflows",
+          "Barcode scanners, thermal printers, and electronic weighing scale integration",
+          "Role permissions, audit logs, and automated local backup scheduling",
+          "Clean installer packages with simple deployment on staff computers",
+          "Dedicated post-launch technical support and warranty from Lahore"
         ],
         "cta": {
-          "label": "Discuss POS & Desktop Software",
+          "label": "Discuss Desktop Software",
           "href": "#contact"
         }
       },
       {
         "id": "shopify-wordpress-solutions",
         "categoryId": "engineering",
-        "title": "Shopify & WordPress Solutions",
-        "tagline": "Turnkey E-Commerce Stores Ready to Take Orders",
-        "summary": "Launch a high-converting online storefront. We build and optimize custom Shopify stores and WordPress/WooCommerce websites configured with local and international payment gateways and courier tracking.",
+        "inquiryOption": "E-Commerce / Digital Marketing Services",
+        "title": "Shopify & WordPress",
+        "tagline": "Turnkey Online Stores Ready to Sell",
+        "summary": "Launch a high-converting online storefront. We build and optimize custom Shopify stores and WordPress/WooCommerce websites configured with local payment gateways and courier tracking.",
         "icon": "ShoppingBag",
         "badge": "E-Commerce",
+        "highlights": [
+          "High-speed theme & COD checkout",
+          "TCS, Leopards & Trax courier APIs",
+          "PayFast, JazzCash & Stripe setup"
+        ],
         "techStack": ["Shopify Liquid", "WordPress", "WooCommerce", "TCS/Leopards APIs"],
         "deliverables": [
           "Custom Shopify theme design with fast checkout and zero layout glitches",
@@ -506,39 +564,78 @@
           "Cart abandonment recovery SMS/WhatsApp flows to rescue lost sales"
         ],
         "cta": {
-          "label": "Discuss Shopify or WordPress",
+          "label": "Discuss E-Commerce Store",
+          "href": "#contact"
+        }
+      },
+      {
+        "id": "cloud-api-systems",
+        "categoryId": "engineering",
+        "inquiryOption": "Custom Web / Mobile / Desktop Software Development",
+        "title": "API & Cloud Systems",
+        "tagline": "Scalable Backends & Integrations",
+        "summary": "Connect web apps, mobile apps, payment gateways, courier services, and CRM workflows with fast, fault-tolerant REST APIs and resilient cloud server infrastructure.",
+        "icon": "Layers",
+        "badge": "APIs & Cloud",
+        "highlights": [
+          "AWS & scalable cloud servers",
+          "Payment, WhatsApp & courier APIs",
+          "99.9% uptime & SSL security"
+        ],
+        "techStack": ["Node.js", "AWS", "PostgreSQL", "REST APIs", "DigitalOcean"],
+        "deliverables": [
+          "Scalable AWS and DigitalOcean server setup with automated daily backups",
+          "Payment gateway and courier webhook APIs (Stripe, PayFast, TCS, Leopards)",
+          "WhatsApp Business API notifications, OTP logins, and CRM automation",
+          "High-throughput backend APIs built for mobile and web client applications",
+          "SSL hardening, API rate limiting, and continuous uptime monitoring"
+        ],
+        "cta": {
+          "label": "Discuss Backend & APIs",
           "href": "#contact"
         }
       },
       {
         "id": "digital-marketing",
         "categoryId": "marketing",
-        "title": "Digital Marketing (SEO & Google Ads)",
-        "tagline": "Targeted Lead Generation & Search Rankings",
-        "summary": "Get your business in front of customers who are actively searching to buy. We run high-intent Google Search Ads and execute organic SEO so your phone rings with qualified commercial leads.",
+        "inquiryOption": "E-Commerce / Digital Marketing Services",
+        "title": "SEO & Google Ads",
+        "tagline": "Targeted Leads & Search Rankings",
+        "summary": "Get your business in front of customers actively searching to buy. We manage high-intent Google Search Ads and execute organic SEO so your phone rings with commercial leads.",
         "icon": "TrendingUp",
-        "badge": "Google Ads & SEO",
+        "badge": "SEO & Search",
+        "highlights": [
+          "High-intent Google Search ads",
+          "Local SEO & Google Maps top 3",
+          "Transparent bi-weekly ROI reports"
+        ],
         "techStack": ["Google Ads", "Google Analytics 4", "Semrush", "Search Console"],
         "deliverables": [
           "Google Search & Performance Max campaigns with disciplined cost-per-click",
-          "Local SEO optimization to rank your business on Google Maps in Lahore",
+          "Local SEO optimization to rank your business on Google Maps",
           "Negative keyword filtering to eliminate wasted ad spend on irrelevant clicks",
           "Conversion-focused landing page design and phone call click tracking",
-          "Bi-weekly transparent reports showing exactly where every rupee or dollar went"
+          "Bi-weekly transparent reports showing clicks, leads, and return on ad spend"
         ],
         "cta": {
-          "label": "Discuss Digital Marketing",
+          "label": "Discuss SEO & Google Ads",
           "href": "#contact"
         }
       },
       {
         "id": "social-media-marketing",
         "categoryId": "marketing",
+        "inquiryOption": "E-Commerce / Digital Marketing Services",
         "title": "Social Media Marketing",
-        "tagline": "Paid Ad Campaigns on Meta, Instagram & TikTok",
-        "summary": "Stop posting generic Canva graphics that get zero sales. We produce eye-catching video hooks, targeted Facebook/Instagram ad funnels, and TikTok campaigns that generate real orders and brand credibility.",
+        "tagline": "Meta, Instagram & TikTok Ad Funnels",
+        "summary": "Stop posting generic graphics that generate zero orders. We produce engaging video creatives, targeted Facebook/Instagram ad funnels, and TikTok campaigns that drive real sales.",
         "icon": "Share2",
-        "badge": "Social Growth",
+        "badge": "Social Ads",
+        "highlights": [
+          "Reels & TikTok performance ads",
+          "Meta retargeting sales funnels",
+          "Direct WhatsApp lead generation"
+        ],
         "techStack": ["Meta Ads Manager", "TikTok Ads", "Canva Pro", "CapCut", "LinkedIn Ads"],
         "deliverables": [
           "Full monthly content calendars with professional graphic design and video edits",
@@ -555,251 +652,371 @@
     ]
   },
   "industries": {
-    "badge": "Where Our Systems Run Daily",
-    "heading": "Industries Powered by Our POS & Cloud",
-    "highlightedWord": "Management Systems",
-    "subheading": "Built to tackle the real challenges of Pakistani and international businesses — from fast-food counter rushes to multi-branch franchise stock controls.",
+    "heading": "Industries Mapped to Our",
+    "highlightedWord": "Standalone Systems",
+    "subheading": "We pair multi-channel food brands with Product #1 (Full-Fledged Restaurant Management System) and single-counter / offline retail stores with Product #2 (Fast POS Offline Desktop).",
     "items": [
       {
-        "id": "restaurants-fastfood",
-        "title": "Restaurants & Fast Food Chains",
-        "summary": "Dine-in tables, kitchen KOT printers, takeaway counter speed, and central phone call order delivery dispatch.",
-        "icon": "Monitor",
-        "solutions": ["Multi-till touch POS", "Dine-in table mapping", "Kitchen KOT thermal slips", "Rider dispatch & phone recall"]
+        "id": "restaurants-dinein-chains",
+        "productTag": "Product #1 · Restaurant System",
+        "inquiryOption": "Full-Fledged Restaurant Management System (Web + POS + Call Center + Inventory + Rider)",
+        "title": "Restaurants & Family Dining",
+        "summary": "Unify branded web ordering, dine-in table POS, call center phone orders, recipe inventory, and rider delivery in one system.",
+        "icon": "Utensils",
+        "solutions": [
+          "Branded Customer Ordering Website",
+          "In-Store Table & KOT POS",
+          "Integrated Recipe Inventory",
+          "Linked Rider Delivery Dispatch"
+        ]
       },
       {
-        "id": "supermarkets-groceries",
-        "title": "Supermarkets & Retail Stores",
-        "summary": "High-volume barcode scanning, barcode weighing scales, batch expiry dates, and supplier purchase bills.",
-        "icon": "ShoppingBag",
-        "solutions": ["Barcode scanner support", "Weighing scale sync", "Multi-branch stock transfer", "End-of-day Z-Report audit"]
+        "id": "fastfood-callcenter-brands",
+        "productTag": "Product #1 · Restaurant System",
+        "inquiryOption": "Full-Fledged Restaurant Management System (Web + POS + Call Center + Inventory + Rider)",
+        "title": "Fast Food & Telephone Delivery",
+        "summary": "Route direct website orders, takeaway counters, and busy phone-desk orders into one zero-leakage kitchen workflow.",
+        "icon": "PhoneCall",
+        "solutions": [
+          "Call Center Telephone Order Portal",
+          "Single Unified Kitchen Order Queue",
+          "Automatic Stock Deduction",
+          "Rider Settlement Tracking"
+        ]
       },
       {
-        "id": "bakeries-confectionery",
-        "title": "Bakeries & Cafes",
-        "summary": "Custom deals and combos, cake booking advances, daily production loss tracking, and cash drawer security.",
-        "icon": "Layers",
-        "solutions": ["Quick combo touch grid", "Advance booking receipts", "Recipe ingredient deduction", "Cash drawer audit trails"]
+        "id": "retail-general-stores",
+        "productTag": "Product #2 · Offline Fast POS",
+        "inquiryOption": "Fast POS (100% Offline Standalone Desktop System)",
+        "title": "Retail Shops & General Stores",
+        "summary": "Single-PC 100% offline Fast POS built for neighborhood stores and mini-marts wanting zero monthly cloud or hosting fees.",
+        "icon": "Store",
+        "solutions": [
+          "Zero Internet Required",
+          "Zero Monthly Hosting Fees",
+          "Barcode Billing & Stock Alerts",
+          "Customer Khata & Daily Profit"
+        ]
       },
       {
-        "id": "franchise-networks",
-        "title": "Multi-Branch Franchises",
-        "summary": "Centralized headquarters portal, menu pricing synchronization, royalty calculations, and raw material logistics.",
-        "icon": "Globe",
-        "solutions": ["One-click menu updates", "Central call center", "Live branch P&L comparison", "Warehouse dispatch slips"]
-      },
-      {
-        "id": "ecommerce-retail",
-        "title": "E-Commerce & Online Stores",
-        "summary": "Synchronize online Shopify/WooCommerce orders with physical retail inventory, preventing double selling.",
-        "icon": "ShoppingBag",
-        "solutions": ["Shopify store sync", "Courier COD tracking", "Omnichannel inventory", "Customer WhatsApp bots"]
-      },
-      {
-        "id": "healthcare-pharmacies",
-        "title": "Pharmacies & Clinics",
-        "summary": "Batch tracking, medicine expiry alerts, customer credit accounts, and doctor prescription attachments.",
+        "id": "pharmacies-medical-stores",
+        "productTag": "Product #2 · Offline Fast POS",
+        "inquiryOption": "Fast POS (100% Offline Standalone Desktop System)",
+        "title": "Pharmacies & Medical Counters",
+        "summary": "Reliable offline counter PC billing with rapid formula lookup, batch expiry alerts, customer credit ledgers, and thermal slips.",
         "icon": "ShieldCheck",
-        "solutions": ["Medicine expiry alerts", "Formula & batch search", "Customer credit ledger", "FBR sales tax receipts"]
+        "solutions": [
+          "100% Offline Stability",
+          "Batch & Expiry Notifications",
+          "Customer Credit / Khata Ledger",
+          "Daily Profit & Expense Reports"
+        ]
+      },
+      {
+        "id": "bakeries-hardware-stores",
+        "productTag": "Product #2 · Offline Fast POS",
+        "inquiryOption": "Fast POS (100% Offline Standalone Desktop System)",
+        "title": "Bakeries, Hardware & Counter Shops",
+        "summary": "Weighing scale, barcode scanning, cash drawer security, and daily expenses tracked locally on one standalone PC.",
+        "icon": "Monitor",
+        "solutions": [
+          "Weighing Scale & Thermal Print",
+          "Local Single-PC Stock Control",
+          "Expense & Cash Drawer Audit",
+          "No Server Overhead"
+        ]
+      },
+      {
+        "id": "ecommerce-custom-businesses",
+        "productTag": "Agency Services",
+        "inquiryOption": "E-Commerce / Digital Marketing Services",
+        "title": "Online Brands & Growing Enterprises",
+        "summary": "Custom Shopify/WooCommerce stores, bespoke web/mobile portals, and ROI-focused SEO, Meta, and Google Ads campaigns.",
+        "icon": "ShoppingBag",
+        "solutions": [
+          "Shopify & WordPress Storefronts",
+          "Custom Web & Mobile Apps",
+          "Payment & Courier APIs",
+          "SEO, Meta & Google Search Ads"
+        ]
       }
     ]
   },
   "process": {
-    "badge": "Fast Onboarding & Rollout",
-    "heading": "How We Deploy & Set Up Your Systems in",
+    "heading": "How We Deploy & Launch Your Software in",
     "highlightedWord": "4 Clear Steps",
-    "subheading": "Whether you want Fast POS installed on your counter terminals or need the Cloud Franchise Portal configured for multiple branches, we make rollout painless.",
+    "subheading": "Whether launching our 5-in-1 Full-Fledged Restaurant Management System, installing offline Fast POS on your shop PC, or building a custom app, our workflow stays predictable.",
     "steps": [
       {
         "number": "01",
-        "title": "1-on-1 Demo & Requirements Walkthrough",
+        "title": "Demo & System Selection",
         "timeline": "Day 1",
-        "summary": "We demonstrate Fast POS and the Cloud Portal (in person at Model Town, Lahore or via live Zoom). We test your menu items, branch hierarchy, and hardware needs.",
+        "summary": "We walk through either our 5-in-1 Restaurant Management System, our standalone Fast POS desktop software, or your custom build requirements (in Model Town, Lahore or live Zoom).",
         "icon": "Compass",
+        "highlights": [
+          "1-on-1 product or project walkthrough",
+          "Printer, scanner & hardware check",
+          "Direct WhatsApp setup group"
+        ],
         "activities": [
-          "Hands-on demonstration of counter register and reports",
-          "Review of thermal printers, scanners, and cash drawer hardware",
-          "Menu and product category data template handover",
-          "Direct WhatsApp group created with our technical setup team"
+          "Hands-on demo of Restaurant Management System or Offline Fast POS",
+          "Audit of existing thermal printers, scanners, scales, and counter PCs",
+          "Clear scope confirmation and zero-surprise itemized quotation",
+          "Dedicated WhatsApp technical group with your Lahore team"
         ]
       },
       {
         "number": "02",
-        "title": "System Configuration & Menu Upload",
+        "title": "Configuration & Data Setup",
         "timeline": "Days 2 – 4",
-        "summary": "Our team uploads your entire menu, product barcodes, pricing, deals, and configures roles (Admins, Branch Heads, Cashiers, Call Center Agents).",
+        "summary": "For Product #1 we set up your digital menu, recipes, phone portal & rider zones; for Product #2 we configure local barcodes, khata templates & thermal receipts on your store PC.",
         "icon": "Layout",
+        "highlights": [
+          "Menu, recipes or barcode import",
+          "Receipts, taxes & role permissions",
+          "Custom storefront or local DB setup"
+        ],
         "activities": [
-          "Complete database configuration with product photos and prices",
-          "Tax settings (FBR/PRA receipts) and receipt template branding",
-          "Role permissions and secure user credentials creation",
-          "Call center routing and branch delivery radius setup"
+          "Menu & modifier setup (Restaurant) or SKU barcode import (Fast POS)",
+          "58mm/80mm receipt branding, discounts, and FBR/PRA tax rules",
+          "Staff logins for cashiers, telephone agents, managers, or riders",
+          "Delivery zone or store expense & supplier categories configuration"
         ]
       },
       {
         "number": "03",
-        "title": "Hardware Installation & On-Site Testing",
+        "title": "Installation & Testing",
         "timeline": "Days 5 – 7",
-        "summary": "For Lahore clients, our technicians visit your branch to set up thermal printers, barcode scanners, and cash drawers. Remote clients receive assisted remote installation.",
+        "summary": "Our Lahore technicians handle on-site setup for printers, scanners, and drawers — stress-testing offline PC performance (Fast POS) or end-to-end 5-channel order routing (Restaurant).",
         "icon": "Cpu",
+        "highlights": [
+          "On-site printer & drawer setup",
+          "Offline PC or 5-channel testing",
+          "Live test transactions review"
+        ],
         "activities": [
-          "Thermal printer speed calibration and automatic drawer kick testing",
-          "Offline mode stress-testing and cloud sync verification",
-          "Live test orders across Dine-In, Takeaway, and Delivery",
-          "Network and backup power configuration review"
+          "Physical thermal printer calibration and automatic RJ11 drawer kick test",
+          "Product #1 live order flow test (Website + POS + Call Center + Riders)",
+          "Product #2 offline single-PC stress test with disconnected Wi-Fi",
+          "Backup procedure verification for local databases or cloud servers"
         ]
       },
       {
         "number": "04",
-        "title": "Staff Training & Live Go-Live Support",
-        "timeline": "Go-Live & 60-Day Warranty",
-        "summary": "We train your cashiers, branch managers, and call center team. On your go-live day, our team stands by to ensure smooth operation with 60 days of free technical warranty.",
+        "title": "Training & Go-Live Support",
+        "timeline": "Go-Live • 60d Warranty",
+        "summary": "We train your cashiers, kitchen staff, riders, or store operators directly, hand over master admin control, and back your launch with 60 days of priority technical support.",
         "icon": "Rocket",
+        "highlights": [
+          "Hands-on operator & staff training",
+          "Shift closing & daily reports",
+          "60-day priority technical warranty"
+        ],
         "activities": [
-          "Hands-on staff training session with step-by-step video guides",
-          "End-of-day Z-Report and shift reconciliation training for managers",
-          "Full administrative master credentials and database ownership handover",
-          "60 days of complimentary priority technical warranty and phone support"
+          "Step-by-step live training for billing staff, managers, or phone desk",
+          "End-of-day cash drawer reconciliation, khata & daily profit review",
+          "Complete administrative credentials and full data ownership handover",
+          "60 days of complimentary priority technical warranty & WhatsApp support"
         ]
       }
     ],
-    "differentiatorsBadge": "Why Business Owners Trust EBRICKS",
-    "differentiatorsHeading": "Why Retail & Restaurant Owners Choose Us",
+    "differentiatorsHeading": "Why Business Owners Choose EBRICKS",
     "differentiators": [
       {
-        "title": "100% Offline Resilience",
-        "description": "Never lose a sale when internet slows down. Fast POS rings orders, prints receipts, and opens cash drawers offline with zero interruption.",
-        "icon": "Monitor"
+        "id": "independent-fit",
+        "badge": "Zero Bloat",
+        "title": "Right Architecture First",
+        "tagline": "Two dedicated systems, never forced together",
+        "highlights": [
+          "5-in-1 web ecosystem for restaurants",
+          "100% offline PC POS for retail stores"
+        ],
+        "description": "Restaurants get an integrated online, dine-in, phone, inventory, and rider hub; single-counter shops get an offline single-PC app with zero hosting bills.",
+        "details": [
+          "Never pay for complex restaurant modules in a standalone neighborhood shop",
+          "Never stitch disconnected plugins to run website, dine-in, call desk & riders",
+          "Clear ownership of whether your data stays 100% local on-PC or online"
+        ],
+        "icon": "Layers"
       },
       {
-        "title": "Deep Financial Auditing (Zero Leakage)",
-        "description": "Blind shift closing, cancellation logs, and 7-question financial intelligence reveal exactly where every rupee went.",
+        "id": "zero-cloud-fees-option",
+        "badge": "Cost Control",
+        "title": "Zero Mandatory Cloud Fees",
+        "tagline": "Fast POS runs offline with zero hosting bills",
+        "highlights": [
+          "Zero monthly SaaS fees on Fast POS",
+          "Runs completely on one Windows PC"
+        ],
+        "description": "If your shop prefers zero recurring hosting charges or suffers frequent internet outages, Fast POS runs 100% locally on your counter computer forever.",
+        "details": [
+          "Local desktop database requires zero external servers or domain renewals",
+          "Keep ringing barcode sales, stock deductions, and receipts offline",
+          "Export or back up your local store database directly to USB anytime"
+        ],
+        "icon": "WifiOff"
+      },
+      {
+        "id": "financial-auditing",
+        "badge": "Leakage Protection",
+        "title": "Total Cash & Stock Accountability",
+        "tagline": "Account for every ticket, rupee & item",
+        "highlights": [
+          "Cancellation & void audit trails",
+          "Recipe stock or local khata tracking"
+        ],
+        "description": "Both standalone products stop silent leakage — tracking shift closings, order voids, customer credit, expenses, and exact profit margins clearly.",
+        "details": [
+          "Supervisor password checks on voids, refunds, and manual discounts",
+          "Clear end-of-day shift reports comparing expected vs counted cash",
+          "Track customer credit/khata receivables and supplier dues without guesswork"
+        ],
         "icon": "ShieldCheck"
       },
       {
-        "title": "Central Multi-Branch Call Center",
-        "description": "Single telephone order center automatically routes orders to the correct branch kitchen with rider dispatch tracking.",
-        "icon": "PhoneCall"
-      },
-      {
-        "title": "Lahore Office & On-Site Team",
-        "description": "Our headquarters is right on Model Town Link Road, Lahore. We provide in-person meetings, physical hardware setup, and direct WhatsApp support.",
+        "id": "lahore-onsite-team",
+        "badge": "Model Town, Lahore",
+        "title": "Lahore HQ & On-Site Team",
+        "tagline": "In-person meetings & hardware setup",
+        "highlights": [
+          "Model Town Link Road live demos",
+          "Direct WhatsApp & 60-day warranty"
+        ],
+        "description": "Our engineers operate directly from Model Town Link Road, Lahore — offering face-to-face product demos, physical printer installation, and rapid WhatsApp support.",
+        "details": [
+          "Visit our Model Town Link Road, Lahore office for live demonstrations",
+          "On-site hardware setup for thermal printers, barcode scanners & drawers",
+          "Direct WhatsApp engineering support backed by a 60-day warranty"
+        ],
         "icon": "MapPin"
       }
     ]
   },
   "testimonials": {
-    "badge": "Proven Results in the Field",
-    "heading": "What Restaurant & Retail Owners Say About",
-    "highlightedWord": "Fast POS & Our Cloud Portal",
-    "subheading": "Real feedback from restaurant chains, supermarkets, and multi-branch retail brands operating in Lahore and across Pakistan.",
+    "heading": "Trusted by Restaurant Ecosystems,",
+    "highlightedWord": "Retail Counters & Brands",
+    "subheading": "Verified feedback from restaurant operators running our 5-in-1 ecosystem and retail store owners running offline Fast POS across Lahore and Pakistan.",
     "items": [
       {
-        "quote": "We implemented Fast POS across our family restaurant branches in Lahore. Counter checkout is instantaneous, thermal receipt printing never jams, and our end-of-day cash reconciliation is completed in under 10 minutes. The cancellations audit alone saved us thousands of rupees.",
+        "id": "fine-pizza",
+        "badge": "Product #1 · Restaurant",
+        "headline": "Unified Dine-In, Website & Recipe Control",
+        "quote": "Deploying EBRICKS' Full-Fledged Restaurant Management System brought our customer website, dine-in counter POS, and kitchen inventory into one place. End-of-day shift reconciliation finishes in minutes, and recipe tracking immediately cut kitchen waste.",
+        "highlights": [
+          "Website + dine-in POS in one order queue",
+          "Automatic recipe inventory stopped leakage"
+        ],
         "author": "M. Imran Sheikh",
         "role": "General Manager & Operations Lead",
         "company": "Fine Pizza Family Restaurant",
         "location": "Lahore, Pakistan",
-        "service": "Fast POS & Cloud Multi-Branch System",
+        "service": "Full-Fledged Restaurant Management System",
         "rating": 5
       },
       {
-        "quote": "Running a high-rush burger and shawarma joint with dine-in tables, takeaway, and delivery used to create total kitchen chaos. Fast POS streamlined our table tickets and rider dispatch. The system runs flawlessly even when our PTCL internet disconnects.",
+        "id": "munna-bhai",
+        "badge": "Product #1 · 5-in-1",
+        "headline": "Call Center & Rider Dispatch Without Chaos",
+        "quote": "Peak rush with dine-in tables, takeaway pickups, phone orders, and delivery riders used to cause constant ticket mistakes. Now phone agents book orders in the Call Center Portal, kitchen tickets print automatically, and riders stay organized.",
+        "highlights": [
+          "Call Center Portal pushes straight to kitchen",
+          "Clean Delivery Rider assignment & COD logs"
+        ],
         "author": "Haji Munawar Hussain",
         "role": "Managing Partner",
         "company": "Munna Bhai Fresh Burger & Shawarma",
         "location": "Lahore, Pakistan",
-        "service": "Fast POS Restaurant Touch Counter",
+        "service": "Full-Fledged Restaurant Management System",
         "rating": 5
       },
       {
-        "quote": "Managing 5 branches and a central call center was a nightmare before EBRICKS deployed their Cloud Franchise Portal. Now our call center takes calls and sends orders straight to the nearest branch kitchen. True game-changer for scaling our franchise.",
+        "id": "crispy-crave",
+        "badge": "Product #1 · Ecosystem",
+        "headline": "Zero Missed Orders Across Web & Phone Desk",
+        "quote": "Before EBRICKS built our 5-in-1 Restaurant Management System, third-party orders, counter bills, and phone deliveries were tracked separately. Having website orders, call center desk, inventory, and riders unified inside one system transformed our speed.",
+        "highlights": [
+          "Direct Customer Website cuts app commissions",
+          "Live inventory & rider dispatch from 1 hub"
+        ],
         "author": "Shahid Rasheed",
-        "role": "Franchise Director",
-        "company": "Crispy Crave Food Network",
+        "role": "Operations Director",
+        "company": "Crispy Crave Kitchen",
         "location": "Lahore & Gujranwala",
-        "service": "Cloud Franchise & Call Center Portal",
+        "service": "Full-Fledged Restaurant Management System",
+        "rating": 5
+      },
+      {
+        "id": "city-mart",
+        "badge": "Product #2 · Fast POS",
+        "headline": "100% Offline Single-PC Speed, Zero Cloud Fees",
+        "quote": "We wanted a reliable retail POS on our single store computer without paying monthly cloud fees or worrying when Wi-Fi drops. Fast POS scans 12,000+ barcodes locally, handles customer khata and expenses, and gives clear daily profit reports.",
+        "highlights": [
+          "100% offline local database on 1 counter PC",
+          "Zero monthly cloud fees + daily profit & khata"
+        ],
+        "author": "Kamran Siddiqui",
+        "role": "Owner & Director",
+        "company": "City Mart General & Retail Store",
+        "location": "Lahore, Pakistan",
+        "service": "Fast POS Offline Desktop System",
         "rating": 5
       }
     ]
   },
   "faqs": {
-    "badge": "Clear Answers",
     "heading": "Frequently Asked Questions About",
-    "highlightedWord": "Fast POS & Cloud Portal",
-    "subheading": "Everything you need to know about pricing, hardware, installation, and multi-branch expansion.",
+    "highlightedWord": "Our Products & Agency",
+    "subheading": "Clear answers covering the independence of our two flagship platforms, offline desktop setup, 5-in-1 restaurant modules, and custom agency projects.",
     "items": [
       {
-        "question": "Does Fast POS work when our internet is disconnected?",
-        "answer": "Yes, absolutely! Fast POS is engineered with an offline-first architecture. All sales, barcode scanning, receipt printing, and cash drawer operations run locally at high speed without needing internet. Once your internet connection restores, all shift data and sales sync automatically with the cloud portal.",
-        "category": "Offline Capability"
+        "question": "Are the Restaurant Management System and Fast POS connected or separate products?",
+        "answer": "They are two completely separate, standalone products designed for different businesses. Our Full-Fledged Restaurant Management System is a connected 5-in-1 restaurant ecosystem (Website, In-Store POS, Call Center, Inventory, and Riders). Fast POS is a 100% offline single-PC desktop Point of Sale with zero cloud or hosting dependency.",
+        "category": "Product Independence"
       },
       {
-        "question": "Can I manage multiple restaurant or retail branches from home or my phone?",
-        "answer": "Yes! Our Cloud Multi-Branch & Franchise Management Portal allows owners and executives to log in from any smartphone, tablet, or laptop to view live sales, branch revenue rankings, stock levels, and staff shifts in real time from anywhere in the world.",
-        "category": "Multi-Branch Cloud"
+        "question": "How does the Full-Fledged Restaurant Management System unify all 5 modules?",
+        "answer": "All customer orders — whether placed on your branded Customer Ordering Website, punched at your In-Store Restaurant POS (dine-in or takeaway), or booked by staff in the Call Center Order Portal — flow into one unified central queue. From that single hub, Integrated Inventory automatically deducts recipe ingredients and the Delivery Rider System assigns riders and settles cash.",
+        "category": "Restaurant System"
       },
       {
-        "question": "What hardware do I need, and can you provide it in Lahore?",
-        "answer": "Fast POS runs on any Windows PC, laptop, or touch terminal. It supports standard 58mm/80mm thermal receipt printers, USB/wireless barcode scanners, cash drawers, and digital weighing scales. If you already have hardware, we can configure our software on it. If you need hardware, our Lahore team can provide and set up complete packages.",
-        "category": "Hardware Setup"
+        "question": "Does Fast POS require internet or any monthly cloud/hosting fees?",
+        "answer": "No! Fast POS runs 100% offline on a single Windows counter PC. Because there are no cloud servers or external databases involved, your billing, barcode scanning, receipt printing, and local reports never stop if Wi-Fi drops, and you pay zero recurring monthly cloud or hosting fees.",
+        "category": "Fast POS Offline"
       },
       {
-        "question": "How does the Central Call Center order dispatching work?",
-        "answer": "Customers call your central business number. Your telephone agents enter the customer's phone and order details in the Cloud Portal. The system automatically identifies the customer's delivery area and routes the order directly to the nearest branch kitchen printer or screen with rider assignment.",
-        "category": "Call Center Operations"
+        "question": "What daily store operations are included in Fast POS?",
+        "answer": "Fast POS handles every single-counter retail task inside one local desktop application: fast barcode billing, 58mm/80mm thermal slip printing, local stock inventory and low-stock alerts, customer credit/khata ledgers, daily shop expense tracking, and daily profit and sales Z-reports.",
+        "category": "Fast POS Features"
       },
       {
-        "question": "Can we visit your office in Model Town, Lahore to see a live demo?",
-        "answer": "Yes, we encourage it! You can visit our office on Model Town Link Road, Lahore, Monday through Saturday between 9:00 AM and 6:00 PM. We will demonstrate Fast POS on touch hardware and show you the live Cloud Portal. Please call or WhatsApp us at 0315-4112925 to schedule your time.",
-        "category": "Office Visits"
+        "question": "What hardware works with these systems, and can we visit your Lahore office?",
+        "answer": "Both systems work with standard 58mm/80mm thermal receipt printers, 1D/2D barcode scanners, automatic cash drawers, weighing scales, and Windows counter PCs or touch screens. Visit our Model Town Link Road, Lahore office Monday to Saturday (9 AM – 6 PM) or call/WhatsApp 0315-4112925 for a live hardware demonstration.",
+        "category": "Hardware & Office Visits"
       },
       {
-        "question": "What training and ongoing support do you provide?",
-        "answer": "We provide complete on-site and remote training for your cashiers, branch managers, and call center agents. Every license includes 60 days of complimentary priority technical warranty, and our Lahore team provides fast WhatsApp and on-site support if any issues arise.",
-        "category": "Training & Warranty"
+        "question": "Can EBRICKS SOLUTIONS build custom websites, mobile apps, or manage digital ads too?",
+        "answer": "Yes. Beyond our two standalone flagship products, EBRICKS SOLUTIONS is a full-service software and digital growth agency delivering custom static/dynamic websites, custom SaaS web portals, iOS/Android Flutter apps, Shopify & WooCommerce stores, bespoke desktop software, SEO, Google Ads, and Meta/TikTok social media marketing.",
+        "category": "Agency Services"
       }
     ]
   },
-  "ctaBanner": {
-    "badge": "Ready for Speed & Control?",
-    "heading": "Ready to Transform Your Counter &",
-    "highlightedWord": "Branch Operations?",
-    "subheading": "Schedule a free 20-minute live demonstration of Fast POS and the Cloud Franchise Portal with our technical team in Lahore.",
-    "primaryCta": {
-      "label": "Book Your Free Live Demo",
-      "href": "#contact",
-      "icon": "ArrowRight"
-    },
-    "secondaryCta": {
-      "label": "Message on WhatsApp (0315-4112925)",
-      "href": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20want%20to%20book%20a%20live%20demo%20of%20Fast%20POS%20and%20the%20Cloud%20Portal.",
-      "icon": "MessageSquare"
-    },
-    "guarantees": [
-      "Free 1-on-1 Interactive Demo (In-Person or Zoom)",
-      "Itemized System & Hardware Quotation in 24 Hours",
-      "Full On-Site Setup, Staff Training & 60-Day Warranty"
-    ]
-  },
   "contactSection": {
-    "badge": "Schedule a Demo",
-    "heading": "See Fast POS & Cloud Portal",
-    "highlightedWord": "In Action",
-    "subheading": "Fill out the inquiry form below to schedule a free demonstration or reach our team directly via WhatsApp or phone. We typically respond within 15 minutes during business hours.",
-    "formTitle": "Request a Free Live Demo & Price Quote",
-    "formSubtitle": "Select your system interest and tell us about your business or branch count.",
+    "heading": "Explore Our Flagship Systems &",
+    "highlightedWord": "Custom Software Services",
+    "subheading": "Select the exact product or agency service you need below to book a free demonstration or price quotation. Our Lahore team typically responds within 15 minutes.",
+    "formTitle": "Book a Free Live Demo or Project Consultation",
+    "formSubtitle": "Choose your standalone product or custom development requirement below.",
     "fields": {
       "fullName": {
         "name": "fullName",
         "label": "Your Name",
-        "placeholder": "e.g., Tariq Mehmood / Usman Sheikh",
+        "placeholder": "e.g., Tariq Mehmood / Kamran Siddiqui",
         "required": true
       },
       "email": {
         "name": "email",
         "label": "Email Address",
-        "placeholder": "e.g., tariq@restaurant.com",
+        "placeholder": "e.g., info@yourbusiness.com",
         "required": true
       },
       "phone": {
@@ -809,73 +1026,91 @@
         "required": true
       },
       "serviceSelect": {
-        "label": "System / Service Needed",
-        "placeholder": "Select System Interest",
-        "required": true
+        "label": "Product or Service Interest",
+        "placeholder": "Select Product or Service",
+        "required": true,
+        "options": [
+          "Full-Fledged Restaurant Management System (Web + POS + Call Center + Inventory + Rider)",
+          "Fast POS (100% Offline Standalone Desktop System)",
+          "Custom Web / Mobile / Desktop Software Development",
+          "E-Commerce / Digital Marketing Services"
+        ]
       },
       "budgetRange": {
-        "label": "Number of Outlets / Branches",
-        "placeholder": "Select Outlet Scale",
+        "label": "Business Scale / Project Scope",
+        "placeholder": "Select Scale or Scope",
         "options": [
-          "Single Store / 1 Counter Setup",
-          "2 to 3 Branches (Multi-Branch POS)",
-          "4 to 10 Branches (Franchise & Call Center)",
-          "10+ Branches / Enterprise Chain",
-          "Custom Software / Web Development Project"
+          "Single Store / 1 Counter PC Setup (Offline Fast POS)",
+          "Restaurant Setup (Website + POS + Call Center + Riders)",
+          "Multi-Station Restaurant / High-Volume Outlet",
+          "Custom Web, Mobile or Desktop Software Build",
+          "Shopify Store, SEO or Paid Social Media Growth"
         ]
       },
       "projectDetails": {
         "name": "projectDetails",
-        "label": "Tell Us About Your Business & Hardware Needs",
-        "placeholder": "e.g., Restaurant, Supermarket, Bakery; number of billing counters, whether you need thermal printers or already have hardware...",
+        "label": "Tell Us About Your Store, Restaurant or Software Project",
+        "placeholder": "e.g., Restaurant needing Web ordering + Dine-in POS + Riders; Retail store needing Offline Fast POS; or custom website/mobile app details...",
         "required": true
       }
     },
-    "submitButtonText": "Schedule My Free Demo",
+    "submitButtonText": "Schedule Free Demo / Consultation",
     "successMessage": {
-      "title": "Demo Request Received Successfully!",
-      "message": "Thank you for reaching out to EBRICKS SOLUTIONS. A senior technical specialist from our Lahore office will contact you within 2 hours to confirm your demonstration schedule."
+      "title": "Inquiry Received Successfully!",
+      "message": "Thank you for contacting EBRICKS SOLUTIONS. A senior technical director from our Model Town, Lahore office will reach out shortly to confirm your demo or consultation."
     },
     "directContactTitle": "Direct Lahore Contacts",
-    "directContactSubtitle": "Want an immediate demo or quote? Reach our technical directors directly:"
+    "directContactSubtitle": "Prefer an instant conversation? Contact our technical team in Lahore directly:"
   },
   "footer": {
-    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a software engineering company based in Lahore, Pakistan. Creators of Fast POS — high-speed desktop point of sale software for retail & restaurants, and the Cloud Multi-Branch & Franchise Management SaaS portal.",
+    "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED is a software engineering and digital growth company in Lahore, Pakistan — creators of our 5-in-1 Full-Fledged Restaurant Management System, our 100% Offline Fast POS Desktop Software, and custom web/mobile solutions.",
     "linkGroups": [
       {
-        "title": "Hero Products",
+        "title": "Standalone Products",
         "links": [
-          { "label": "Fast POS Counter Terminal", "href": "#fast-pos" },
-          { "label": "7-Pillar Financial Reports", "href": "#fast-pos" },
-          { "label": "Cloud Franchise Portal", "href": "#cloud-franchise" },
-          { "label": "Call Center Order Routing", "href": "#cloud-franchise" },
-          { "label": "Hardware Compatibility", "href": "#fast-pos" }
+          { "label": "Restaurant Management System", "href": "#restaurant-system" },
+          { "label": "5 Integrated Restaurant Modules", "href": "#restaurant-modules" },
+          { "label": "Fast POS (Offline Desktop)", "href": "#fast-pos" },
+          { "label": "Ideal Retail Businesses", "href": "#fast-pos-ideal" },
+          { "label": "Book Live Product Demo", "href": "#contact" }
         ]
       },
       {
-        "title": "Agency & Custom",
+        "title": "Agency Services",
         "links": [
-          { "label": "Custom Web Applications", "href": "#services" },
-          { "label": "Mobile App Development", "href": "#services" },
-          { "label": "Shopify & WooCommerce", "href": "#services" },
-          { "label": "Google & Meta Ads", "href": "#services" },
+          { "label": "Website & Web App Development", "href": "#services" },
+          { "label": "Mobile & Desktop Software", "href": "#services" },
+          { "label": "Shopify & WooCommerce Stores", "href": "#services" },
+          { "label": "SEO, Google & Meta Ads", "href": "#services" },
           { "label": "Technologies & Stack", "href": "#tech-stack" }
         ]
       },
       {
         "title": "Company & Trust",
         "links": [
-          { "label": "Onboarding Process", "href": "#process" },
-          { "label": "Client Case Studies", "href": "#testimonials" },
+          { "label": "4-Step Deployment Process", "href": "#process" },
+          { "label": "Client Reviews", "href": "#testimonials" },
           { "label": "Frequently Asked Questions", "href": "#faqs" },
           { "label": "Model Town Lahore Office", "href": "#contact" }
         ]
       }
     ],
     "socials": [
-      { "platform": "LinkedIn", "url": "https://linkedin.com/company/ebricks-solutions", "icon": "Linkedin" },
-      { "platform": "Facebook", "url": "https://facebook.com/ebricksSolutions", "icon": "Facebook" },
-      { "platform": "Instagram", "url": "https://instagram.com/ebricksSolutions", "icon": "Instagram" },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/company/ebricks-solutions",
+        "icon": "Linkedin"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://facebook.com/ebricksSolutions",
+        "icon": "Facebook"
+      },
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/ebricksSolutions",
+        "icon": "Instagram"
+      },
       { "platform": "Twitter", "url": "https://twitter.com/ebricksSolutions", "icon": "Twitter" },
       { "platform": "GitHub", "url": "https://github.com/ebricksSolutions", "icon": "Github" }
     ],
@@ -884,7 +1119,109 @@
   },
   "floatingWhatsApp": {
     "enabled": true,
-    "tooltipText": "Chat on WhatsApp for Fast POS Demo (0315-4112925)",
-    "initialMessage": "Hello EBRICKS SOLUTIONS! I would like to see a demo of Fast POS and the Cloud Multi-Branch Management Portal."
+    "tooltipText": "Chat on WhatsApp (0315-4112925)",
+    "initialMessage": "Hello EBRICKS SOLUTIONS! I would like to discuss your Restaurant Management System, Offline Fast POS, or software agency services."
+  },
+  "ui": {
+    "skipToContent": "Skip to main content",
+    "navbar": {
+      "primaryLabel": "Primary",
+      "homeLabel": "EBRICKS SOLUTIONS (PRIVATE) LIMITED — Home",
+      "menuButtonLabel": "Menu",
+      "closeMenuLabel": "Close menu"
+    },
+    "hero": {
+      "previewBadge": "Dual Flagship Showcase",
+      "windowStatusLabel": "Two Independent Products",
+      "inspectButtonLabel": "Zoom",
+      "dialogTitlePrefix": "Full-Resolution View",
+      "closeDialogLabel": "Close preview",
+      "highlightsHeading": "Key Capabilities",
+      "productWidth": 1024,
+      "productHeight": 614
+    },
+    "flagship": {
+      "inspectButtonLabel": "Inspect Full Screen",
+      "highlightsHeading": "Key Operational Benefits",
+      "ecosystemHeading": "End-to-End Unified Restaurant Pipeline",
+      "modulesHeading": "5 Core Integrated Modules",
+      "standalonePillarsHeading": "Key Standalone Desktop Capabilities",
+      "hardwareHeading": "Compatible Local Counter Hardware",
+      "dialogTitlePrefix": "Screenshot Inspection",
+      "closeDialogLabel": "Close preview"
+    },
+    "services": {
+      "highlightsHeading": "Key Service Highlights",
+      "deliverablesHeading": "Key Deliverables",
+      "stackHeading": "Core Technologies",
+      "viewDetailsLabel": "View Details",
+      "closeDialogLabel": "Close service details",
+      "closeButtonLabel": "Close"
+    },
+    "process": {
+      "stepPrefix": "Step",
+      "activitiesHeading": "Included Setup Activities",
+      "viewDetailsLabel": "Step Details",
+      "closeDialogLabel": "Close deployment step details",
+      "closeButtonLabel": "Close",
+      "ctaLabel": "Book Your Free Live Demo",
+      "ctaHref": "#contact",
+      "whyViewDetailsLabel": "Learn More",
+      "whyDetailsHeading": "How This Helps Your Business",
+      "closeWhyDialogLabel": "Close detail modal"
+    },
+    "industries": {
+      "ctaPrefix": "Consult for"
+    },
+    "testimonials": {
+      "ratingLabelTemplate": "{rating} out of 5 stars",
+      "highlightsHeading": "Verified Outcomes",
+      "viewDetailsLabel": "Read Review",
+      "closeDialogLabel": "Close client review details",
+      "closeButtonLabel": "Close",
+      "ctaLabel": "Book Your Free Live Demo",
+      "ctaHref": "#contact"
+    },
+    "faqs": {
+      "expandAllLabel": "Expand all questions",
+      "collapseAllLabel": "Collapse all questions",
+      "supportPrompt": "Still unsure whether you need our 5-in-1 Restaurant System, Offline Fast POS, or a custom build?",
+      "supportCtaLabel": "Ask Directly on WhatsApp (0315-4112925)",
+      "supportWhatsappHref": "https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20have%20a%20question%20about%20your%20Restaurant%20System%2C%20Offline%20Fast%20POS%2C%20or%20agency%20services."
+    },
+    "contact": {
+      "requiredLegend": "Fields marked * are required.",
+      "submittingLabel": "Preparing Request...",
+      "whatsAppFollowupLabel": "Send via WhatsApp as well",
+      "resetFormLabel": "Send Another Inquiry",
+      "multiServiceOption": "E-Commerce / Digital Marketing Services",
+      "whatsAppMessageTitle": "Hello EBRICKS SOLUTIONS! Project Inquiry:",
+      "channels": {
+        "whatsappTitle": "Instant WhatsApp",
+        "whatsappSubtitle": "Chat directly with our Lahore technical directors",
+        "phoneSubtitle": "Direct phone line for voice consultations",
+        "emailTitle": "Official Inquiries",
+        "emailSubtitle": "Detailed briefs, demos & custom software RFPs",
+        "addressTitle": "Lahore Headquarters",
+        "mapsLinkLabel": "View on Google Maps",
+        "hoursLabel": "Hours"
+      },
+      "errors": {
+        "fullName": "Please enter your full name.",
+        "email": "Enter an email address in the format name@company.com.",
+        "phone": "Enter a valid phone or WhatsApp number (at least 7 digits).",
+        "serviceSelect": "Please select a product or service option.",
+        "projectDetails": "Please describe your store, restaurant, or software requirements.",
+        "summaryHeading": "Please fix the highlighted fields below:"
+      }
+    },
+    "footer": {
+      "legalNavLabel": "Footer Navigation",
+      "contactHeading": "Headquarters & Direct Contacts"
+    },
+    "floatingActions": {
+      "dockLabel": "Quick page actions",
+      "backToTopLabel": "Back to top"
+    }
   }
 }

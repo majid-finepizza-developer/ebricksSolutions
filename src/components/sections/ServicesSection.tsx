@@ -1,209 +1,170 @@
-import React, { useState, useEffect } from 'react';
-import type { ServicesSectionData, ServiceItem } from '../../types/content';
+import React, { useState } from 'react';
+import type { ServicesSectionData, ServiceItem, SiteUiLabels } from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
-import { cn } from '../../utils/cn';
+import { DetailDialog } from '../mwg/DetailDialog';
+import { openModalFallback } from '../../utils/polyfills';
 
 interface ServicesSectionProps {
   services: ServicesSectionData;
+  ui: SiteUiLabels['services'];
   onSelectService?: (serviceTitle: string) => void;
 }
 
+const SERVICE_DIALOG_ID = 'service-detail-dialog';
+
 export const ServicesSection: React.FC<ServicesSectionProps> = ({
   services,
+  ui,
   onSelectService,
 }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeService, setActiveService] = useState<ServiceItem | null>(null);
+  const currentService = activeService ?? services.items[0];
 
-  // Synchronize active category with navigation hash (#services-engineering, #services-marketing)
-  useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash;
-      if (hash === '#services-engineering') {
-        setActiveCategory('engineering');
-      } else if (hash === '#services-marketing') {
-        setActiveCategory('marketing');
-      } else if (hash === '#services') {
-        setActiveCategory('all');
-      }
-    };
-
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
-  }, []);
-
-  const filteredServices = services.items.filter((item) => {
-    if (activeCategory === 'all') return true;
-    return item.categoryId === activeCategory;
-  });
-
-  const handleDiscussClick = (e: React.MouseEvent<HTMLAnchorElement>, service: ServiceItem) => {
-    e.preventDefault();
-    if (onSelectService) {
-      onSelectService(service.title);
-    }
-    const contactEl = document.getElementById('contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
-    }
+  const openServiceModal = (service: ServiceItem) => {
+    setActiveService(service);
+    openModalFallback(SERVICE_DIALOG_ID);
   };
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-slate-50 text-slate-900 scroll-mt-20 relative">
-      <div id="services-engineering" className="absolute -top-24 left-0 pointer-events-none" />
-      <div id="services-marketing" className="absolute -top-24 left-0 pointer-events-none" />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs sm:text-sm font-semibold tracking-wide">
-            <IconRenderer name="Layers" className="w-4 h-4 text-primary-600" />
-            <span>{services.badge}</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+    <section id="services" data-defer-paint="" className="section-band">
+      <div className="mwg-container">
+        <div className="section-header">
+          <h2 className="section-heading">
             {services.heading}{' '}
-            <span className="text-primary-600 underline decoration-accent-500 decoration-wavy decoration-2">
-              {services.highlightedWord}
-            </span>
+            <span className="section-heading-accent">{services.highlightedWord}</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-            {services.subheading}
-          </p>
+          <p className="section-lead">{services.subheading}</p>
         </div>
 
-        {/* Category Tabs Filter */}
-        <div className="mt-10 sm:mt-12 flex items-center sm:justify-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar pb-2 sm:pb-0">
-          {services.categories.map((cat) => {
-            const isActive = activeCategory === cat.id;
+        <div className="mwg-card-grid mwg-card-grid--responsive-4 mwg-card-grid--subgrid">
+          {services.items.map((service) => {
+            const isMarketing = service.categoryId === 'marketing';
+            const cardHighlights = service.highlights ?? service.deliverables.slice(0, 3);
+            const stackPreview =
+              service.techStack && service.techStack.length > 0
+                ? `${service.techStack.slice(0, 2).join(' · ')}${
+                    service.techStack.length > 2 ? ` +${service.techStack.length - 2}` : ''
+                  }`
+                : undefined;
+
             return (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id)}
-                className={cn(
-                  'px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xs whitespace-nowrap cursor-pointer shrink-0',
-                  isActive
-                    ? 'bg-slate-900 text-white shadow-md scale-[1.02]'
-                    : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200',
-                )}
-                aria-pressed={isActive}
+              <article
+                key={service.id}
+                className={
+                  isMarketing
+                    ? 'mwg-card highlight-card highlight-card--accent mwg-scroll-reveal'
+                    : 'mwg-card highlight-card mwg-scroll-reveal'
+                }
               >
-                {cat.label}
-              </button>
+                <div className="highlight-card-head">
+                  {service.badge ? <span className="meta-chip">{service.badge}</span> : <span />}
+                  <span className={isMarketing ? 'icon-tile icon-tile--accent' : 'icon-tile'}>
+                    <IconRenderer name={service.icon} size={20} aria-hidden="true" />
+                  </span>
+                </div>
+
+                <div className="highlight-card-body">
+                  <hgroup className="highlight-card-hgroup">
+                    <h3 className="highlight-card-title">{service.title}</h3>
+                    <p className="highlight-card-tagline">{service.tagline}</p>
+                  </hgroup>
+
+                  <ul className="highlight-points" aria-label={ui.highlightsHeading}>
+                    {cardHighlights.map((point, idx) => (
+                      <li key={idx} className="highlight-point">
+                        <IconRenderer
+                          name="CheckCircle2"
+                          size={15}
+                          className="check-icon"
+                          aria-hidden="true"
+                        />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mwg-card-footer highlight-card-footer">
+                  {stackPreview ? (
+                    <span className="highlight-card-meta">{stackPreview}</span>
+                  ) : (
+                    <span />
+                  )}
+
+                  <button
+                    type="button"
+                    command="show-modal"
+                    commandfor={SERVICE_DIALOG_ID}
+                    onClick={() => openServiceModal(service)}
+                    className="highlight-card-trigger"
+                  >
+                    <span>{ui.viewDetailsLabel}</span>
+                    <span className="visually-hidden">: {service.title}</span>
+                    <IconRenderer
+                      name="ArrowRight"
+                      size={15}
+                      className="highlight-card-arrow"
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+              </article>
             );
           })}
         </div>
+      </div>
 
-        {/* Dynamic Category Description */}
-        <div className="text-center mt-3 text-xs sm:text-sm text-slate-500 italic">
-          {services.categories.find((c) => c.id === activeCategory)?.description}
-        </div>
+      {currentService ? (
+        <DetailDialog
+          dialogId={SERVICE_DIALOG_ID}
+          badge={currentService.badge}
+          icon={currentService.icon}
+          accentIcon={currentService.categoryId === 'marketing'}
+          title={currentService.title}
+          subtitle={currentService.tagline}
+          closeLabel={ui.closeDialogLabel}
+          closeButtonLabel={ui.closeButtonLabel}
+          primaryAction={{
+            label: currentService.cta.label,
+            href: currentService.cta.href,
+            onClick: () =>
+              onSelectService?.(currentService.inquiryOption ?? currentService.title),
+          }}
+        >
+          <p className="mwg-dialog-summary">{currentService.summary}</p>
 
-        {/* Services Cards Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {filteredServices.map((service) => (
-            <div
-              key={service.id}
-              className="flex flex-col bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 p-6 sm:p-8 hover:-translate-y-1 group relative overflow-hidden"
-            >
-              {/* Top Accent Gradient Bar */}
-              <div
-                className={cn(
-                  'absolute top-0 left-0 right-0 h-1.5 transition-all duration-300',
-                  service.categoryId === 'marketing'
-                    ? 'bg-gradient-to-r from-accent-500 to-amber-500 group-hover:h-2'
-                    : 'bg-gradient-to-r from-primary-600 to-primary-400 group-hover:h-2',
-                )}
-              />
+          <div className="mwg-dialog-detail-section">
+            <p className="checklist-title">{ui.deliverablesHeading}</p>
+            <ul className="check-list">
+              {currentService.deliverables.map((item, idx) => (
+                <li key={idx} className="check-list-item">
+                  <IconRenderer
+                    name="CheckCircle2"
+                    size={16}
+                    className="check-icon"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              {/* Icon & Category Badge */}
-              <div className="flex items-center justify-between gap-4 mb-5">
-                <div
-                  className={cn(
-                    'w-12 h-12 rounded-xl flex items-center justify-center transition-colors',
-                    service.categoryId === 'marketing'
-                      ? 'bg-accent-50 text-accent-600 group-hover:bg-accent-100'
-                      : 'bg-primary-50 text-primary-600 group-hover:bg-primary-100',
-                  )}
-                >
-                  <IconRenderer name={service.icon} className="w-6 h-6" />
-                </div>
-
-                {service.badge && (
-                  <span
-                    className={cn(
-                      'text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md',
-                      service.categoryId === 'marketing'
-                        ? 'bg-accent-50 text-accent-700 border border-accent-200'
-                        : 'bg-slate-100 text-slate-700 border border-slate-200',
-                    )}
-                  >
-                    {service.badge}
+          {currentService.techStack && currentService.techStack.length > 0 ? (
+            <div className="mwg-dialog-detail-section">
+              <p className="checklist-title">{ui.stackHeading}</p>
+              <div className="chip-row">
+                {currentService.techStack.map((tech, idx) => (
+                  <span key={idx} className="meta-chip">
+                    {tech}
                   </span>
-                )}
-              </div>
-
-              {/* Title & Tagline */}
-              <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-xs font-semibold text-accent-600 tracking-wide mt-1 uppercase">
-                {service.tagline}
-              </p>
-
-              {/* Summary */}
-              <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                {service.summary}
-              </p>
-
-              {/* Tech Stack Chips */}
-              {service.techStack && service.techStack.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {service.techStack.map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {/* Deliverables Checklist */}
-              <div className="mt-6 pt-5 border-t border-slate-100 flex-1">
-                <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">
-                  Key Deliverables
-                </h4>
-                <ul className="space-y-2.5">
-                  {service.deliverables.map((item, dIdx) => (
-                    <li key={dIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600">
-                      <IconRenderer
-                        name="CheckCircle2"
-                        className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"
-                      />
-                      <span className="leading-snug">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Discuss Project CTA Link */}
-              <div className="mt-8 pt-4">
-                <a
-                  href={service.cta.href}
-                  onClick={(e) => handleDiscussClick(e, service)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-800 bg-slate-100 hover:bg-primary-600 hover:text-white transition-all duration-200 group-hover:shadow"
-                >
-                  <span>{service.cta.label}</span>
-                  <IconRenderer name="ArrowRight" className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          ) : null}
+        </DetailDialog>
+      ) : null}
     </section>
   );
 };

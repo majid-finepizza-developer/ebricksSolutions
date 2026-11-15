@@ -97,19 +97,18 @@ export interface HeroStat {
 
 export interface HeroProductPreview {
   id: string;
-  tabLabel: string;
-  name: string;
   badge: string;
+  name: string;
   tagline: string;
   image: string;
+  width?: number;
+  height?: number;
+  href: string;
+  ctaLabel: string;
   keyPoints: string[];
 }
 
 export interface HeroData {
-  badge: {
-    text: string;
-    icon: string;
-  };
   headline: {
     prefix: string;
     highlight: string;
@@ -138,7 +137,6 @@ export interface TechItem {
 }
 
 export interface TechStackData {
-  badge: string;
   heading: string;
   subheading: string;
   technologies: TechItem[];
@@ -148,62 +146,73 @@ export interface ProductScreenshot {
   title: string;
   caption: string;
   image: string;
-  badge: string;
+  width?: number;
+  height?: number;
 }
 
 export interface ProductFeature {
+  number?: string;
   title: string;
   description: string;
   icon: string;
+  badge?: string;
+  highlights?: string[];
 }
 
-export interface ReportQuestion {
-  question: string;
-  description: string;
-  icon: string;
+export interface EcosystemStage {
+  label: string;
+  items: string[];
+  role: 'input' | 'hub' | 'output';
+}
+
+export interface IdealForBar {
+  label: string;
+  note: string;
+  items: string[];
 }
 
 export interface FlagshipProduct {
   id: string;
+  productNumber?: string;
   name: string;
   tagline: string;
   category: string;
-  badge: string;
   summary: string;
+  inquiryOption?: string;
   primaryImage: string;
   screenshots: ProductScreenshot[];
   highlights: string[];
+  ecosystemFlow?: EcosystemStage[];
   features: ProductFeature[];
-  reportQuestions?: ReportQuestion[];
   hardwareSupport?: string[];
+  idealForBar?: IdealForBar;
   cta: {
+    label: string;
+    href: string;
+  };
+  secondaryCta?: {
     label: string;
     href: string;
   };
 }
 
 export interface FlagshipProductsData {
-  badge: string;
   heading: string;
   highlightedWord: string;
   subheading: string;
   products: FlagshipProduct[];
 }
 
-export interface ServiceCategory {
-  id: string;
-  label: string;
-  description: string;
-}
-
 export interface ServiceItem {
   id: string;
   categoryId: 'engineering' | 'marketing';
+  inquiryOption?: string;
   title: string;
   tagline: string;
   summary: string;
   icon: string;
   badge?: string;
+  highlights?: string[];
   deliverables: string[];
   techStack?: string[];
   cta: {
@@ -213,16 +222,16 @@ export interface ServiceItem {
 }
 
 export interface ServicesSectionData {
-  badge: string;
   heading: string;
   highlightedWord: string;
   subheading: string;
-  categories: ServiceCategory[];
   items: ServiceItem[];
 }
 
 export interface IndustryItem {
   id: string;
+  productTag?: string;
+  inquiryOption?: string;
   title: string;
   summary: string;
   icon: string;
@@ -230,7 +239,6 @@ export interface IndustryItem {
 }
 
 export interface IndustriesSectionData {
-  badge: string;
   heading: string;
   highlightedWord: string;
   subheading: string;
@@ -243,38 +251,45 @@ export interface ProcessStep {
   timeline: string;
   summary: string;
   icon: string;
+  highlights?: string[];
   activities: string[];
 }
 
 export interface Differentiator {
+  id?: string;
   title: string;
+  tagline?: string;
+  badge?: string;
   description: string;
   icon: string;
+  highlights?: string[];
+  details?: string[];
 }
 
 export interface ProcessSectionData {
-  badge: string;
   heading: string;
   highlightedWord: string;
   subheading: string;
   steps: ProcessStep[];
-  differentiatorsBadge: string;
   differentiatorsHeading: string;
   differentiators: Differentiator[];
 }
 
 export interface TestimonialItem {
+  id?: string;
+  headline?: string;
   quote: string;
   author: string;
   role: string;
   company: string;
   location: string;
   service: string;
+  badge?: string;
   rating: number;
+  highlights?: string[];
 }
 
 export interface TestimonialsSectionData {
-  badge: string;
   heading: string;
   highlightedWord: string;
   subheading: string;
@@ -288,29 +303,10 @@ export interface FaqItem {
 }
 
 export interface FaqSectionData {
-  badge: string;
   heading: string;
   highlightedWord: string;
   subheading: string;
   items: FaqItem[];
-}
-
-export interface CtaBannerData {
-  badge: string;
-  heading: string;
-  highlightedWord: string;
-  subheading: string;
-  primaryCta: {
-    label: string;
-    href: string;
-    icon: string;
-  };
-  secondaryCta: {
-    label: string;
-    href: string;
-    icon: string;
-  };
-  guarantees: string[];
 }
 
 export interface ContactFormField {
@@ -321,7 +317,6 @@ export interface ContactFormField {
 }
 
 export interface ContactSectionData {
-  badge: string;
   heading: string;
   highlightedWord: string;
   subheading: string;
@@ -335,6 +330,7 @@ export interface ContactSectionData {
       label: string;
       placeholder: string;
       required: boolean;
+      options?: string[];
     };
     budgetRange?: {
       label: string;
@@ -380,6 +376,109 @@ export interface FloatingWhatsAppConfig {
   initialMessage: string;
 }
 
+export interface SiteUiLabels {
+  skipToContent: string;
+  navbar: {
+    primaryLabel: string;
+    homeLabel: string;
+    menuButtonLabel: string;
+    closeMenuLabel: string;
+  };
+  hero: {
+    previewBadge: string;
+    windowStatusLabel: string;
+    inspectButtonLabel: string;
+    dialogTitlePrefix: string;
+    closeDialogLabel: string;
+    highlightsHeading: string;
+    productWidth: number;
+    productHeight: number;
+  };
+  flagship: {
+    inspectButtonLabel: string;
+    highlightsHeading: string;
+    ecosystemHeading: string;
+    modulesHeading: string;
+    standalonePillarsHeading: string;
+    hardwareHeading: string;
+    dialogTitlePrefix: string;
+    closeDialogLabel: string;
+  };
+  services: {
+    highlightsHeading: string;
+    deliverablesHeading: string;
+    stackHeading: string;
+    viewDetailsLabel: string;
+    closeDialogLabel: string;
+    closeButtonLabel: string;
+  };
+  process: {
+    stepPrefix: string;
+    activitiesHeading: string;
+    viewDetailsLabel: string;
+    closeDialogLabel: string;
+    closeButtonLabel: string;
+    ctaLabel: string;
+    ctaHref: string;
+    whyViewDetailsLabel: string;
+    whyDetailsHeading: string;
+    closeWhyDialogLabel: string;
+  };
+  industries: {
+    ctaPrefix: string;
+  };
+  testimonials: {
+    ratingLabelTemplate: string;
+    highlightsHeading: string;
+    viewDetailsLabel: string;
+    closeDialogLabel: string;
+    closeButtonLabel: string;
+    ctaLabel: string;
+    ctaHref: string;
+  };
+  faqs: {
+    expandAllLabel: string;
+    collapseAllLabel: string;
+    supportPrompt: string;
+    supportCtaLabel: string;
+    supportWhatsappHref: string;
+  };
+  contact: {
+    requiredLegend: string;
+    submittingLabel: string;
+    whatsAppFollowupLabel: string;
+    resetFormLabel: string;
+    multiServiceOption: string;
+    whatsAppMessageTitle: string;
+    channels: {
+      whatsappTitle: string;
+      whatsappSubtitle: string;
+      phoneSubtitle: string;
+      emailTitle: string;
+      emailSubtitle: string;
+      addressTitle: string;
+      mapsLinkLabel: string;
+      hoursLabel: string;
+    };
+    errors: {
+      fullName: string;
+      email: string;
+      phone: string;
+      serviceSelect: string;
+      projectDetails: string;
+      summaryHeading: string;
+    };
+  };
+  footer: {
+    legalNavLabel: string;
+    contactHeading: string;
+  };
+  floatingActions: {
+    dockLabel: string;
+    backToTopLabel: string;
+  };
+}
+
 export interface SiteContent {
   meta: MetaData;
   brand: BrandData;
@@ -394,8 +493,8 @@ export interface SiteContent {
   process: ProcessSectionData;
   testimonials: TestimonialsSectionData;
   faqs: FaqSectionData;
-  ctaBanner: CtaBannerData;
   contactSection: ContactSectionData;
   footer: FooterData;
   floatingWhatsApp: FloatingWhatsAppConfig;
+  ui: SiteUiLabels;
 }

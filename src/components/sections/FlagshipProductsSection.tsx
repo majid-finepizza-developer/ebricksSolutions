@@ -1,335 +1,299 @@
-import React, { useState } from 'react';
-import type { FlagshipProductsData, FlagshipProduct } from '../../types/content';
+import React from 'react';
+import type {
+  CompanyContact,
+  FlagshipProduct,
+  FlagshipProductsData,
+  SiteUiLabels,
+} from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
-import { cn } from '../../utils/cn';
+import { resolveAssetUrl } from '../../utils/assets';
+import { ScreenshotDialog } from '../mwg/ScreenshotDialog';
+import { openModalFallback } from '../../utils/polyfills';
 
 interface FlagshipProductsSectionProps {
   data: FlagshipProductsData;
+  contact: CompanyContact;
+  ui: SiteUiLabels['flagship'];
   onSelectProduct?: (productName: string) => void;
 }
 
 export const FlagshipProductsSection: React.FC<FlagshipProductsSectionProps> = ({
   data,
+  contact,
+  ui,
   onSelectProduct,
 }) => {
-  const [activeFastPosTab, setActiveFastPosTab] = useState(0);
-
-  const fastPosProduct = data.products.find((p) => p.id === 'fast-pos') || data.products[0];
-  const cloudProduct = data.products.find((p) => p.id === 'cloud-franchise') || data.products[1];
-
-  const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>, product: FlagshipProduct) => {
-    e.preventDefault();
-    if (onSelectProduct) {
-      onSelectProduct(product.name);
-    }
-    const contactEl = document.getElementById('contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleProductDemo = (product: FlagshipProduct) => {
+    onSelectProduct?.(product.inquiryOption ?? product.name);
   };
 
   return (
-    <section id="products" className="py-20 lg:py-28 bg-slate-50/70 text-slate-900 scroll-mt-20 relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header - Clean Swiss Typography */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 text-primary-800 border border-primary-200 text-xs sm:text-sm font-semibold tracking-wide shadow-xs">
-            <IconRenderer name="Award" className="w-4 h-4 text-primary-600" />
-            <span>{data.badge}</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight font-heading">
-            {data.heading}{' '}
-            <span className="text-primary-600">
-              {data.highlightedWord}
-            </span>
+    <section id="products" className="section-band section-band--alt">
+      <div className="mwg-container">
+        <div className="section-header">
+          <h2 className="section-heading">
+            {data.heading} <span className="section-heading-accent">{data.highlightedWord}</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-            {data.subheading}
-          </p>
+          <p className="section-lead">{data.subheading}</p>
         </div>
 
-        {/* ========================================================================= */}
-        {/* HERO PRODUCT 1: FAST POS SYSTEM */}
-        {/* ========================================================================= */}
-        {fastPosProduct && (
-          <div id="fast-pos" className="scroll-mt-24 space-y-10 pb-20 border-b border-slate-200">
-            {/* Header / Intro */}
-            <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6">
-              <div className="max-w-3xl space-y-3">
-                <span className="inline-block text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-50 border border-amber-200 px-3 py-1 rounded-md">
-                  {fastPosProduct.badge} • Counter & Restaurant Operations
-                </span>
-                <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 leading-tight font-heading">
-                  {fastPosProduct.name}
-                </h3>
-                <p className="text-sm sm:text-base text-accent-600 font-semibold tracking-wide">
-                  {fastPosProduct.tagline}
-                </p>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  {fastPosProduct.summary}
-                </p>
-              </div>
+        <div className="flagship-stack">
+          {data.products.map((product) => {
+            const isEcosystemProduct = Boolean(
+              product.ecosystemFlow && product.ecosystemFlow.length > 0,
+            );
+            const fallbackCardClass = product.idealForBar
+              ? 'product-showcase-card product-showcase-card--offline'
+              : 'product-showcase-card product-showcase-card--restaurant';
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto shrink-0">
-                <a
-                  href="#contact"
-                  onClick={(e) => handleDemoClick(e, fastPosProduct)}
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md shadow-primary-600/20 transition-all hover:-translate-y-0.5 whitespace-nowrap"
-                >
-                  <span>{fastPosProduct.cta.label}</span>
-                  <IconRenderer name="ArrowRight" className="w-4 h-4" />
-                </a>
-
-                <a
-                  href="https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20would%20like%20to%20see%20a%20Fast%20POS%20demo."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-xs transition-all whitespace-nowrap"
-                >
-                  <IconRenderer name="MessageSquare" className="w-4 h-4 text-emerald-600" />
-                  <span>WhatsApp POS Demo</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Interactive Screenshot Showcase with Tabs */}
-            <div className="rounded-3xl bg-white border border-slate-200 p-4 sm:p-6 lg:p-8 shadow-sm">
-              <div className="flex items-center gap-2 pb-4 sm:pb-5 border-b border-slate-200 overflow-x-auto no-scrollbar">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mr-1 whitespace-nowrap shrink-0">
-                  System Screens:
-                </span>
-                <div className="flex items-center gap-2 shrink-0">
-                  {fastPosProduct.screenshots.map((s, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => setActiveFastPosTab(idx)}
-                      className={cn(
-                        'px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer',
-                        activeFastPosTab === idx
-                          ? 'bg-slate-900 text-white shadow-sm'
-                          : 'bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200/80 border border-slate-200',
-                      )}
+            return (
+              <article key={product.id} id={product.id} className={fallbackCardClass}>
+                <div className="product-kicker-row">
+                  {product.productNumber ? (
+                    <span
+                      className={
+                        product.idealForBar
+                          ? 'product-number-badge product-number-badge--accent'
+                          : 'product-number-badge'
+                      }
                     >
-                      <span>{s.title}</span>
-                    </button>
-                  ))}
+                      {product.productNumber}
+                    </span>
+                  ) : null}
+                  <span className="product-category-badge">{product.category}</span>
                 </div>
-              </div>
 
-              {/* Active Screen View */}
-              {fastPosProduct.screenshots[activeFastPosTab] && (
-                <div className="mt-6 space-y-4">
-                  <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
-                    <img
-                      src={fastPosProduct.screenshots[activeFastPosTab].image}
-                      alt={fastPosProduct.screenshots[activeFastPosTab].title}
-                      className="w-full h-auto object-cover max-h-[650px]"
-                    />
-                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-bold text-slate-900 border border-slate-200 shadow-sm">
-                      {fastPosProduct.screenshots[activeFastPosTab].badge}
+                <div className="product-overview-grid">
+                  <div>
+                    <h3 className="product-heading">{product.name}</h3>
+                    <p className="product-tagline">{product.tagline}</p>
+                    <p className="product-summary">{product.summary}</p>
+
+                    <div className="hero-cta-row">
+                      <a
+                        href={product.cta.href}
+                        onClick={() => handleProductDemo(product)}
+                        className="btn btn-primary"
+                      >
+                        <span>{product.cta.label}</span>
+                        <IconRenderer name="ArrowRight" size={17} aria-hidden="true" />
+                      </a>
+
+                      {product.secondaryCta ? (
+                        <a href={product.secondaryCta.href} className="btn btn-secondary">
+                          <span>{product.secondaryCta.label}</span>
+                        </a>
+                      ) : null}
+
+                      <a
+                        href={contact.whatsapp.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-whatsapp"
+                      >
+                        <IconRenderer name={contact.whatsapp.icon} size={17} aria-hidden="true" />
+                        <span>{contact.whatsapp.label}</span>
+                      </a>
                     </div>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
-                    <strong className="text-slate-900 font-semibold">Screen Overview:</strong>{' '}
-                    {fastPosProduct.screenshots[activeFastPosTab].caption}
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* 7-Question Financial Intelligence Section */}
-            {fastPosProduct.reportQuestions && (
-              <div className="space-y-6 pt-4">
-                <div className="text-center max-w-3xl mx-auto space-y-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-50 px-3 py-1 rounded-full border border-primary-200">
-                    Comprehensive Financial Suite
-                  </span>
-                  <h4 className="text-xl sm:text-3xl font-extrabold text-slate-900 font-heading">
-                    The 7 Core Business Questions Fast POS Answers in Seconds
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-500">
-                    Built directly from our Financial & Inventory Report Center (shown in screenshot 2 above).
-                  </p>
+                  <div className="checklist-panel">
+                    <h4 className="checklist-title">{ui.highlightsHeading}</h4>
+                    <ul className="check-list">
+                      {product.highlights.map((item, idx) => (
+                        <li key={idx} className="check-list-item">
+                          <IconRenderer
+                            name="CheckCircle2"
+                            size={17}
+                            className="check-icon"
+                            aria-hidden="true"
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                  {fastPosProduct.reportQuestions.map((q, qIdx) => (
-                    <div
-                      key={qIdx}
-                      className="p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-primary-300 hover:shadow-md transition-all space-y-2.5 shadow-xs"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center">
-                        <IconRenderer name={q.icon} className="w-5 h-5" />
-                      </div>
-                      <h5 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
-                        {q.question}
-                      </h5>
-                      <p className="text-xs text-slate-600 leading-relaxed">
-                        {q.description}
-                      </p>
+                {isEcosystemProduct && product.ecosystemFlow ? (
+                  <div className="ecosystem-flow-panel">
+                    <h4 className="sub-block-heading">{ui.ecosystemHeading}</h4>
+                    <div className="ecosystem-flow">
+                      {product.ecosystemFlow.map((stage, stageIdx) => (
+                        <React.Fragment key={stageIdx}>
+                          <div className={`ecosystem-stage ecosystem-stage--${stage.role}`}>
+                            <span className="ecosystem-stage-label">{stage.label}</span>
+                            <ul className="ecosystem-stage-list">
+                              {stage.items.map((item, itemIdx) => (
+                                <li key={itemIdx} className="ecosystem-stage-item">
+                                  <IconRenderer
+                                    name={
+                                      stage.role === 'hub' ? 'Layers' : 'CheckCircle2'
+                                    }
+                                    size={14}
+                                    aria-hidden="true"
+                                  />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {stageIdx < product.ecosystemFlow!.length - 1 ? (
+                            <span className="ecosystem-arrow" aria-hidden="true">
+                              <IconRenderer name="ArrowRight" size={18} />
+                            </span>
+                          ) : null}
+                        </React.Fragment>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                  </div>
+                ) : null}
 
-            {/* Fast POS Core Highlights & Hardware Support */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
-              <div className="lg:col-span-7 space-y-3.5">
-                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-heading">
-                  Front-Counter Operational Advantages:
-                </h4>
-                <div className="space-y-2.5">
-                  {fastPosProduct.highlights.map((h, hIdx) => (
-                    <div
-                      key={hIdx}
-                      className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs"
-                    >
-                      <IconRenderer
-                        name="CheckCircle2"
-                        className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"
-                      />
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                {product.screenshots.length > 0 ? (
+                  <div className="product-gallery-grid">
+                    {product.screenshots.map((screen, screenIdx) => {
+                      const dialogId = `screen-${product.id}-${screenIdx}`;
 
-              {/* Hardware Compatibility */}
-              {fastPosProduct.hardwareSupport && (
-                <div className="lg:col-span-5 p-6 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-xs">
-                  <div className="flex items-center gap-2">
-                    <IconRenderer name="Cpu" className="w-5 h-5 text-accent-600" />
-                    <h4 className="text-base font-bold text-slate-900 font-heading">
-                      Tested Hardware Compatibility:
+                      return (
+                        <React.Fragment key={dialogId}>
+                          <figure className="screenshot-card">
+                            <img
+                              src={resolveAssetUrl(screen.image)}
+                              alt={screen.title}
+                              width={screen.width ?? 1024}
+                              height={screen.height ?? 614}
+                              loading="lazy"
+                              decoding="async"
+                            />
+                            <figcaption className="screenshot-caption-bar">
+                              <div>
+                                <p className="screenshot-caption-title">{screen.title}</p>
+                                <p className="product-summary">{screen.caption}</p>
+                              </div>
+                              <button
+                                type="button"
+                                command="show-modal"
+                                commandfor={dialogId}
+                                onClick={() => openModalFallback(dialogId)}
+                                aria-label={`${ui.inspectButtonLabel}: ${screen.title}`}
+                                className="btn btn-secondary"
+                              >
+                                <IconRenderer name="Maximize2" size={16} aria-hidden="true" />
+                                <span>{ui.inspectButtonLabel}</span>
+                              </button>
+                            </figcaption>
+                          </figure>
+
+                          <ScreenshotDialog
+                            dialogId={dialogId}
+                            title={`${ui.dialogTitlePrefix}: ${screen.title}`}
+                            imageSrc={resolveAssetUrl(screen.image)}
+                            imageAlt={screen.title}
+                            width={screen.width ?? 1024}
+                            height={screen.height ?? 614}
+                            caption={screen.caption}
+                            closeLabel={ui.closeDialogLabel}
+                          />
+                        </React.Fragment>
+                      );
+                    })}
+                  </div>
+                ) : null}
+
+                {product.features.length > 0 ? (
+                  <div id={isEcosystemProduct ? 'restaurant-modules' : undefined}>
+                    <h4 className="sub-block-heading">
+                      {isEcosystemProduct ? ui.modulesHeading : ui.standalonePillarsHeading}
                     </h4>
+
+                    <div className={isEcosystemProduct ? 'module-grid-5' : 'feature-grid-3'}>
+                      {product.features.map((feat, fIdx) => (
+                        <article key={fIdx} className="mwg-card module-card mwg-scroll-reveal">
+                          <div className="mwg-card-header">
+                            <div className="module-card-meta">
+                              {feat.number ? (
+                                <span className="module-number-pill">{feat.number}</span>
+                              ) : null}
+                              {feat.badge ? (
+                                <span className="mwg-chip">{feat.badge}</span>
+                              ) : null}
+                            </div>
+                            <span
+                              className={
+                                product.idealForBar ? 'icon-tile icon-tile--accent' : 'icon-tile'
+                              }
+                            >
+                              <IconRenderer name={feat.icon} size={20} aria-hidden="true" />
+                            </span>
+                          </div>
+
+                          <div className="mwg-card-body">
+                            <h5 className="mwg-card-title">{feat.title}</h5>
+                            <p>{feat.description}</p>
+
+                            {feat.highlights && feat.highlights.length > 0 ? (
+                              <ul className="module-highlights">
+                                {feat.highlights.map((hl, hlIdx) => (
+                                  <li key={hlIdx}>
+                                    <IconRenderer
+                                      name="Check"
+                                      size={14}
+                                      className="check-icon"
+                                      aria-hidden="true"
+                                    />
+                                    <span>{hl}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : null}
+                          </div>
+                        </article>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-xs text-slate-500">
-                    Fast POS works seamlessly with standard retail hardware packages:
-                  </p>
-                  <ul className="space-y-2">
-                    {fastPosProduct.hardwareSupport.map((hw, hwIdx) => (
-                      <li key={hwIdx} className="flex items-center gap-2 text-xs text-slate-700">
-                        <IconRenderer name="Check" className="w-4 h-4 text-emerald-600 shrink-0" />
-                        <span>{hw}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="pt-2 text-[11px] text-slate-500 italic border-t border-slate-100">
-                    Need full counter hardware in Lahore? We provide complete bundles with on-site installation.
+                ) : null}
+
+                {product.idealForBar ? (
+                  <aside id="fast-pos-ideal" className="ideal-for-banner">
+                    <div className="ideal-for-head">
+                      <h4 className="checklist-title">{product.idealForBar.label}</h4>
+                      <p className="ideal-for-note">{product.idealForBar.note}</p>
+                    </div>
+                    <ul className="ideal-for-chips">
+                      {product.idealForBar.items.map((biz, bizIdx) => (
+                        <li key={bizIdx} className="ideal-for-chip">
+                          <IconRenderer name="Store" size={14} aria-hidden="true" />
+                          <span>{biz}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </aside>
+                ) : null}
+
+                {product.hardwareSupport && product.hardwareSupport.length > 0 ? (
+                  <div className="checklist-panel">
+                    <h4 className="checklist-title">{ui.hardwareHeading}</h4>
+                    <ul className="check-list check-list--columns">
+                      {product.hardwareSupport.map((hw, hwIdx) => (
+                        <li key={hwIdx} className="check-list-item">
+                          <IconRenderer
+                            name="Check"
+                            size={16}
+                            className="check-icon"
+                            aria-hidden="true"
+                          />
+                          <span>{hw}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================================= */}
-        {/* HERO PRODUCT 2: CLOUD MULTI-BRANCH & FRANCHISE PORTAL */}
-        {/* ========================================================================= */}
-        {cloudProduct && (
-          <div id="cloud-franchise" className="scroll-mt-24 pt-16 space-y-10">
-            {/* Header / Intro */}
-            <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6">
-              <div className="max-w-3xl space-y-3">
-                <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-50 border border-primary-200 px-3 py-1 rounded-md">
-                  {cloudProduct.badge} • Head Office & Centralized Chain Governance
-                </span>
-                <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 leading-tight font-heading">
-                  {cloudProduct.name}
-                </h3>
-                <p className="text-sm sm:text-base text-primary-600 font-semibold tracking-wide">
-                  {cloudProduct.tagline}
-                </p>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  {cloudProduct.summary}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto shrink-0">
-                <a
-                  href="#contact"
-                  onClick={(e) => handleDemoClick(e, cloudProduct)}
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-md shadow-primary-600/20 transition-all hover:-translate-y-0.5 whitespace-nowrap"
-                >
-                  <span>{cloudProduct.cta.label}</span>
-                  <IconRenderer name="ArrowRight" className="w-4 h-4" />
-                </a>
-
-                <a
-                  href="https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20am%20interested%20in%20the%20Cloud%20Multi-Branch%20Portal."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-xs transition-all whitespace-nowrap"
-                >
-                  <IconRenderer name="MessageSquare" className="w-4 h-4 text-emerald-600" />
-                  <span>WhatsApp Portal Demo</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Screenshot Display Card */}
-            <div className="rounded-3xl bg-white border border-slate-200 p-4 sm:p-6 lg:p-8 shadow-sm">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
-                <img
-                  src={cloudProduct.primaryImage}
-                  alt={cloudProduct.name}
-                  className="w-full h-auto object-cover max-h-[600px]"
-                />
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-bold text-slate-900 border border-slate-200 shadow-sm">
-                  Live System Screenshot: User Types & Franchise Branch Permissions
-                </div>
-              </div>
-
-              <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                <strong className="text-slate-900 font-semibold">Administrative Architecture:</strong> As seen in the management screen above, the Cloud Portal provides full granular control over <strong>System Administrators</strong>, <strong>Branch Heads</strong>, <strong>Restaurant Managers</strong>, <strong>Call Center Agents</strong>, <strong>Delivery Riders</strong>, and <strong>Customers</strong>.
-              </div>
-            </div>
-
-            {/* 4 Multi-Branch Core Capability Pillars */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {cloudProduct.features.map((feat, fIdx) => (
-                <div
-                  key={fIdx}
-                  className="p-6 rounded-2xl bg-white border border-slate-200/90 hover:border-primary-300 hover:shadow-md transition-all space-y-3 shadow-xs"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 border border-primary-100 flex items-center justify-center">
-                    <IconRenderer name={feat.icon} className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-base font-bold text-slate-900 font-heading">{feat.title}</h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {feat.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Cloud Highlights Checklist */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-xs">
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 font-heading">
-                Enterprise Multi-Branch Highlights:
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {cloudProduct.highlights.map((hl, hlIdx) => (
-                  <div
-                    key={hlIdx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700"
-                  >
-                    <IconRenderer
-                      name="CheckCircle2"
-                      className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"
-                    />
-                    <span>{hl}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+                ) : null}
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

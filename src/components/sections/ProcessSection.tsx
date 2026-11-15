@@ -1,108 +1,258 @@
-import React from 'react';
-import type { ProcessSectionData } from '../../types/content';
+import React, { useState } from 'react';
+import type {
+  Differentiator,
+  ProcessSectionData,
+  ProcessStep,
+  SiteUiLabels,
+} from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
+import { DetailDialog } from '../mwg/DetailDialog';
+import { openModalFallback } from '../../utils/polyfills';
 
 interface ProcessSectionProps {
   process: ProcessSectionData;
+  ui: SiteUiLabels['process'];
 }
 
-export const ProcessSection: React.FC<ProcessSectionProps> = ({ process }) => {
-  return (
-    <section id="process" className="py-20 lg:py-28 bg-white text-slate-900 scroll-mt-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-100 text-accent-700 text-xs sm:text-sm font-semibold tracking-wide">
-            <IconRenderer name="Compass" className="w-4 h-4 text-accent-600" />
-            <span>{process.badge}</span>
-          </div>
+const PROCESS_DIALOG_ID = 'process-step-detail-dialog';
+const WHY_US_DIALOG_ID = 'why-us-detail-dialog';
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight font-heading">
+export const ProcessSection: React.FC<ProcessSectionProps> = ({ process, ui }) => {
+  const [activeStep, setActiveStep] = useState<ProcessStep | null>(null);
+  const [activeDiff, setActiveDiff] = useState<Differentiator | null>(null);
+  const currentStep = activeStep ?? process.steps[0];
+  const currentDiff = activeDiff ?? process.differentiators[0];
+
+  const openStepModal = (step: ProcessStep) => {
+    setActiveStep(step);
+    openModalFallback(PROCESS_DIALOG_ID);
+  };
+
+  const openDiffModal = (diff: Differentiator) => {
+    setActiveDiff(diff);
+    openModalFallback(WHY_US_DIALOG_ID);
+  };
+
+  return (
+    <section id="process" data-defer-paint="" className="section-band section-band--surface">
+      <div className="mwg-container">
+        <div className="section-header">
+          <h2 className="section-heading">
             {process.heading}{' '}
-            <span className="text-primary-600">
-              {process.highlightedWord}
-            </span>
+            <span className="section-heading-accent">{process.highlightedWord}</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-            {process.subheading}
-          </p>
+          <p className="section-lead">{process.subheading}</p>
         </div>
 
-        {/* 4-Step Process Timeline Cards */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {process.steps.map((step, idx) => (
-            <div
-              key={idx}
-              className="relative flex flex-col bg-slate-50 rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
-            >
-              {/* Step Number & Icon */}
-              <div className="flex items-center justify-between gap-4 mb-4">
-                <span className="text-3xl font-black text-slate-300 group-hover:text-primary-500 transition-colors">
-                  {step.number}
-                </span>
-                <div className="w-10 h-10 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center">
-                  <IconRenderer name={step.icon} className="w-5 h-5" />
+        <ol className="mwg-card-grid mwg-card-grid--responsive-4 mwg-card-grid--subgrid">
+          {process.steps.map((step) => {
+            const stepHighlights = step.highlights ?? step.activities.slice(0, 3);
+
+            return (
+              <li key={step.number} className="mwg-card highlight-card mwg-scroll-reveal">
+                <div className="highlight-card-head">
+                  <span className="step-number-pill">{step.number}</span>
+                  <span className="icon-tile">
+                    <IconRenderer name={step.icon} size={20} aria-hidden="true" />
+                  </span>
                 </div>
-              </div>
 
-              {/* Timeline Pill */}
-              <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-accent-600 bg-accent-50 border border-accent-200 px-2.5 py-0.5 rounded-md w-fit mb-3">
-                {step.timeline}
-              </span>
+                <div className="highlight-card-body">
+                  <hgroup className="highlight-card-hgroup">
+                    <h3 className="highlight-card-title">{step.title}</h3>
+                  </hgroup>
 
-              {/* Title & Summary */}
-              <h3 className="text-lg font-bold text-slate-900 group-hover:text-primary-600 transition-colors">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {step.summary}
-              </p>
+                  <ul className="highlight-points" aria-label={ui.activitiesHeading}>
+                    {stepHighlights.map((point, idx) => (
+                      <li key={idx} className="highlight-point">
+                        <IconRenderer
+                          name="Check"
+                          size={15}
+                          className="check-icon"
+                          aria-hidden="true"
+                        />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              {/* Activities Checklist */}
-              <div className="mt-5 pt-4 border-t border-slate-200/80 flex-1">
-                <ul className="space-y-2">
-                  {step.activities.map((act, aIdx) => (
-                    <li key={aIdx} className="flex items-start gap-2 text-xs text-slate-600">
-                      <IconRenderer name="Check" className="w-3.5 h-3.5 text-primary-500 shrink-0 mt-0.5" />
-                      <span>{act}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="mwg-card-footer highlight-card-footer">
+                  <span className="meta-chip">{step.timeline}</span>
 
-        {/* Why Choose EBRICKS Differentiators Sub-Section */}
-        <div id="why-us" className="mt-24 pt-16 border-t border-slate-200 scroll-mt-24">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary-600 bg-primary-50 px-3 py-1 rounded-full border border-primary-200">
-              {process.differentiatorsBadge}
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-              {process.differentiatorsHeading}
-            </h3>
+                  <button
+                    type="button"
+                    command="show-modal"
+                    commandfor={PROCESS_DIALOG_ID}
+                    onClick={() => openStepModal(step)}
+                    className="highlight-card-trigger"
+                  >
+                    <span>{ui.viewDetailsLabel}</span>
+                    <span className="visually-hidden">
+                      : {ui.stepPrefix} {step.number} - {step.title}
+                    </span>
+                    <IconRenderer
+                      name="ArrowRight"
+                      size={15}
+                      className="highlight-card-arrow"
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+
+        <div id="why-us" tabIndex={-1} className="why-panel">
+          <div className="section-header">
+            <h3 className="section-heading">{process.differentiatorsHeading}</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {process.differentiators.map((diff, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:border-slate-300 hover:shadow-md transition-all space-y-3"
-              >
-                <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center">
-                  <IconRenderer name={diff.icon} className="w-6 h-6 text-accent-400" />
-                </div>
-                <h4 className="text-base font-bold text-slate-900">{diff.title}</h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {diff.description}
-                </p>
-              </div>
-            ))}
+          <div className="mwg-card-grid mwg-card-grid--responsive-4 mwg-card-grid--subgrid">
+            {process.differentiators.map((diff, idx) => {
+              const diffHighlights = diff.highlights ?? [];
+
+              return (
+                <article
+                  key={diff.id ?? idx}
+                  className="mwg-card highlight-card highlight-card--accent mwg-scroll-reveal"
+                >
+                  <div className="highlight-card-head">
+                    {diff.badge ? (
+                      <span className="meta-chip highlight-card-chip">{diff.badge}</span>
+                    ) : (
+                      <span />
+                    )}
+                    <span className="icon-tile icon-tile--accent">
+                      <IconRenderer name={diff.icon} size={20} aria-hidden="true" />
+                    </span>
+                  </div>
+
+                  <div className="highlight-card-body">
+                    <hgroup className="highlight-card-hgroup">
+                      <h4 className="highlight-card-title">{diff.title}</h4>
+                      {diff.tagline ? (
+                        <p className="highlight-card-tagline">{diff.tagline}</p>
+                      ) : null}
+                    </hgroup>
+
+                    {diffHighlights.length > 0 ? (
+                      <ul className="highlight-points">
+                        {diffHighlights.map((point, pIdx) => (
+                          <li key={pIdx} className="highlight-point">
+                            <IconRenderer
+                              name="Check"
+                              size={15}
+                              className="check-icon"
+                              aria-hidden="true"
+                            />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p>{diff.description}</p>
+                    )}
+                  </div>
+
+                  <div className="mwg-card-footer highlight-card-footer">
+                    <button
+                      type="button"
+                      command="show-modal"
+                      commandfor={WHY_US_DIALOG_ID}
+                      onClick={() => openDiffModal(diff)}
+                      className="highlight-card-trigger"
+                    >
+                      <span>{ui.whyViewDetailsLabel}</span>
+                      <span className="visually-hidden">: {diff.title}</span>
+                      <IconRenderer
+                        name="ArrowRight"
+                        size={15}
+                        className="highlight-card-arrow"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>
+
+      {currentStep ? (
+        <DetailDialog
+          dialogId={PROCESS_DIALOG_ID}
+          badge={`${ui.stepPrefix} ${currentStep.number} · ${currentStep.timeline}`}
+          icon={currentStep.icon}
+          title={currentStep.title}
+          closeLabel={ui.closeDialogLabel}
+          closeButtonLabel={ui.closeButtonLabel}
+          primaryAction={{
+            label: ui.ctaLabel,
+            href: ui.ctaHref,
+          }}
+        >
+          <p className="mwg-dialog-summary">{currentStep.summary}</p>
+
+          <div className="mwg-dialog-detail-section">
+            <p className="checklist-title">{ui.activitiesHeading}</p>
+            <ul className="check-list">
+              {currentStep.activities.map((activity, idx) => (
+                <li key={idx} className="check-list-item">
+                  <IconRenderer
+                    name="CheckCircle2"
+                    size={16}
+                    className="check-icon"
+                    aria-hidden="true"
+                  />
+                  <span>{activity}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </DetailDialog>
+      ) : null}
+
+      {currentDiff ? (
+        <DetailDialog
+          dialogId={WHY_US_DIALOG_ID}
+          badge={currentDiff.badge}
+          icon={currentDiff.icon}
+          accentIcon
+          title={currentDiff.title}
+          subtitle={currentDiff.tagline}
+          closeLabel={ui.closeWhyDialogLabel}
+          closeButtonLabel={ui.closeButtonLabel}
+          primaryAction={{
+            label: ui.ctaLabel,
+            href: ui.ctaHref,
+          }}
+        >
+          <p className="mwg-dialog-summary">{currentDiff.description}</p>
+
+          {currentDiff.details && currentDiff.details.length > 0 ? (
+            <div className="mwg-dialog-detail-section">
+              <p className="checklist-title">{ui.whyDetailsHeading}</p>
+              <ul className="check-list">
+                {currentDiff.details.map((detail, idx) => (
+                  <li key={idx} className="check-list-item">
+                    <IconRenderer
+                      name="CheckCircle2"
+                      size={16}
+                      className="check-icon"
+                      aria-hidden="true"
+                    />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </DetailDialog>
+      ) : null}
     </section>
   );
 };

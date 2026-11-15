@@ -1,108 +1,125 @@
-import React, { useState } from 'react';
-import type { FaqSectionData } from '../../types/content';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import type { FaqSectionData, SiteUiLabels } from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
-import { cn } from '../../utils/cn';
 
 interface FaqSectionProps {
   faqs: FaqSectionData;
+  ui: SiteUiLabels['faqs'];
 }
 
-export const FaqSection: React.FC<FaqSectionProps> = ({ faqs }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default
+const FAQ_LIST_ID = 'faq-accordion-list';
 
-  const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+export const FaqSection: React.FC<FaqSectionProps> = ({ faqs, ui }) => {
+  const listRef = useRef<HTMLDivElement>(null);
+  const handledByCommandRef = useRef(false);
+
+  const [openStates, setOpenStates] = useState<boolean[]>(() =>
+    faqs.items.map((_, idx) => idx === 0),
+  );
+
+  const allExpanded = openStates.length > 0 && openStates.every(Boolean);
+
+  const toggleAllDetails = useCallback(() => {
+    setOpenStates((prev) => {
+      const nextOpen = !prev.every(Boolean);
+      return prev.map(() => nextOpen);
+    });
+  }, []);
+
+  // Custom Invoker Command (`--toggle-all`) listener on accordion container.
+  useEffect(() => {
+    const listEl = listRef.current;
+    if (!listEl) return;
+
+    const handleCommand = (event: Event) => {
+      const cmd = (event as Event & { command?: string }).command;
+      if (cmd !== '--toggle-all') return;
+      handledByCommandRef.current = true;
+      toggleAllDetails();
+    };
+
+    listEl.addEventListener('command', handleCommand);
+    return () => listEl.removeEventListener('command', handleCommand);
+  }, [toggleAllDetails]);
+
+  const handleToggleAllClick = () => {
+    // Fallback strictly when native `commandfor` / async invokers-polyfill didn't handle the command.
+    queueMicrotask(() => {
+      if (!handledByCommandRef.current) {
+        toggleAllDetails();
+      }
+      handledByCommandRef.current = false;
+    });
   };
 
   return (
-    <section id="faqs" className="py-20 lg:py-28 bg-slate-50 text-slate-900 scroll-mt-20">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="text-center space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs sm:text-sm font-semibold tracking-wide">
-            <IconRenderer name="HelpCircle" className="w-4 h-4 text-primary-600" />
-            <span>{faqs.badge}</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+    <section id="faqs" data-defer-paint="" className="section-band">
+      <div className="mwg-container">
+        <div className="section-header">
+          <h2 className="section-heading">
             {faqs.heading}{' '}
-            <span className="text-primary-600">{faqs.highlightedWord}</span>
+            <span className="section-heading-accent">{faqs.highlightedWord}</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
-            {faqs.subheading}
-          </p>
+          <p className="section-lead">{faqs.subheading}</p>
         </div>
 
-        {/* FAQs Accordion */}
-        <div className="space-y-4">
-          {faqs.items.map((faq, idx) => {
-            const isOpen = openIndex === idx;
-            return (
-              <div
-                key={idx}
-                className={cn(
-                  'rounded-2xl border transition-all duration-200 overflow-hidden',
-                  isOpen
-                    ? 'bg-white border-primary-300 shadow-md ring-1 ring-primary-100'
-                    : 'bg-white/80 border-slate-200 hover:border-slate-300',
-                )}
-              >
-                <button
-                  type="button"
-                  onClick={() => toggleFaq(idx)}
-                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-                  aria-expanded={isOpen}
-                >
-                  <div className="flex items-center gap-3">
-                    {faq.category && (
-                      <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded">
-                        {faq.category}
-                      </span>
-                    )}
-                    <span className="text-base sm:text-lg font-bold text-slate-900">
-                      {faq.question}
-                    </span>
-                  </div>
+        <div className="faq-toolbar">
+          <button
+            type="button"
+            command="--toggle-all"
+            commandfor={FAQ_LIST_ID}
+            aria-expanded={allExpanded}
+            onClick={handleToggleAllClick}
+            className="btn btn-secondary"
+          >
+            <IconRenderer
+              name={allExpanded ? 'ChevronUp' : 'ChevronDown'}
+              size={16}
+              aria-hidden="true"
+            />
+            <span>{allExpanded ? ui.collapseAllLabel : ui.expandAllLabel}</span>
+          </button>
+        </div>
 
-                  <div
-                    className={cn(
-                      'w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200',
-                      isOpen
-                        ? 'bg-primary-50 text-primary-600 rotate-180'
-                        : 'bg-slate-100 text-slate-600',
-                    )}
-                  >
-                    <IconRenderer name="ChevronDown" className="w-4 h-4" />
-                  </div>
-                </button>
+        <div ref={listRef} id={FAQ_LIST_ID} className="mwg-accordion">
+          {faqs.items.map((faq, idx) => (
+            <details
+              key={idx}
+              open={openStates[idx] ?? false}
+              onToggle={(e) => {
+                const isOpenNow = e.currentTarget.open;
+                setOpenStates((prev) =>
+                  prev.map((val, itemIdx) => (itemIdx === idx ? isOpenNow : val)),
+                );
+              }}
+              className="mwg-details"
+            >
+              {/* No <h*> inside <summary>: preserves native button semantics cleanly */}
+              <summary className="mwg-summary">
+                <span>{faq.question}</span>
+                {faq.category ? (
+                  <span className="mwg-summary-cat">{faq.category}</span>
+                ) : null}
+              </summary>
 
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 animate-fadeIn">
-                    <p>{faq.answer}</p>
-                  </div>
-                )}
+              <div className="mwg-details-panel">
+                <p>{faq.answer}</p>
               </div>
-            );
-          })}
+            </details>
+          ))}
         </div>
 
-        {/* Direct Contact Prompt Below FAQs */}
-        <div className="mt-12 p-6 rounded-2xl bg-white border border-slate-200 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-left">
-            <h4 className="text-sm font-bold text-slate-900">Have a question not listed here?</h4>
-            <p className="text-xs text-slate-500 mt-0.5">
-              Talk directly with our technical lead at Model Town Link Road, Lahore.
-            </p>
-          </div>
+        <div className="faq-support-banner">
+          <p className="section-lead">{ui.supportPrompt}</p>
           <a
-            href="https://wa.me/923154112925?text=Hello%20EBRICKS%20SOLUTIONS%2C%20I%20have%20a%20question%20about%20your%20services."
+            href={ui.supportWhatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors"
+            className="btn btn-whatsapp"
           >
-            <IconRenderer name="MessageSquare" className="w-4 h-4 text-emerald-600" />
-            <span>Ask on WhatsApp (0315-4112925)</span>
+            <IconRenderer name="MessageSquare" size={17} aria-hidden="true" />
+            <span>{ui.supportCtaLabel}</span>
           </a>
         </div>
       </div>
