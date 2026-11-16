@@ -3,10 +3,10 @@ import { useSiteContent } from './context/content-context';
 import { Navbar } from './components/sections/Navbar';
 import { Hero } from './components/sections/Hero';
 import { FlagshipProductsSection } from './components/sections/FlagshipProductsSection';
-import { TechStackSection } from './components/sections/TechStackSection';
-import { IndustriesSection } from './components/sections/IndustriesSection';
+// import { TechStackSection } from './components/sections/TechStackSection';
+// import { IndustriesSection } from './components/sections/IndustriesSection';
 import { ServicesSection } from './components/sections/ServicesSection';
-import { ProcessSection } from './components/sections/ProcessSection';
+// import { ProcessSection } from './components/sections/ProcessSection';
 import { TestimonialsSection } from './components/sections/TestimonialsSection';
 import { FaqSection } from './components/sections/FaqSection';
 import { ContactSection } from './components/sections/ContactSection';
@@ -60,13 +60,13 @@ export function App() {
           onSelectProduct={handleSelectService}
         />
 
-        <TechStackSection techStack={content.techStack} />
+        {/* <TechStackSection techStack={content.techStack} /> */}
 
-        <IndustriesSection
+        {/* <IndustriesSection
           industries={content.industries}
           ui={content.ui.industries}
           onConsultIndustry={handleSelectService}
-        />
+        /> */}
 
         <ServicesSection
           services={content.services}
@@ -74,15 +74,12 @@ export function App() {
           onSelectService={handleSelectService}
         />
 
-        <ProcessSection
+        {/* <ProcessSection
           process={content.process}
           ui={content.ui.process}
-        />
+        /> */}
 
-        <TestimonialsSection
-          testimonials={content.testimonials}
-          ui={content.ui.testimonials}
-        />
+        <TestimonialsSection testimonials={content.testimonials} ui={content.ui.testimonials} />
 
         <FaqSection faqs={content.faqs} ui={content.ui.faqs} />
 

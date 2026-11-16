@@ -90,8 +90,6 @@
         ]
       },
       { "label": "Services", "href": "#services" },
-      { "label": "Tech Stack", "href": "#tech-stack" },
-      { "label": "Process", "href": "#process" },
       { "label": "FAQs", "href": "#faqs" },
       { "label": "Contact", "href": "#contact" }
     ],
