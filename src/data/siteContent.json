@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "EBRICKS SOLUTIONS | Restaurant Management System, Offline Fast POS & Software Agency | Lahore, Pakistan",
+    "title": "EBRICKS SOLUTIONS | Software Agency | Lahore, Pakistan",
     "description": "EBRICKS SOLUTIONS (PRIVATE) LIMITED engineers two standalone flagship products — a 5-in-1 Full-Fledged Restaurant Management System and 100% Offline Fast POS Desktop Software — plus custom web, mobile, and digital growth services in Lahore, Pakistan.",
     "keywords": [
       "Restaurant Management System Pakistan",
@@ -62,7 +62,7 @@
   "topBar": {
     "enabled": true,
     "announcement": {
-      "badge": "Two Standalone Platforms + Custom Software Agency",
+      "badge": "Software Agency",
       "text": ""
     }
   },
