@@ -32,7 +32,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [selectedService, setSelectedService] = useState(preselectedService?.name || '');
-  const [budgetRange, setBudgetRange] = useState('');
   const [projectDetails, setProjectDetails] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -72,7 +71,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     setEmail('');
     setPhone('');
     setSelectedService(preselectedService?.name || '');
-    setBudgetRange('');
     setProjectDetails('');
     setSubmitted(false);
   };
@@ -84,9 +82,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
       phone ? `${formConfig.fields.phone.label}: ${phone}` : '',
       email ? `${formConfig.fields.email.label}: ${email}` : '',
       selectedService ? `${formConfig.fields.serviceSelect.label}: ${selectedService}` : '',
-      budgetRange && formConfig.fields.budgetRange
-        ? `${formConfig.fields.budgetRange.label}: ${budgetRange}`
-        : '',
       projectDetails ? `${formConfig.fields.projectDetails.label}: ${projectDetails}` : '',
     ].filter(Boolean);
 
@@ -103,7 +98,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const idEmail = `${uid}-email`;
   const idPhone = `${uid}-phone`;
   const idService = `${uid}-service`;
-  const idBudget = `${uid}-budget`;
   const idDetails = `${uid}-details`;
 
   const errName = `${uid}-err-name`;
@@ -292,28 +286,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       <span>{ui.errors.serviceSelect}</span>
                     </div>
                   </div>
-
-                  {formConfig.fields.budgetRange ? (
-                    <div className="mwg-field">
-                      <label htmlFor={idBudget} className="mwg-label">
-                        <span>{formConfig.fields.budgetRange.label}</span>
-                      </label>
-                      <select
-                        id={idBudget}
-                        name="budgetRange"
-                        value={budgetRange}
-                        onChange={(e) => setBudgetRange(e.target.value)}
-                        className="mwg-control"
-                      >
-                        <option value="">{formConfig.fields.budgetRange.placeholder}</option>
-                        {formConfig.fields.budgetRange.options.map((opt) => (
-                          <option key={opt} value={opt}>
-                            {opt}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  ) : null}
 
                   <div className="mwg-field">
                     <label htmlFor={idDetails} className="mwg-label">

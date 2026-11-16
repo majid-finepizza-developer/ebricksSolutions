@@ -3,7 +3,7 @@ import { useSiteContent } from './context/content-context';
 import { Navbar } from './components/sections/Navbar';
 import { Hero } from './components/sections/Hero';
 import { FlagshipProductsSection } from './components/sections/FlagshipProductsSection';
-// import { TechStackSection } from './components/sections/TechStackSection';
+import { TechStackSection } from './components/sections/TechStackSection';
 // import { IndustriesSection } from './components/sections/IndustriesSection';
 import { ServicesSection } from './components/sections/ServicesSection';
 // import { ProcessSection } from './components/sections/ProcessSection';
@@ -60,8 +60,6 @@ export function App() {
           onSelectProduct={handleSelectService}
         />
 
-        {/* <TechStackSection techStack={content.techStack} /> */}
-
         {/* <IndustriesSection
           industries={content.industries}
           ui={content.ui.industries}
@@ -73,6 +71,8 @@ export function App() {
           ui={content.ui.services}
           onSelectService={handleSelectService}
         />
+
+        <TechStackSection techStack={content.techStack} />
 
         {/* <ProcessSection
           process={content.process}

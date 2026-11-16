@@ -740,7 +740,9 @@
     align-items: stretch;
     gap: 0.3rem;
     padding-inline-start: 0;
-    transition: padding-inline-start 160ms ease, border-color 160ms ease;
+    transition:
+      padding-inline-start 160ms ease,
+      border-color 160ms ease;
   }
 
   .mwg-field:has(:is(:user-invalid, .user-invalid-fallback)),

@@ -1,10 +1,5 @@
 import React from 'react';
-import type {
-  BrandData,
-  CompanyContact,
-  FooterData,
-  SiteUiLabels,
-} from '../../types/content';
+import type { BrandData, CompanyContact, FooterData, SiteUiLabels } from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
 import { resolveAssetUrl } from '../../utils/assets';
 
@@ -15,12 +10,7 @@ interface FooterProps {
   ui: SiteUiLabels['footer'];
 }
 
-export const Footer: React.FC<FooterProps> = ({
-  brand,
-  contact,
-  footer,
-  ui,
-}) => {
+export const Footer: React.FC<FooterProps> = ({ brand, contact, footer, ui }) => {
   const currentYear = new Date().getFullYear();
   const copyrightText = footer.copyright.replace('{year}', String(currentYear));
 
@@ -29,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="mwg-container">
         <div className="footer-grid">
           <div>
-            <a href="#" className="brand-link" aria-label={brand.name}>
+            {/* <a href="#" className="brand-link" aria-label={brand.name}>
               <img
                 src={resolveAssetUrl(brand.logo)}
                 alt={brand.name}
@@ -39,14 +29,12 @@ export const Footer: React.FC<FooterProps> = ({
                 decoding="async"
                 className="footer-brand-logo"
               />
-            </a>
+            </a> */}
 
-            <p className="mwg-card-title" style={{ marginBlockStart: '0.85rem' }}>
-              {brand.legalName}
-            </p>
-            <p style={{ marginBlockStart: '0.65rem', maxInlineSize: '36ch', fontSize: '0.9rem' }}>
+            <p className="mwg-card-title">{brand.legalName}</p>
+            {/* <p style={{ marginBlockStart: '0.65rem', maxInlineSize: '36ch', fontSize: '0.9rem' }}>
               {footer.description}
-            </p>
+            </p> */}
 
             <h2 className="visually-hidden">{ui.contactHeading}</h2>
             <ul className="footer-link-list">
@@ -110,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         <div className="footer-bottom">
           <p>{copyrightText}</p>
-          <p>{footer.disclaimer}</p>
+          {/* <p>{footer.disclaimer}</p> */}
         </div>
       </div>
     </footer>

@@ -276,7 +276,8 @@
     gap: 0.25rem;
   }
 
-  .site-nav:not(.is-wide):not(.is-measuring) .site-menu[popover]:is(:popover-open, .\:popover-open) {
+  .site-nav:not(.is-wide):not(.is-measuring)
+    .site-menu[popover]:is(:popover-open, .\:popover-open) {
     display: flex;
   }
 
@@ -290,7 +291,8 @@
       transition-behavior: allow-discrete;
     }
 
-    .site-nav:not(.is-wide):not(.is-measuring) .site-menu[popover]:is(:popover-open, .\:popover-open) {
+    .site-nav:not(.is-wide):not(.is-measuring)
+      .site-menu[popover]:is(:popover-open, .\:popover-open) {
       translate: 0 0;
       opacity: 1;
 
@@ -534,11 +536,7 @@
         color-mix(in oklab, var(--brand-accent) 9%, transparent),
         transparent 44%
       ),
-      linear-gradient(
-        to bottom var(--in-oklab),
-        var(--surface-card),
-        var(--surface-page)
-      );
+      linear-gradient(to bottom var(--in-oklab), var(--surface-card), var(--surface-page));
     border-block-end: 1px solid var(--border-subtle);
     overflow-x: clip;
   }
@@ -1505,7 +1503,8 @@
     background-color: var(--surface-dark);
     color: var(--ink-inverse-muted);
     border-block-start: 1px solid rgb(var(--color-surface) / 0.12);
-    padding-block: clamp(1.75rem, 1.35rem + 1.4vw, 2.5rem) max(6.25rem, calc(5.75rem + env(safe-area-inset-bottom, 0px)));
+    padding-block: clamp(1.75rem, 1.35rem + 1.4vw, 2.5rem)
+      max(2.25rem, calc(1.75rem + env(safe-area-inset-bottom, 0px)));
   }
 
   .site-footer :is(h2, h3, h4) {
@@ -1606,7 +1605,9 @@
   @media (prefers-reduced-motion: reduce) {
     .floating-actions-dock {
       translate: none;
-      transition: visibility 120ms linear, opacity 120ms linear;
+      transition:
+        visibility 120ms linear,
+        opacity 120ms linear;
     }
   }
 

@@ -90,6 +90,7 @@
         ]
       },
       { "label": "Services", "href": "#services" },
+      { "label": "Tech Stack", "href": "#tech-stack" },
       { "label": "FAQs", "href": "#faqs" },
       { "label": "Contact", "href": "#contact" }
     ],
@@ -1000,7 +1001,7 @@
   "contactSection": {
     "heading": "Explore Our Flagship Systems &",
     "highlightedWord": "Custom Software Services",
-    "subheading": "Select the exact product or agency service you need below to book a free demonstration or price quotation. Our Lahore team typically responds within 15 minutes.",
+    "subheading": "Select the exact product or agency service you need below to book a free demonstration or price quotation. Our team typically responds within one business day.",
     "formTitle": "Book a Free Live Demo or Project Consultation",
     "formSubtitle": "Choose your standalone product or custom development requirement below.",
     "fields": {
@@ -1031,17 +1032,6 @@
           "Fast POS (100% Offline Standalone Desktop System)",
           "Custom Web / Mobile / Desktop Software Development",
           "E-Commerce / Digital Marketing Services"
-        ]
-      },
-      "budgetRange": {
-        "label": "Business Scale / Project Scope",
-        "placeholder": "Select Scale or Scope",
-        "options": [
-          "Single Store / 1 Counter PC Setup (Offline Fast POS)",
-          "Restaurant Setup (Website + POS + Call Center + Riders)",
-          "Multi-Station Restaurant / High-Volume Outlet",
-          "Custom Web, Mobile or Desktop Software Build",
-          "Shopify Store, SEO or Paid Social Media Growth"
         ]
       },
       "projectDetails": {

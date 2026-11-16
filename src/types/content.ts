@@ -332,11 +332,6 @@ export interface ContactSectionData {
       required: boolean;
       options?: string[];
     };
-    budgetRange?: {
-      label: string;
-      placeholder: string;
-      options: string[];
-    };
     projectDetails: ContactFormField;
   };
   submitButtonText: string;
