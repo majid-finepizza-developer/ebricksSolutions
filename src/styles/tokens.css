@@ -15,7 +15,11 @@
 
     --brand-secondary: rgb(var(--color-secondary-600));
     --brand-secondary-strong: rgb(var(--color-secondary-700));
-    --brand-secondary-soft: color-mix(in oklab, var(--brand-secondary) 12%, rgb(var(--color-surface)));
+    --brand-secondary-soft: color-mix(
+      in oklab,
+      var(--brand-secondary) 12%,
+      rgb(var(--color-surface))
+    );
 
     /* Semantic surfaces & accessible ink (WCAG AA >= 4.5:1) */
     --surface-page: rgb(var(--color-background));
@@ -50,10 +54,22 @@
       rgb(var(--color-text-muted)) 80%,
       rgb(var(--color-text-secondary))
     );
-    --status-success: color-mix(in oklab, rgb(var(--color-success)) 88%, rgb(var(--color-text-primary)));
-    --status-success-soft: color-mix(in oklab, rgb(var(--color-success)) 11%, rgb(var(--color-surface)));
+    --status-success: color-mix(
+      in oklab,
+      rgb(var(--color-success)) 88%,
+      rgb(var(--color-text-primary))
+    );
+    --status-success-soft: color-mix(
+      in oklab,
+      rgb(var(--color-success)) 11%,
+      rgb(var(--color-surface))
+    );
     --status-danger: rgb(var(--color-danger));
-    --status-danger-soft: color-mix(in oklab, rgb(var(--color-danger)) 10%, rgb(var(--color-surface)));
+    --status-danger-soft: color-mix(
+      in oklab,
+      rgb(var(--color-danger)) 10%,
+      rgb(var(--color-surface))
+    );
     --status-star: rgb(var(--color-star));
 
     /* Focus indicator token (>= 3:1 contrast) */
@@ -72,7 +88,8 @@
       0 8px 18px -6px rgb(var(--color-text-primary) / 0.08);
 
     /* Typography families & scale (never set font-size on :root/html so meta text-scale works) */
-    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans:
+      'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-heading: 'Poppins', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
     --text-xs: 0.75rem;
@@ -91,7 +108,7 @@
     --radius-xl: 1.5rem;
     --radius-pill: 9999px;
 
-    --container-max: 80rem;
+    --container-max: 80%;
     --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.25rem);
     --section-space: clamp(2rem, 1.5rem + 1.8vw, 3.25rem);
     --sticky-header-height: 4rem;
