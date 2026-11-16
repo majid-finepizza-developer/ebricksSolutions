@@ -1,7 +1,7 @@
 import React from 'react';
 import type { BrandData, CompanyContact, FooterData, SiteUiLabels } from '../../types/content';
 import { IconRenderer } from '../IconRenderer';
-import { resolveAssetUrl } from '../../utils/assets';
+// import { resolveAssetUrl } from '../../utils/assets';
 
 interface FooterProps {
   brand: BrandData;
